@@ -2,6 +2,7 @@
 import { readFile } from 'node:fs/promises';
 import { store } from '../src/state/store.js';
 import { tick } from '../src/engine/clock.js';
+import { groupConversations } from '../src/ui/discord.js';
 
 const [streams, threads, rules] = await Promise.all([
   readJson(new URL('../src/data/streams.json', import.meta.url)),
@@ -15,6 +16,7 @@ checkReputationFailure();
 checkTosLimitFailure();
 checkFinalTickPrecedence();
 checkDifficultyAdvance();
+checkDmConversations();
 checkCareerReset();
 assert(JSON.stringify(threads) === authoredThreadsSnapshot, 'store hydration mutated authored DM data');
 
@@ -84,6 +86,37 @@ function checkDifficultyAdvance() {
     next.streams[0].viewers === Math.round(startingViewers * (rules.viewerGrowthPerShift ?? 1)),
     'difficulty advance: audience inflation (S3.0)',
   );
+  assert(next.threads.every((thread) => !thread._arrived), 'difficulty advance: prior-shift DMs must archive immediately');
+  store.dispatch({ type: 'SET_RUNNING', payload: { running: true } });
+  tick();
+  const immediate = next.threads.find((thread) => !thread.hidden && (thread.arrivesAt ?? 0) === 0);
+  assert(immediate?._arrived, 'difficulty advance: current-shift DMs must redeliver on the first tick');
+}
+
+function checkDmConversations() {
+  const state = { shift: 1 };
+  const grouped = groupConversations([
+    {
+      id: 'dm_parent', streamerId: 'same-person', name: 'Same Person',
+      _arrived: true, hidden: false, unread: false,
+      messages: [{ from: 'them', text: 'opening' }], choices: [],
+    },
+    {
+      id: 'dm_continuation', streamerId: 'same-person', name: 'Same Person',
+      _arrived: true, hidden: false, unread: true,
+      messages: [{ from: 'them', text: 'continuation' }], choices: [{ label: 'reply' }],
+    },
+    {
+      id: 'dm_other', streamerId: 'someone-else', name: 'Someone Else',
+      _arrived: true, hidden: false, unread: false,
+      messages: [{ from: 'them', text: 'separate' }], choices: [],
+    },
+  ], state);
+  assert(grouped.length === 2, 'DM grouping: one person should produce one tab');
+  const samePerson = grouped.find((conversation) => conversation.streamerId === 'same-person');
+  assert(samePerson?.threads.length === 2, 'DM grouping: continuation must stay in its sender tab');
+  assert(samePerson?.messages.map((message) => message.text).join('|') === 'opening|continuation', 'DM grouping: combined history order');
+  assert(samePerson?.unread, 'DM grouping: grouped tab must inherit unread state');
 }
 
 function checkCareerReset() {

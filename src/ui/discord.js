@@ -8,7 +8,7 @@
 // which changes the signature and re-renders the unread/typing badges.
 import { store } from '../state/store.js';
 
-let activeThreadId = null;
+let activeConversationKey = null;
 let stickToBottom = true;   // autoscroll the active thread unless the user scrolled up
 
 export function mountDiscord() {
@@ -34,34 +34,64 @@ export function mountDiscord() {
 /** Cheap signature: only the DM-relevant bits + the active thread + standing. */
 function dmSignature(s) {
   const rels = s.relationships || {};
-  const parts = [activeThreadId || '-'];
+  const parts = [`shift:${s.shift}`, activeConversationKey || '-'];
   for (const t of s.threads) {
     if (!isVisible(t, s)) continue;
     const last = t.messages.at(-1);
-    parts.push(`${t.id}|${t.unread ? 1 : 0}|${t.messages.length}|${t.choices ? t.choices.length : 0}|${last ? last.text : ''}|${rels[t.streamerId] || 0}`);
+    parts.push(`${conversationKey(t)}|${t.id}|${t.unread ? 1 : 0}|${t.messages.length}|${t.choices ? t.choices.length : 0}|${last ? last.text : ''}|${rels[t.streamerId] || 0}`);
   }
   return parts.join('~');
 }
 
-function isVisible(t, s) {
-  if (t.hidden) return false;
-  return !!t._arrived || (typeof t.arrivesAt === 'number' ? t.arrivesAt : 0) <= s.tick;
+export function isVisible(t) {
+  return !t.hidden && !!t._arrived;
+}
+
+export function conversationKey(thread) {
+  return thread.streamerId ? `streamer:${thread.streamerId}` : `thread:${thread.id}`;
+}
+
+/** Collapse authored continuations/story beats into one visible tab per person. */
+export function groupConversations(threads, state) {
+  const grouped = new Map();
+  for (const thread of threads || []) {
+    if (!isVisible(thread, state)) continue;
+    const key = conversationKey(thread);
+    let conversation = grouped.get(key);
+    if (!conversation) {
+      conversation = {
+        key,
+        streamerId: thread.streamerId,
+        name: thread.name,
+        avatarColor: thread.avatarColor,
+        threads: [],
+        messages: [],
+        unread: false,
+      };
+      grouped.set(key, conversation);
+    }
+    conversation.threads.push(thread);
+    conversation.messages.push(...(thread.messages || []));
+    conversation.unread ||= !!thread.unread;
+  }
+  return [...grouped.values()];
 }
 
 function render(state) {
-  const visibleThreads = state.threads.filter((t) => isVisible(t, state));
-  if ((!activeThreadId || !visibleThreads.some((t) => t.id === activeThreadId)) && visibleThreads[0]) {
-    activeThreadId = visibleThreads[0].id;
+  const conversations = groupConversations(state.threads, state);
+  if ((!activeConversationKey || !conversations.some((item) => item.key === activeConversationKey)) && conversations[0]) {
+    activeConversationKey = conversations[0].key;
   }
-  const active = state.threads.find((t) => t.id === activeThreadId) || null;
+  if (!conversations.length) activeConversationKey = null;
+  const active = conversations.find((item) => item.key === activeConversationKey) || null;
 
   // Capture scroll intent before we touch the messages DOM.
   const old = document.getElementById('dmMessages');
   if (old) stickToBottom = old.scrollHeight - old.scrollTop - old.clientHeight < 60;
 
-  renderThreadList(visibleThreads);
+  renderThreadList(conversations, state);
   renderView(active, state);
-  wire();
+  wire(state);
   if (stickToBottom) {
     const box = document.getElementById('dmMessages');
     if (box) box.scrollTop = box.scrollHeight;
@@ -69,17 +99,17 @@ function render(state) {
   updateUnreadTotal(state);
 }
 
-function renderThreadList(threads) {
+function renderThreadList(conversations, state) {
   const root = document.getElementById('dmThreads');
-  root.innerHTML = threads.length
-    ? threads.map((t) => threadItem(t, t.id === activeThreadId)).join('')
-    : '<div class="dm-empty">No messages yet.<br><span class="dm-muted">Streamers will slide in as the shift goes on…</span></div>';
+  root.innerHTML = conversations.length
+    ? conversations.map((item) => threadItem(item, item.key === activeConversationKey)).join('')
+    : `<div class="dm-empty">${state.shift > 1 ? 'Yesterday’s DMs archived.' : 'No messages yet.'}<br><span class="dm-muted">${state.shift > 1 ? 'Today’s inbox opens when the shift starts…' : 'Streamers will slide in as the shift goes on…'}</span></div>`;
 }
 
 function renderView(active, state) {
   const root = document.getElementById('dmView');
   if (!active) {
-    root.innerHTML = '<div class="dm-empty">Select a conversation.</div>';
+    root.innerHTML = `<div class="dm-empty">${state.shift > 1 ? 'No stale corporate baggage here.<br><span class="dm-muted">Start the shift for today’s fresh demands.</span>' : 'Select a conversation.'}</div>`;
     return;
   }
   const standing = standingChip((state.relationships || {})[active.streamerId]);
@@ -88,7 +118,7 @@ function renderView(active, state) {
       <span class="dm-avatar" style="--c:${active.avatarColor}">${initial(active.name)}</span>
       <div class="dm-view-name">
         <b>${escape(active.name)}</b>
-        <small class="dm-muted">${active.messages.length} message${active.messages.length === 1 ? '' : 's'}</small>
+        <small class="dm-muted">${active.messages.length} message${active.messages.length === 1 ? '' : 's'} · one continuous thread</small>
       </div>
       ${standing}
     </div>
@@ -106,44 +136,53 @@ function standingChip(rel) {
   return `<span class="dm-standing ${cls}" title="relationship standing">${label} ${r > 0 ? '+' : ''}${r}</span>`;
 }
 
-function threadItem(t, isActive) {
-  const last = t.messages.at(-1);
+function threadItem(conversation, isActive) {
+  const last = conversation.messages.at(-1);
   const who = last ? (last.from === 'me' ? 'You: ' : '') : '';
-  return `<div class="dm-thread-item ${isActive ? 'active' : ''} ${t.unread ? 'unread' : ''}" data-thread="${t.id}">
-    <span class="dm-avatar sm" style="--c:${t.avatarColor}">${initial(t.name)}</span>
+  return `<div class="dm-thread-item ${isActive ? 'active' : ''} ${conversation.unread ? 'unread' : ''}" data-conversation="${escape(conversation.key)}">
+    <span class="dm-avatar sm" style="--c:${conversation.avatarColor}">${initial(conversation.name)}</span>
     <div class="dm-thread-meta">
-      <div class="dm-thread-name"><b>${escape(t.name)}</b>${t.unread ? '<span class="dm-typing" title="new message"><i></i><i></i><i></i></span>' : ''}</div>
+      <div class="dm-thread-name"><b>${escape(conversation.name)}</b>${conversation.unread ? '<span class="dm-typing" title="new message"><i></i><i></i><i></i></span>' : ''}</div>
       <div class="dm-thread-preview">${escape((who + (last ? last.text : '')).slice(0, 42))}</div>
     </div>
   </div>`;
 }
 
-function messages(t) {
-  return t.messages.map((m) => {
+function messages(conversation) {
+  return conversation.messages.map((m) => {
     if (m.from === 'system') return `<div class="dm-msg system">${escape(m.text)}</div>`;
     return `<div class="dm-msg ${m.from}">${escape(m.text)}</div>`;
   }).join('') || '<div class="dm-muted" style="padding:8px">(no messages)</div>';
 }
 
-function choices(t) {
-  if (!t.choices || !t.choices.length) return '<div class="dm-empty">— end of conversation —</div>';
-  return t.choices.map((c, i) =>
-    `<button data-choice="${i}" class="dm-choice">${escape(c.label)}</button>`).join('');
+function choices(conversation) {
+  const buttons = conversation.threads.flatMap((thread) => (
+    (thread.choices || []).map((choice, index) => (
+      `<button data-choice="${index}" data-choice-thread="${escape(thread.id)}" class="dm-choice">${escape(choice.label)}</button>`
+    ))
+  ));
+  return buttons.length ? buttons.join('') : '<div class="dm-empty">— end of conversation —</div>';
 }
 
-function wire() {
+function wire(state) {
   const root = document.getElementById('discord');
-  root.querySelectorAll('[data-thread]').forEach((el) => {
+  root.querySelectorAll('[data-conversation]').forEach((el) => {
     el.onclick = () => {
-      activeThreadId = el.dataset.thread;
+      activeConversationKey = el.dataset.conversation;
       stickToBottom = true;
-      store.dispatch({ type: 'DM_OPEN', payload: { threadId: activeThreadId } });
+      const conversation = groupConversations(state.threads, state)
+        .find((item) => item.key === activeConversationKey);
+      const unread = conversation?.threads.filter((thread) => thread.unread) || [];
+      if (!unread.length) render(store.getState());
+      for (const thread of unread) {
+        store.dispatch({ type: 'DM_OPEN', payload: { threadId: thread.id } });
+      }
     };
   });
   root.querySelectorAll('[data-choice]').forEach((el) => {
     el.onclick = () => store.dispatch({
       type: 'DM_CHOOSE',
-      payload: { threadId: activeThreadId, choiceIndex: Number(el.dataset.choice) },
+      payload: { threadId: el.dataset.choiceThread, choiceIndex: Number(el.dataset.choice) },
     });
   });
 }
@@ -151,7 +190,7 @@ function wire() {
 function updateUnreadTotal(state) {
   const el = document.querySelector('.dm-unread-total');
   if (!el) return;
-  const n = state.threads.filter((t) => isVisible(t, state) && t.unread).length;
+  const n = groupConversations(state.threads, state).filter((item) => item.unread).length;
   el.textContent = n ? String(n) : '';
   el.dataset.unread = String(n);
 }

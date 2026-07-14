@@ -201,6 +201,10 @@ function hydrateThread(t) {
   return {
     unread: false,
     ...t,
+    // The Discord view treats delivery as the source of visibility. Immediate
+    // top-level threads are present during the day-one briefing; scheduled and
+    // continuation threads stay archived until their engine delivery.
+    _arrived: !t.hidden && (typeof t.arrivesAt !== 'number' || t.arrivesAt === 0),
     messages: Array.isArray(t.messages) ? t.messages.map((message) => ({ ...message })) : [],
     choices: cloneChoices(t.choices),
     followUp: t.followUp
@@ -368,6 +372,12 @@ function advanceShift(state) {
     // S3.0: audience inflation — supply grows with demand so the curve is a
     // gradient, not a wall (see BUILD_PLAN Sprint 3 / WS-J).
     stream.viewers = Math.round(stream.viewers * state.viewerGrowthPerShift);
+  }
+  // Close yesterday's inbox immediately while the next briefing is paused.
+  // dm.step rebuilds and redelivers today's conversations on the first tick.
+  for (const thread of state.threads) {
+    thread._arrived = false;
+    thread.unread = false;
   }
   startShift(state);
   // The briefing owns the transition from prepared to actively ticking.

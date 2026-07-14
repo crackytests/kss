@@ -150,6 +150,7 @@ function revealUnlocks(state) {
     if (!t.unread) continue;            // reducer flips unread on unlockThreadIds
     t.hidden = false;
     t._revealed = true;
+    t._arrived = true;
     store.pushEvent({
       type: 'dm_incoming', tone: 'neutral', threadId: t.id,
       message: `💬 ${t.name} slid into your corporate nightmare.`,
