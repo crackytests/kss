@@ -4,6 +4,13 @@
 
 import { store } from '../state/store.js';
 import { dailyKey, getRunConfig } from '../engine/persistence.js';
+import {
+  buildChallengeUrl,
+  copyText,
+  mountShare,
+  openShareCard,
+  refreshShareSurfaces,
+} from './share.js';
 
 let open = false;
 let runConfig = getRunConfig();
@@ -11,6 +18,7 @@ let eventBound = false;
 
 export function mountLeaderboard(config = getRunConfig()) {
   runConfig = config;
+  mountShare(config);
   if (!eventBound && typeof window !== 'undefined') {
     window.addEventListener('kickstaff:career-open', () => {
       open = true;
@@ -37,6 +45,7 @@ function render(state) {
   const career = state.career || {};
   root.innerHTML = open ? careerPanel(state, career) : '';
   wire(root, state);
+  refreshShareSurfaces();
 }
 
 function careerPanel(state, career) {
@@ -98,7 +107,10 @@ function careerPanel(state, career) {
             <span>Your sins are saved in this browser only.</span>
             <button type="button" class="career-reset" data-career-reset>Burn the whole record</button>
           </div>
-          <strong>${runConfig.mode === 'daily' ? 'DAILY MODE ACTIVE' : 'STANDARD MODE'}</strong>
+          <div class="career-foot__mode">
+            <button type="button" class="career-copy-challenge" data-career-copy-challenge>Copy this challenge</button>
+            <strong>${runConfig.mode === 'daily' ? 'DAILY MODE ACTIVE' : 'STANDARD MODE'}</strong>
+          </div>
         </footer>
       </section>
     </div>`;
@@ -110,10 +122,15 @@ function lifetimeMetric(label, value, note) {
 
 function leaderRow(entry, index) {
   const mutator = entry.mutatorName || 'Legacy run';
+  const challengeUrl = buildChallengeUrl(entry.seed, entry.mode);
   return `
     <div class="leader-row ${index === 0 ? 'is-best' : ''}">
       <b class="leader-rank">${String(index + 1).padStart(2, '0')}</b>
-      <div class="leader-run"><strong>${entry.mode === 'daily' ? 'DAILY' : 'STANDARD'}</strong><small>${escapeHtml(mutator)} · ${formatDate(entry.finishedAt)}</small></div>
+      <div class="leader-run">
+        <strong>${entry.mode === 'daily' ? 'DAILY' : 'STANDARD'}</strong>
+        <small>${escapeHtml(mutator)} · ${formatDate(entry.finishedAt)}</small>
+        <div class="career-run-seed"><code>seed ${seedLabel(entry.seed)} / ${(Number(entry.seed) || 0) >>> 0}</code><a class="career-challenge-link" href="${escapeHtml(challengeUrl)}">replay</a><button type="button" class="career-entry-share" data-share-entry="${escapeHtml(entry.id)}">share</button></div>
+      </div>
       <div><span>SCORE</span><strong>${formatNumber(entry.score)}</strong></div>
       <div><span>SHIFTS</span><strong>${entry.shiftsSurvived}</strong></div>
       <div><span>ENGAGEMENT</span><strong>${formatCompact(entry.totalEngagement)}</strong></div>
@@ -125,10 +142,15 @@ function historyRow(entry) {
   const reason = entry.result === 'won'
     ? 'CAMPAIGN CLEARED'
     : `FIRED · ${(entry.failureReason || 'quota').replaceAll('_', ' ').toUpperCase()}`;
+  const challengeUrl = buildChallengeUrl(entry.seed, entry.mode);
   return `
     <article class="history-row">
       <div class="history-row__badge ${entry.mode === 'daily' ? 'daily' : ''}">${entry.mode === 'daily' ? 'D' : 'S'}</div>
-      <div class="history-row__main"><strong>${reason}</strong><small>${escapeHtml(entry.mutatorName || 'Legacy run')} · ${formatDateTime(entry.finishedAt)} · seed ${seedLabel(entry.seed)}</small></div>
+      <div class="history-row__main">
+        <strong>${reason}</strong>
+        <small>${escapeHtml(entry.mutatorName || 'Legacy run')} · ${formatDateTime(entry.finishedAt)} · seed ${seedLabel(entry.seed)} / ${(Number(entry.seed) || 0) >>> 0}</small>
+        <div class="career-run-seed"><a class="career-challenge-link" href="${escapeHtml(challengeUrl)}">replay seed</a><button type="button" class="career-entry-share" data-share-entry="${escapeHtml(entry.id)}">share card</button></div>
+      </div>
       <div class="history-row__score"><strong>${formatNumber(entry.score)}</strong><small>${entry.shiftsSurvived} shifts</small></div>
     </article>`;
 }
@@ -163,6 +185,21 @@ function wire(root, state) {
     store.resetCareer();
     window.location.reload();
   };
+  const copyChallenge = root.querySelector('[data-career-copy-challenge]');
+  if (copyChallenge) copyChallenge.onclick = async () => {
+    const result = await copyText(buildChallengeUrl(runConfig.seed, runConfig.mode));
+    copyChallenge.textContent = result === 'manual' ? 'Link selected — Ctrl/Cmd+C' : 'Challenge copied ✓';
+    window.setTimeout?.(() => { copyChallenge.textContent = 'Copy this challenge'; }, 2200);
+  };
+  if (typeof root.querySelectorAll === 'function') {
+    const entries = [...validRows(state.career?.leaderboard), ...validRows(state.career?.runHistory)];
+    root.querySelectorAll('[data-share-entry]').forEach((button) => {
+      button.onclick = () => {
+        const entry = entries.find((candidate) => candidate.id === button.dataset.shareEntry);
+        if (entry) openShareCard(entry);
+      };
+    });
+  }
 }
 
 function validRows(value) {

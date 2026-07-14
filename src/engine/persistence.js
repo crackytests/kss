@@ -37,11 +37,19 @@ export function getRunConfig(
   const params = new URLSearchParams(search);
   const mode = params.get('mode') === 'daily' ? 'daily' : 'standard';
   const key = mode === 'daily' ? dailyKey(now) : null;
+  const challengeSeed = parseChallengeSeed(params.get('seed'));
   return {
     mode,
     dailyKey: key,
-    seed: mode === 'daily' ? dailySeed(now) : now.getTime() >>> 0,
+    seed: challengeSeed ?? (mode === 'daily' ? dailySeed(now) : now.getTime() >>> 0),
   };
+}
+
+/** Decimal-only URL seed parser. Invalid/overflowing values fall back normally. */
+function parseChallengeSeed(raw) {
+  if (typeof raw !== 'string' || !/^\d+$/.test(raw)) return null;
+  const value = Number(raw);
+  return Number.isSafeInteger(value) && value <= 0xffffffff ? value >>> 0 : null;
 }
 
 /**
