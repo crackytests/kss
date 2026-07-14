@@ -557,3 +557,77 @@ Let players brag and challenge each other with zero backend.
 > `state.storyFlags._ending` (string, set by ui/ending.js) — OPTIONAL read,
 > must degrade to "shift N reached" when absent, so the workstreams stay
 > independently shippable. Neither touches the other's files.
+
+---
+
+# Sprint 6 — "New Toys & No Friction"
+
+Sprints 1–5 complete and LIVE. User decisions: directions **New Toys** (the
+twice-deferred Path B) + **Feel & Friction**; lead pre-work **CI + social
+previews**; builders **Claude (lead) + ChatGPT 5.6**. No external player
+feedback yet — the share loop's last mile (link unfurls) ships this sprint too.
+
+R-rated register for all new copy. One commit per milestone; push deploys.
+
+## Phase S6.0 — Hardening pre-work (lead, FIRST)
+
+- [ ] **CI**: `.github/workflows/checks.yml` — on push/PR to main: `node --check`
+  every `src/**/*.js`, run all six `scripts/*.mjs`. Three models commit to this
+  repo and every push auto-deploys to the public site; nothing guards it today.
+- [ ] **Social previews**: `og:`/`twitter:` meta in `index.html` (title,
+  description, image, url) + a 1200×630 social card image so shared challenge
+  links unfurl properly in Discord/Twitter. Alt text included.
+- [ ] Contract v14: `state.crisis` (null | active crisis object), actions
+  `CRISIS_CHOOSE {optionId}` and `CLIP_ATTEMPT {streamId, accuracy}` (reducers
+  generic; engines/UI own semantics). Stub `engine/crisis.js`; tick order:
+  crisis after story: **events → risk → perks → jackpot → economy → dm → story →
+  crisis → audit → mutators**. Mount slots `#crisisSlot`, `#clipSlot`.
+
+## Phase S6.1 — Parallel workstreams
+
+### WS-P · New Toys — **Claude (lead)** — *files: `engine/crisis.js`, `data/crisis.json`, `ui/crisis.js`, `ui/clipdesk.js`, `styles/toys.css`*
+Two systems that deepen the minute-to-minute.
+- **PR Crisis mode**: a TOS break now ALSO spawns a timed crisis (one at a
+  time, ~8-tick countdown, auto-resolves worst-case if ignored). Three plays,
+  each a different poison: **Spin it** (pay money, halve the reputation hit),
+  **Bury it** (restore some engagement; heat + investigation spike — feeds the
+  Sprint-5 story layer), **Sacrifice the streamer** (permanent ban +
+  relationship nuke with their allies; minimal platform damage). Crisis panel
+  UI with countdown; choices dispatch `CRISIS_CHOOSE`.
+- **Clip Desk**: while a stream is VIRAL (Sprint-3 live events), a CLIP button
+  appears on its front-page slot. Clicking opens a quick timing bar — hit the
+  hot zone → engagement bonus scaled by accuracy (`CLIP_ATTEMPT`), miss →
+  small embarrassment penalty. One attempt per viral event.
+- Acceptance: a break spawns exactly one crisis with a live countdown; all
+  three plays + the ignore path have measurably different outcomes (extend
+  story-check or new crisis-check); clip button appears only during viral on
+  featured streams; accuracy scales reward; all checks green; balance sim
+  still passes (crisis penalties must not soften the fired states).
+
+### WS-Q · Feel & Friction — **ChatGPT 5.6** — *files: `ui/browse.js` (ownership transferred from lead), `styles/board.css` (transferred), new `ui/hotkeys.js`, `styles/a11y.css`*
+Remove every rough edge between the player and the decision.
+- **Directory search + sort**: text filter box; sort by viewers / controversy /
+  risk / category. Keep the selector-gated render pattern (CONTRACTS §7).
+- **Keyboard shortcuts** (`ui/hotkeys.js`, mounted from main.js by lead on
+  request): `1–6` pull front-page slots, `Space` pause/resume, `M` mute, `?`
+  overlay listing shortcuts. Never steal keys while typing in the search box.
+- **Hover preview**: front-page-style risk/stats card on directory hover
+  (desktop only; no-op on touch).
+- **Accessibility audit**: focus order, aria-labels on icon buttons, meter
+  aria-values, contrast check on muted text; fixes in `a11y.css` + your files.
+- Acceptance: search/sort work mid-shift without breaking selector renders;
+  every shortcut works and is discoverable via `?`; keyboard-only play is
+  possible (feature + pull); checks green.
+
+## Sprint 6 ownership matrix
+
+| File | Owner |
+|------|-------|
+| .github/workflows/checks.yml, index.html (meta + slots), social card asset, store.js, clock.js, main.js, CONTRACTS.md | S6.0 / lead |
+| engine/crisis.js, data/crisis.json, ui/crisis.js, ui/clipdesk.js, styles/toys.css | WS-P (Claude) |
+| ui/browse.js, styles/board.css (both transferred), ui/hotkeys.js, styles/a11y.css | WS-Q (ChatGPT 5.6) |
+
+> Coupling notes: WS-P's clip button renders into the front-page slot DOM via a
+> `#clipSlot`-anchored overlay, NOT by editing frontpage.js. WS-Q's hotkeys
+> dispatch existing actions only. Neither workstream touches the other's files;
+> `main.js` mount lines are added by lead on request.

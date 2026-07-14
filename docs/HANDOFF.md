@@ -1,5 +1,15 @@
 # Handoff — for GLM 5.2, ChatGPT 5.6, and any agent continuing this project
 
+> **SPRINT 6 IS PLANNED (not started): "New Toys & No Friction".** Full plan:
+> `BUILD_PLAN.md` → "Sprint 6". Claude (lead) does S6.0 first (CI workflow,
+> social-preview meta + card, contract v14: `state.crisis`, `CRISIS_CHOOSE`,
+> `CLIP_ATTEMPT`, crisis tick slot, mount slots), then WS-P (PR Crisis mode +
+> Clip Desk). **ChatGPT 5.6 takes WS-Q** — Feel & Friction: directory search +
+> sort, keyboard shortcuts (`ui/hotkeys.js`), hover previews, accessibility
+> audit. Ownership transfer: `ui/browse.js` + `styles/board.css` are now YOURS.
+> Wait for contract v14 in CONTRACTS.md before starting. Sprints 1–5 all live at
+> https://crackytests.github.io/kss/.
+
 > **SPRINT 5 ACTIVE. S5.0 + WS-N are DONE and deployed** (lead, 2026-07-14):
 > investigation meter, story beats, journalist/legal DM chains, news ticker,
 > five endings. Contract logged as **v13** (v12 was taken by resetCareer).
