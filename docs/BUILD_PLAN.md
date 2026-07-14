@@ -389,3 +389,68 @@ No two runs start the same.
 > not touch it (mutator multipliers live in `mutators.json`). Both engines are
 > pure `step(state)` modules — no UI imports, `state.rng` only. **R-rated copy**
 > for event/mutator flavor text per GAME_DESIGN.md guardrails.
+
+---
+
+# Sprint 4 — "Release Cut" (ship it publicly)
+
+Sprints 1–3 complete. Goal: the game meets players. Distribution: **GitHub
+Pages**. Title stays **"Kick Staff Simulator"** (user decision, accepted parody
+framing). Two builders: Claude (lead) + ChatGPT 5.6.
+
+## Phase R0 — Version control — DONE (lead, 2026-07-14)
+- [x] `git init` (branch `main`), `.gitignore`, `.nojekyll`; baseline commit
+  `f0571a9` "Sprints 1-3 complete — full game". Rule: one commit per milestone.
+
+## Phase R1 — Parallel workstreams
+
+### WS-L · First-run experience & shell — DONE (Claude lead, 2026-07-14) — *`ui/title.js`, `ui/tutorial.js`, `styles/title.css` (new), + lead-owned `index.html`/`main.js`/`hud.js` wiring, additive `audio.setVolume`*
+Shipped & verified in-browser (commit `0a787c8`):
+- **Title screen** over the paused game: Career / Daily mode select (navigates,
+  one-shot sessionStorage skip re-lands on the briefing), career ledger, settings,
+  and the **18+ R-rated content notice**. Board inert while up.
+- **Tutorial**: five skippable steps (directory → front page → the pull → the
+  sponsor → DMs) firing on the first real tick of shift 1 (not at boot — the
+  START_SHIFT running-flag race is guarded); pauses/resumes the clock; persists
+  `career.tutorialDone`; verified it never re-fires for returning players.
+- **Settings** (from title or HUD ⚙️): volume slider → new additive
+  `audio.setVolume(0..1)` scaling the master bus (persisted as `career.volume`),
+  mute, reset career (`store.resetCareer()` + reload).
+- **Responsive**: board stacks to one column ≤900px; page scrolls; verified at 375px.
+- Also fixed a stale `persistence-check.mjs` assertion that predated Sprint 4
+  (WS-K made every run a seeded roster subset; the check still asserted authored
+  order — it now asserts determinism/subset/bounds). All five scripts green.
+
+### WS-M · R-rated copy & content QA pass — **ChatGPT 5.6** — OPEN
+Files: all `src/data/*.json` copy fields (dms, stream titles, events, mutators,
+sponsors, perks blurbs) + UI strings ONLY in files you own (`ui/shift-overlay.js`,
+`ui/leaderboard.js`, `ui/sponsor-bar.js`). Engine toast strings (`engine/*.js`):
+**strings-only edits** — do not touch logic, formulas, or field names.
+- Rewrite all player-facing copy to the R-rated register (GAME_DESIGN.md →
+  "Tone & content guardrails"): strong profanity/crude adult humor in-bounds;
+  hard lines stay (fictional only, no slurs/hate at protected groups, nothing
+  sexual involving minors, no real-world how-to).
+- Voice-consistency pass: each of the 24 streamers gets ONE recognizable voice
+  across stream titles + DM arcs (loyal/default/hostile variants included).
+- QA sweep: every DM choice reachable, no orphaned `unlockThreadIds`, event/
+  mutator flavor reads right in toasts + briefing.
+- Acceptance: all five `scripts/*.mjs` stay green (catches JSON slips); spot-read
+  in-browser. Commit as one milestone.
+
+## Phase R2 — Deploy (lead) — in progress
+- [x] Subpath compatibility PROVEN: game boots clean under `/kick/` (simulated
+  Pages subpath) — relative fetches + module imports all fine, zero console errors.
+- [ ] **Blocked on user:** no `gh` CLI installed and no git remote. User must
+  either install/auth `gh` (then lead runs repo-create + push + Pages enable) or
+  create the GitHub repo manually and add it as `origin`.
+- [ ] After push: enable Pages (deploy from branch, `main`, root), smoke test the
+  public URL (fresh profile → title → tutorial → one full shift; daily-mode
+  determinism across two loads).
+
+## Sprint 4 ownership matrix
+
+| File | Owner |
+|------|-------|
+| ui/title.js, ui/tutorial.js, styles/title.css, index.html, main.js, hud.js, engine/audio.js (setVolume only), .gitignore/.nojekyll | WS-L (Claude lead) |
+| data/*.json copy fields; UI strings in shift-overlay/leaderboard/sponsor-bar; strings-only in engine/*.js | WS-M (ChatGPT 5.6) |
+| scripts/persistence-check.mjs (stale-assertion fix) | lead (logged here) |

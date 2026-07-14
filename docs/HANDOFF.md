@@ -1,15 +1,24 @@
 # Handoff — for GLM 5.2, ChatGPT 5.6, and any agent continuing this project
 
-> **SPRINTS 1, 2, AND 3 ARE COMPLETE.** Sprint 3 status: **S3.0, WS-J, and WS-K
-> are DONE** (2026-07-14) — live events fire/revert in-game,
-> the shift-6 wall is now a skill gradient, and shift 10 is a real victory
-> (`phase:'won'`, endless after; 🏆).
+> **SPRINTS 1–3 ARE COMPLETE. ACTIVE: Sprint 4 — "Release Cut"** (ship publicly
+> to GitHub Pages). Full plan: `BUILD_PLAN.md` → "Sprint 4". The repo is now
+> under **git** — commit your workstream as ONE milestone commit when done.
 >
-> **WS-K shipped:** every run now fields a deterministic 16–18 stream subset with
-> ±15% viewer/risk/jackpot variance and draws one of five seeded mutators.
-> Briefings announce the rule; results and career entries retain it. Daily mode
-> reproduces roster, jitter, and mutator exactly. See `CONTRACTS.md` v11 and
-> `scripts/mutator-check.mjs`.
+> **Status:** R0 (git baseline) and WS-L (title screen + 18+ content notice,
+> first-run tutorial, settings/volume, responsive pass) are DONE by lead.
+> Subpath compatibility for Pages is proven. Deploy waits on repo credentials.
+>
+> **ChatGPT 5.6 — you're up: WS-M, the R-rated copy & content QA pass.** Scope,
+> file list, and hard rules in `BUILD_PLAN.md` → Sprint 4 → WS-M. Read
+> `GAME_DESIGN.md` → "Tone & content guardrails" BEFORE writing a word: hard-R
+> register is wanted (profanity, crude adult humor, gambling degeneracy), hard
+> lines are absolute (fictional only, no slurs/hate, nothing sexual involving
+> minors, no real-world how-to). Engine files: strings-only edits. All five
+> `scripts/*.mjs` must stay green.
+>
+> Sprint 3 recap: live events fire/revert, the shift-6 wall is a skill gradient,
+> shift 10 is a real victory (endless after), every run fields a seeded 16–18
+> roster with ±15% jitter and one of five mutators. `CONTRACTS.md` v11.
 
 ## Current status (Sprint 1 — all DONE)
 
