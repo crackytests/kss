@@ -454,3 +454,86 @@ engagement with the clock running, and daily mode produced an identical
 | ui/title.js, ui/tutorial.js, styles/title.css, index.html, main.js, hud.js, engine/audio.js (setVolume only), .gitignore/.nojekyll | WS-L (Claude lead) |
 | data/*.json copy fields; UI strings in shift-overlay/leaderboard/sponsor-bar; strings-only in engine/*.js | WS-M (ChatGPT 5.6) |
 | scripts/persistence-check.mjs (stale-assertion fix) | lead (logged here) |
+
+---
+
+# Sprint 5 — "The Season Finale & The Share Loop"
+
+**LIVE at https://crackytests.github.io/kss/** — this sprint builds for players.
+User decisions: directions **A (Season Finale)** + **C (Players Talking,
+local-only sharing — no itch.io)**; builders **Claude (lead) + ChatGPT 5.6**.
+Key playtest signal from the user: **"DMs/story feel thin"** — so the story
+workstream aims squarely at the Discord layer.
+
+R-rated copy register applies to ALL new writing (GAME_DESIGN.md guardrails).
+Git discipline: one commit per milestone, push to deploy.
+
+## Phase S5.0 — Foundation (lead, FIRST; additive, contract v12)
+
+- [ ] `store.js` (§1): add `state.investigation` (0–100, run-scoped — survives
+  `ADVANCE_SHIFT`, NOT reset by `START_SHIFT`) and `state.storyFlags` ({} —
+  choice tracking: bribesTaken, whistleblower, dealsHonored, scandalsBuried…).
+  New reducer `SET_STORY_FLAG {key, value}` + `DMEffect` gains optional
+  `investigation` (delta) and `storyFlag` fields so arcs move the plot without
+  engine imports.
+- [ ] `clock.js`: insert `story.step` into the tick order after `dm` (story
+  reads DM outcomes, pushes its own events): **events → risk → perks → jackpot →
+  economy → dm → story → audit → mutators**.
+- [ ] Stub `engine/story.js`; mount slot `#tickerSlot` (news ticker strip) in
+  index.html; `ui/ending.js` mount hook in main.js.
+- [ ] Log as CONTRACTS.md v12.
+
+## Phase S5.1 — Parallel workstreams
+
+### WS-N · The Investigation & Endings — **Claude (lead)** — *files: `engine/story.js`, `data/story.json`, `ui/news-ticker.js`, `ui/ending.js`, `styles/story.css`, `data/dms.json` (extend — GLM's old domain, lead assumes it), `hud.js` (investigation meter)*
+A narrative spine across the run; the win/loss becomes a story payoff.
+- **Investigation meter**: rises from TOS breaks, audits, bribes, high heat;
+  falls from clean shifts and burying stories. Visible in the HUD. Threshold
+  events: leaked memo (tick-er + DM), subpoena (forced choices), hearing.
+- **The journalist**: a recurring DM contact (new arcs in `dms.json`) offering
+  the whistleblower path — feed them dirt (investigation redirects toward
+  management, reputation risk) or stonewall/burn them.
+- **News ticker** (`#tickerSlot`): one-line satirical headlines reacting to
+  world events, TOS breaks, sponsor drama, investigation beats. Cheap to render,
+  huge for atmosphere.
+- **Endings** (`ui/ending.js`, computed at `phase:'won'` AND enriched `fired`):
+  at least four from `storyFlags`+`investigation`+`money`: **Scapegoat** (fired,
+  high investigation), **Whistleblower** (journalist path completed),
+  **Made CEO** (won, low investigation), **Indicted, With Bonus** (won, high
+  investigation). Full-screen ending card with run stats; feeds WS-O's share.
+- **DM depth pass** (the user's signal): 8+ new arcs, including multi-shift
+  chains that reference `storyFlags` — the world visibly remembers the plot.
+- Acceptance: investigation moves for documented reasons and displays in HUD;
+  journalist arc completable both ways; all 4 endings reachable (prove via a
+  scripted check or forced-flag harness); ticker reacts to at least 5 systems;
+  balance harness still green.
+
+### WS-O · Share Loop (local-only) — **ChatGPT 5.6** — *files: `engine/persistence.js` (yours), `ui/leaderboard.js` (yours), new `ui/share.js`, `styles/share.css`*
+Let players brag and challenge each other with zero backend.
+- **Challenge links**: `getRunConfig` accepts `?seed=NNN` (+ existing `mode`);
+  a seeded URL reproduces the EXACT run — roster, jitter, mutator. Surface a
+  "copy challenge link" on the briefing/results/career screens.
+- **Share cards**: Wordle-style copyable text block — title, shift reached /
+  ending name (read `state.storyFlags._ending` if WS-N has landed; degrade
+  gracefully if not), money, one emoji row per shift (✅ clear / 💥 breaks /
+  💰 jackpot-heavy / 🏆 win), and the challenge URL. Clipboard API with a
+  textarea fallback.
+- **Endless score screen**: post-victory shifts get a proper score summary and
+  their own share card (endless depth = the brag metric).
+- Acceptance: `?seed=` URLs reproduce board+mutator exactly on the LIVE Pages
+  site; share text pastes correctly (verify clipboard + fallback); leaderboard
+  entries show seed and are re-launchable; all five check scripts green
+  (extend persistence-check for `?seed=`).
+
+## Sprint 5 ownership matrix
+
+| File | Owner |
+|------|-------|
+| store.js, clock.js, main.js, index.html, CONTRACTS.md, engine/story.js stub | S5.0 / lead |
+| engine/story.js, data/story.json, ui/news-ticker.js, ui/ending.js, styles/story.css, data/dms.json, hud.js | WS-N (Claude) |
+| engine/persistence.js, ui/leaderboard.js, ui/share.js, styles/share.css, scripts/persistence-check.mjs | WS-O (ChatGPT 5.6) |
+
+> Coupling note: WS-O's share card may read WS-N's ending via
+> `state.storyFlags._ending` (string, set by ui/ending.js) — OPTIONAL read,
+> must degrade to "shift N reached" when absent, so the workstreams stay
+> independently shippable. Neither touches the other's files.
