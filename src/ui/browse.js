@@ -1,7 +1,7 @@
 // BROWSE — live directory list + promote controls. Owned by WS-A.
 // Renders from state, dispatches PROMOTE_STREAM. No engine imports.
 import { store } from '../state/store.js';
-import { streamThumbnail } from './stream-thumbnails.js';
+import { streamThumbnail } from './stream-thumbnails.js?v=4';
 
 let filter = 'all';
 

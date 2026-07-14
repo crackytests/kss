@@ -24,7 +24,7 @@
   position: absolute; inset: -2px;
   background-image: var(--stream-image);
   background-repeat: no-repeat;
-  background-size: 400% 300%;
+  background-size: var(--stream-size, 400% 300%);
   background-position: var(--stream-position);
   transform-origin: var(--focus-x, 50%) var(--focus-y, 50%);
   animation: stream-camera-cycle 9s steps(1, end) infinite;
@@ -93,9 +93,22 @@
 }
 .slot.filled { border-style: solid; background: var(--panel-2); }
 .slot.stake-req { border-color: var(--gamble); }
+.slot-body { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 10px; align-items: start; }
+.slot-thumb { padding-top: 1px; }
+.slot-thumb .stream-thumb { width: 84px; height: 56px; }
+.slot-details { min-width: 0; }
 .slot-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.slot-title { font-weight: 600; font-size: 13px; }
+.slot-title {
+  min-width: 0; font-weight: 600; font-size: 13px; line-height: 1.25;
+  overflow: hidden; text-overflow: ellipsis; display: -webkit-box;
+  -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
 .slot-empty { color: var(--muted); font-size: 12px; font-style: italic; }
+
+@media (max-width: 1050px) {
+  .slot-body { grid-template-columns: 72px minmax(0, 1fr); gap: 8px; }
+  .slot-thumb .stream-thumb { width: 72px; height: 48px; }
+}
 
 .risk-meter { height: 8px; border-radius: 999px; background: #ffffff12; margin-top: 8px; overflow: hidden; }
 .risk-fill { height: 100%; transition: width .2s linear, background .2s; }

@@ -9,7 +9,7 @@
 // The drain loop + DISMISS_EVENT dispatch below is the integration contract and
 // must stay intact.
 import { store } from '../state/store.js';
-import { incidentReplay } from './stream-thumbnails.js';
+import { incidentReplay } from './stream-thumbnails.js?v=4';
 
 const shown = new Set();
 
@@ -26,14 +26,14 @@ function render(state) {
   for (const evt of state.eventQueue) {
     if (shown.has(evt.id)) continue;
     shown.add(evt.id);
-    const streamIndex = evt.streamId
-      ? state.streams.findIndex((stream) => stream.id === evt.streamId)
-      : -1;
-    root.appendChild(buildToast(evt, streamIndex));
+    const stream = evt.streamId
+      ? state.streams.find((candidate) => candidate.id === evt.streamId)
+      : null;
+    root.appendChild(buildToast(evt, stream));
   }
 }
 
-function buildToast(evt, streamIndex) {
+function buildToast(evt, stream) {
   const tone = evt.tone || 'neutral';
   const isAlarm = ALARM_TYPES.has(evt.type);
   const isCelebrate = CELEBRATE_TYPES.has(evt.type);
@@ -60,8 +60,8 @@ function buildToast(evt, streamIndex) {
   msg.textContent = evt.message;
   content.appendChild(msg);
 
-  if (evt.type === 'tos_break' && streamIndex >= 0) {
-    content.insertAdjacentHTML('beforeend', incidentReplay(streamIndex));
+  if (evt.type === 'tos_break' && stream) {
+    content.insertAdjacentHTML('beforeend', incidentReplay(stream));
   }
   div.appendChild(content);
 

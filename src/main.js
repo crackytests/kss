@@ -2,10 +2,10 @@
 import { store } from './state/store.js';
 import { start } from './engine/clock.js';
 import { mountHud } from './ui/hud.js?v=2';
-import { mountBrowse } from './ui/browse.js';
-import { mountFrontPage } from './ui/frontpage.js';
+import { mountBrowse } from './ui/browse.js?v=4';
+import { mountFrontPage } from './ui/frontpage.js?v=2';
 import { mountDiscord } from './ui/discord.js';
-import { mountToasts } from './ui/toast.js';
+import { mountToasts } from './ui/toast.js?v=4';
 import { mountShiftOverlay } from './ui/shift-overlay.js?v=2';
 import { mountShop } from './ui/shop.js';
 import { mountSponsorBar } from './ui/sponsor-bar.js';
@@ -27,9 +27,9 @@ async function loadJson(path) {
 
 async function boot() {
   const [streams, streamers, threads, rules, sponsors] = await Promise.all([
-    loadJson('src/data/streams.json'),
-    loadJson('src/data/streamers.json'),
-    loadJson('src/data/dms.json'),
+    loadJson('src/data/streams.json?v=3'),
+    loadJson('src/data/streamers.json?v=3'),
+    loadJson('src/data/dms.json?v=3'),
     loadJson('src/data/tos-rules.json'),
     loadJson('src/data/sponsors.json'),
   ]);

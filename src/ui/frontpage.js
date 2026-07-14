@@ -9,6 +9,7 @@
 //   - updateMeters() runs every commit but only mutates the existing meter
 //     widths / labels in place, so pull buttons (and any hover/focus) survive.
 import { store } from '../state/store.js';
+import { streamThumbnail } from './stream-thumbnails.js?v=4';
 
 export function mountFrontPage() {
   render(store.getState());
@@ -48,16 +49,22 @@ function slot(state, id, i) {
 
   const riskPct = Math.min(100, Math.round((s.risk / s.tosThreshold) * 100));
   const color = riskColor(riskPct);
+  const streamIndex = state.streams.indexOf(s);
   return `
     <div class="slot filled ${s.isStake ? 'stake-req' : ''}" data-slot="${i}" data-stream="${s.id}">
-      <div class="slot-head">
-        <span class="slot-title">${escape(s.title)}</span>
-        <button data-pull="${s.id}">Pull</button>
+      <div class="slot-body">
+        <div class="slot-thumb">${streamThumbnail(s, streamIndex)}</div>
+        <div class="slot-details">
+          <div class="slot-head">
+            <span class="slot-title">${escape(s.title)}</span>
+            <button data-pull="${s.id}">Pull</button>
+          </div>
+          <div class="stream-sub"><b class="slot-streamer">${escape(s.streamerName)}</b> · ${escape(s.category)} · ${s.viewers.toLocaleString()} viewers ${s.isStake ? '· 🎰 STAKE' : ''}</div>
+          <div class="risk-meter"><div class="risk-fill" style="width:${riskPct}%;background:${color}"></div></div>
+          <div class="risk-label"><span>TOS risk</span><span>${riskLabel(riskPct)}</span></div>
+          ${state.perks && state.perks.risk_xray ? `<div class="risk-xray" data-xray>${xrayText(s)}</div>` : ''}
+        </div>
       </div>
-      <div class="stream-sub"><b class="slot-streamer">${escape(s.streamerName)}</b> · ${escape(s.category)} · ${s.viewers.toLocaleString()} viewers ${s.isStake ? '· 🎰 STAKE' : ''}</div>
-      <div class="risk-meter"><div class="risk-fill" style="width:${riskPct}%;background:${color}"></div></div>
-      <div class="risk-label"><span>TOS risk</span><span>${riskLabel(riskPct)}</span></div>
-      ${state.perks && state.perks.risk_xray ? `<div class="risk-xray" data-xray>${xrayText(s)}</div>` : ''}
     </div>`;
 }
 

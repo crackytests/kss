@@ -406,5 +406,39 @@
     "tosThreshold": 120,
     "jackpotChance": 0,
     "jackpotPayout": 0
+  },
+  {
+    "id": "st_dang3rman",
+    "streamerId": "dang3rman",
+    "title": "24/7 DANG3RTHON: CASINO, COP SIRENS & ZERO LEGAL ADVICE",
+    "category": "IRL",
+    "viewers": 68000,
+    "color": "#d8ff2f",
+    "tags": ["controversial", "edgy-irl", "gambling", "stake", "self-incrimination"],
+    "controversy": 97,
+    "isGambling": true,
+    "isStake": true,
+    "risk": 0,
+    "riskRate": 3,
+    "tosThreshold": 88,
+    "jackpotChance": 0.045,
+    "jackpotPayout": 260
+  },
+  {
+    "id": "st_fireuranus",
+    "streamerId": "fireuranus",
+    "title": "IRL WORLD TOUR: CHAT PICKS THE COUNTRY, SECURITY PICKS THE EXIT",
+    "category": "IRL",
+    "viewers": 52000,
+    "color": "#ff5a1f",
+    "tags": ["controversial", "edgy-irl", "travel", "gambling", "stake", "crypto", "tts"],
+    "controversy": 99,
+    "isGambling": true,
+    "isStake": true,
+    "risk": 0,
+    "riskRate": 3.2,
+    "tosThreshold": 90,
+    "jackpotChance": 0.05,
+    "jackpotPayout": 275
   }
 ]

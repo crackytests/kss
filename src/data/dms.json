@@ -932,6 +932,46 @@
     }
   },
   {
+    "id": "dm_dang3rman",
+    "streamerId": "dang3rman",
+    "name": "Dang3rMan",
+    "avatarColor": "#d8ff2f",
+    "arrivesAt": 14,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "GOOD NEWS: I turned a police perimeter into a sponsored segment. BAD NEWS: the detective refuses to verify my follower count. Put me front page — I need three million independent witnesses."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Feature it. Legal discovery deserves an audience.",
+        "effect": {
+          "money": 1400,
+          "reputation": -8,
+          "heat": 15,
+          "forceFeatureStreamId": "st_dang3rman",
+          "relationship": 8,
+          "reply": "THREE MILLION WITNESSES. CASE DISMISSED BY CHAT. Tell Stake the evidence cart has cupholders."
+        }
+      },
+      {
+        "label": "Pull the plug before Exhibit A earns ad revenue.",
+        "effect": {
+          "reputation": 5,
+          "relationship": -10,
+          "reply": "YOU CAN'T SUPPRESS THE PRESS. I AM THE PRESS. THE PRESS HAS A BONUS BUY."
+        }
+      }
+    ],
+    "followUp": {
+      "at": 36,
+      "from": "them",
+      "text": "UPDATE: they replayed my stream and said it answered every question. That's efficiency. I should invoice the department for production."
+    }
+  },
+  {
     "id": "dm_journalist_1",
     "streamerId": "journalist",
     "storyThread": true,
@@ -1047,6 +1087,46 @@
         }
       }
     ]
+  },
+  {
+    "id": "dm_fire_uranus",
+    "streamerId": "fireuranus",
+    "name": "Fire Uranus",
+    "avatarColor": "#ff5a1f",
+    "arrivesAt": 16,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "Chat picked Gate 69, TTS announced every connection I have, and airport security says 'season arc' is not a travel document. Front page me before they confiscate the narrative."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Feature it. Security footage deserves director commentary.",
+        "effect": {
+          "money": 1650,
+          "reputation": -10,
+          "heat": 17,
+          "forceFeatureStreamId": "st_fireuranus",
+          "relationship": 9,
+          "reply": "FURNACE FAM OWNS THE TERMINAL. Tell Stake I found a whole new meaning for departure liquidity."
+        }
+      },
+      {
+        "label": "No. Stop turning the departure board into a doxxing menu.",
+        "effect": {
+          "reputation": 6,
+          "relationship": -12,
+          "reply": "YOU CAN'T DEPLATFORM A PLANET. Fine. Chat is my boarding group now."
+        }
+      }
+    ],
+    "followUp": {
+      "at": 38,
+      "from": "them",
+      "text": "UPDATE: they put the TTS box in an evidence tray and it immediately sold an investigator a casino bonus code. That's vertical integration."
+    }
   },
   {
     "id": "dm_legal_1",

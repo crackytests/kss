@@ -22,5 +22,7 @@
   { "id": "rumorroom",  "name": "RumorRoomRae",    "color": "#7e57c2" },
   { "id": "dancecrew",  "name": "DanceCrewDee",    "color": "#ec407a" },
   { "id": "bracketboss", "name": "BracketBoss",    "color": "#29b6f6" },
-  { "id": "quietcraft", "name": "QuietCraftQuinn", "color": "#9ccc65" }
+  { "id": "quietcraft", "name": "QuietCraftQuinn", "color": "#9ccc65" },
+  { "id": "dang3rman", "name": "Dang3rMan", "color": "#d8ff2f" },
+  { "id": "fireuranus", "name": "Fire Uranus", "color": "#ff5a1f" }
 ]
