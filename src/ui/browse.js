@@ -224,8 +224,10 @@ function showPreview(streamId, anchor) {
 
   const rootRect = root.getBoundingClientRect();
   const anchorRect = anchor.getBoundingClientRect();
-  const maxTop = Math.max(58, root.clientHeight - preview.offsetHeight - 12);
-  preview.style.top = `${Math.max(58, Math.min(anchorRect.top - rootRect.top, maxTop))}px`;
+  const maxLeft = window.innerWidth - preview.offsetWidth - 12;
+  const maxTop = window.innerHeight - preview.offsetHeight - 12;
+  preview.style.left = `${Math.max(12, Math.min(rootRect.right + 8, maxLeft))}px`;
+  preview.style.top = `${Math.max(12, Math.min(anchorRect.top, maxTop))}px`;
 }
 
 function hidePreview() {

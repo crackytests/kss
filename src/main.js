@@ -2,7 +2,7 @@
 import { store } from './state/store.js';
 import { start } from './engine/clock.js';
 import { mountHud } from './ui/hud.js?v=2';
-import { mountBrowse } from './ui/browse.js?v=5';
+import { mountBrowse } from './ui/browse.js?v=6';
 import { mountFrontPage } from './ui/frontpage.js?v=2';
 import { mountDiscord } from './ui/discord.js';
 import { mountToasts } from './ui/toast.js?v=4';
