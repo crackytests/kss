@@ -106,7 +106,10 @@ function applyOneTimeEffects(state, mutator) {
 function keepRosterThreadsOnly(state) {
   if (!Array.isArray(state.threads)) return;
   const roster = new Set((state.streams || []).map((stream) => stream.streamerId));
-  state.threads = state.threads.filter((thread) => roster.has(thread.streamerId));
+  // storyThread (WS-N, Sprint 5): narrative contacts (journalist/legal) have no
+  // stream and must survive roster subsetting. One-line integration exemption —
+  // logged in BUILD_PLAN Sprint 5 coupling notes.
+  state.threads = state.threads.filter((thread) => thread.storyThread || roster.has(thread.streamerId));
 }
 
 function stepCrackdown(state, mutator) {

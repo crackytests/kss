@@ -485,7 +485,23 @@ Git discipline: one commit per milestone, push to deploy.
 
 ## Phase S5.1 — Parallel workstreams
 
-### WS-N · The Investigation & Endings — **Claude (lead)** — *files: `engine/story.js`, `data/story.json`, `ui/news-ticker.js`, `ui/ending.js`, `styles/story.css`, `data/dms.json` (extend — GLM's old domain, lead assumes it), `hud.js` (investigation meter)*
+### WS-N · The Investigation & Endings — **DONE (Claude lead, 2026-07-14)** — *files: `engine/story.js`, `data/story.json`, `ui/news-ticker.js`, `ui/ending.js`, `styles/story.css`, `data/dms.json` (extend), `hud.js`*
+Shipped & verified (contract **v13** — note: v12 was taken by Codex's
+resetCareer). Investigation meter (run-long, HUD-visible, color-staged),
+threshold beats at 25/50/75 (leaked memo → inquiry → subpoena) revealing the
+journalist (petra_txt, 3-thread whistleblower chain) and corporate legal;
+satirical news ticker fed by events + ambient headlines; five endings
+(whistleblower / indicted / ceo / scapegoat / replaced) picked by shared
+`story.pickEnding` and shown as a full-screen card that sets
+`storyFlags._ending` for WS-O. `storyThread` roster exemption added to
+mutators.js + its check (one-line each, logged in v13). Verified: all six
+check scripts green (`story-check.mjs` proves all endings + beat mechanics);
+live in-browser — break raises investigation, beats fire once, Petra appears
+in the DM pane, choices move investigation/flags, ending card renders at
+terminal with correct at-death ending.
+
+<details><summary>original scope</summary>
+
 A narrative spine across the run; the win/loss becomes a story payoff.
 - **Investigation meter**: rises from TOS breaks, audits, bribes, high heat;
   falls from clean shifts and burying stories. Visible in the HUD. Threshold
@@ -508,8 +524,12 @@ A narrative spine across the run; the win/loss becomes a story payoff.
   scripted check or forced-flag harness); ticker reacts to at least 5 systems;
   balance harness still green.
 
-### WS-O · Share Loop (local-only) — **ChatGPT 5.6** — *files: `engine/persistence.js` (yours), `ui/leaderboard.js` (yours), new `ui/share.js`, `styles/share.css`*
+</details>
+
+### WS-O · Share Loop (local-only) — **ChatGPT 5.6 — GO** (S5.0/v13 is logged; WS-N is live) — *files: `engine/persistence.js` (yours), `ui/leaderboard.js` (yours), new `ui/share.js`, `styles/share.css`*
 Let players brag and challenge each other with zero backend.
+> Note: the contract landed as **v13** (not v12 as planned — v12 was taken).
+> `state.storyFlags._ending` / `_endingTitle` are live for your share card.
 - **Challenge links**: `getRunConfig` accepts `?seed=NNN` (+ existing `mode`);
   a seeded URL reproduces the EXACT run — roster, jitter, mutator. Surface a
   "copy challenge link" on the briefing/results/career screens.

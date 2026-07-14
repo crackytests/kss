@@ -1,0 +1,126 @@
+{
+  "_comment": "Story layer tuning + copy. WS-N owns this file. R-rated register per GAME_DESIGN.md; punch at the system.",
+
+  "investigation": {
+    "tosBreak": 8,
+    "auditFine": 5,
+    "hotTickThreshold": 70,
+    "hotTickGain": 0.15,
+    "cleanShiftCooling": 4
+  },
+
+  "tickerCap": 8,
+  "ambientEveryTicks": 9,
+
+  "ambientHeadlines": [
+    "PLATFORM DENIES EVERYTHING, ANNOUNCES NOTHING, PROFITS ANYWAY",
+    "STUDY: WATCHING SOMEONE ELSE GAMBLE NOW COUNTS AS CARDIO",
+    "MODERATION TEAM REDUCED TO ONE GUY NAMED KEVIN AND A SPREADSHEET",
+    "AD REVENUE UP 40% — EXECUTIVES CREDIT 'THE CONTENT, WHATEVER IT IS'",
+    "INTERN WHO READ THE TOS HOSPITALIZED FOR EXHAUSTION",
+    "SPONSORS INSIST GAMBLING STREAMS ARE 'FINANCIAL LITERACY CONTENT'",
+    "SITE UPTIME 99.9%; MORAL UPTIME UNMEASURED SINCE LAUNCH",
+    "TRUST & SAFETY RENAMED TO 'VIBES & LIABILITY'",
+    "CEO: 'WE TAKE THIS SERIOUSLY' — LAUGHTER HEARD OFF-CAMERA",
+    "REGULATOR OPENS TAB, FORGETS WHY, ORDERS LUNCH"
+  ],
+
+  "eventHeadlines": {
+    "tos_break": [
+      "LIVE TOS VIOLATION ON FRONT PAGE — CURATOR 'LOOKING INTO IT'",
+      "ANOTHER ONE: {streamer} DETONATES ON THE HOMEPAGE",
+      "COMPLIANCE 'DEEPLY CONCERNED', FRONT PAGE STILL PRINTING MONEY"
+    ],
+    "audit": [
+      "REGULATORS RAID THE FRONT PAGE — FINES ISSUED, LESSONS PENDING",
+      "SNAP AUDIT FINDS EXACTLY WHAT EVERYONE ALREADY KNEW"
+    ],
+    "jackpot": [
+      "GAMBLER WINS BIG LIVE; PLATFORM WINS BIGGER QUIETLY",
+      "JACKPOT ON {streamer} — FINANCE DEPARTMENT SEEN HIGH-FIVING"
+    ],
+    "viral": [
+      "{streamer} GOES VIRAL — LAWYERS PLACED ON STANDBY",
+      "CLIP EVERYWHERE: {streamer} BREAKS CONTAINMENT"
+    ],
+    "sponsor_warning": [
+      "SPONSOR 'DISAPPOINTED' IN HOMEPAGE, THREATENS TO TAKE MONEY ELSEWHERE"
+    ]
+  },
+
+  "beats": [
+    {
+      "at": 25,
+      "flag": "_beat25",
+      "headline": "LEAKED MEMO: EXECUTIVES KNEW FRONT PAGE WAS 'A LIABILITY FARM'",
+      "message": "📄 A memo leaked. Your name is in a footnote. A journalist just slid into your DMs.",
+      "tone": "bad",
+      "revealThreads": ["dm_journalist_1"]
+    },
+    {
+      "at": 50,
+      "flag": "_beat50",
+      "headline": "FORMAL INQUIRY OPENED INTO PLATFORM CURATION PRACTICES",
+      "message": "🏛️ A formal inquiry is open. Legal wants to 'align on narrative'. Heat +10.",
+      "tone": "bad",
+      "heat": 10,
+      "revealThreads": ["dm_journalist_2", "dm_legal_1"]
+    },
+    {
+      "at": 75,
+      "flag": "_beat75",
+      "headline": "HEARING SCHEDULED — CURATOR SUBPOENAED AS 'PERSON OF INTEREST'",
+      "message": "⚖️ You've been subpoenaed. Reputation −5. The journalist wants one last answer.",
+      "tone": "bad",
+      "reputation": -5,
+      "revealThreads": ["dm_journalist_3"]
+    }
+  ],
+
+  "endings": [
+    {
+      "id": "whistleblower",
+      "priority": 1,
+      "phase": "any",
+      "requiresFlags": ["whistleblower"],
+      "title": "THE WHISTLEBLOWER",
+      "stamp": "EXIT: LOUD",
+      "body": "You fed the journalist everything — the memos, the metrics, the sponsor deals nobody was supposed to see. The hearing turns into a bloodbath and for once it isn't yours. Management burns; you trend for a week as 'the one employee with a spine'. You will never work in curation again, and honestly? That's the reward."
+    },
+    {
+      "id": "indicted",
+      "priority": 2,
+      "phase": "won",
+      "minInvestigation": 60,
+      "title": "INDICTED, WITH BONUS",
+      "stamp": "GUILTY & PROMOTED",
+      "body": "You survived the quarter, smashed the quota, and got named in the indictment — in the same week. Legal says don't worry. Finance wires the bonus anyway, because the numbers were incredible and someone upstairs decided that legally speaking, vibes are not admissible. Court date pending. Yacht deposit cleared."
+    },
+    {
+      "id": "ceo",
+      "priority": 3,
+      "phase": "won",
+      "maxInvestigation": 60,
+      "title": "MADE CEO",
+      "stamp": "FAILED UPWARD",
+      "body": "Quota crushed, scandals contained, regulators bored. The board doesn't understand how you did it and doesn't want to. They just want it repeated at scale — so the front page is someone else's problem now, and every curator in the building reports to you. You are the system you used to feed. Congratulations, monster."
+    },
+    {
+      "id": "scapegoat",
+      "priority": 4,
+      "phase": "fired",
+      "minInvestigation": 40,
+      "title": "THE SCAPEGOAT",
+      "stamp": "IT WAS YOU, APPARENTLY",
+      "body": "The inquiry needed a face and management needed a firewall, and holy shit are you both. Every decision that made them money is suddenly a decision you made alone, unsupervised, possibly out of malice. The press release calls you 'a rogue curator'. Your badge stopped working before the meeting ended."
+    },
+    {
+      "id": "replaced",
+      "priority": 5,
+      "phase": "fired",
+      "title": "QUIETLY REPLACED",
+      "stamp": "WHO?",
+      "body": "No scandal, no hearing, no drama — you just didn't make the number. Security walks you out past your replacement, who is already being told the sponsor requirements. The front page doesn't even flicker. In six months nobody here will remember which one you were."
+    }
+  ]
+}

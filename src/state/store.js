@@ -49,6 +49,12 @@ function initialState(seed) {
     wonAtShift: 10,      // clearing this shift sets phase 'won' (endless continues after)
     viewerGrowthPerShift: 1.10, // audience inflation applied in ADVANCE_SHIFT (WS-J tunes)
 
+    // ---- Sprint 5 (S5.0) additive state — the story layer ----
+    investigation: 0,    // 0..100 run-scoped pressure meter. Survives ADVANCE_SHIFT.
+    storyFlags: {},      // plot memory: bribesTaken, whistleblower, _ending… WS-N/O read.
+    ticker: [],          // recent news headlines (strings, newest last). story.js pushes,
+                         // ui/news-ticker.js renders. Capped by story.js.
+
     eventQueue: [],
     rng: makeRng(seed),
     seed,
@@ -231,6 +237,9 @@ function reduce(state, action) {
     case 'ADVANCE_SHIFT': return advanceShift(state);
     case 'PURCHASE_PERK': return purchasePerk(state, payload);
     case 'TOGGLE_MUTE': return toggleMute(state);
+    case 'SET_STORY_FLAG':
+      if (payload.key) state.storyFlags[payload.key] = payload.value ?? true;
+      return;
     case 'ADJUST_RELATIONSHIP': return adjustRelationship(state, payload.streamerId, payload.delta);
     case 'SET_RUNNING': state.running = !!payload.running; return;
     case 'DISMISS_EVENT':
@@ -295,6 +304,14 @@ function dmChoose(state, { threadId, choiceIndex }) {
   // this thread's own streamer; override with eff.relationshipStreamerId.
   if (typeof eff.relationship === 'number') {
     adjustRelationship(state, eff.relationshipStreamerId || t.streamerId, eff.relationship);
+  }
+  // Sprint 5 (S5.0): DM choices move the plot — investigation pressure delta and
+  // arbitrary story-flag merges (e.g. {"whistleblower": true, "bribesTaken": 2}).
+  if (typeof eff.investigation === 'number') {
+    state.investigation = clamp(state.investigation + eff.investigation, 0, 100);
+  }
+  if (eff.storyFlags && typeof eff.storyFlags === 'object') {
+    Object.assign(state.storyFlags, eff.storyFlags);
   }
   // forceFeatureStreamId enforcement is handled by engine/dm.js (WS-B) on tick.
   if (eff.forceFeatureStreamId) t._pendingForce = eff.forceFeatureStreamId;

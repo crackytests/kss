@@ -7,29 +7,91 @@
     "arrivesAt": 0,
     "unread": true,
     "messages": [
-      { "from": "them", "text": "OI, button-pusher. keep the King pinned tonight and i'll make your sad little salary look less insulting 😏🎰" }
+      {
+        "from": "them",
+        "text": "OI, button-pusher. keep the King pinned tonight and i'll make your sad little salary look less insulting 😏🎰"
+      }
     ],
     "choices": [
-      { "label": "You're already featured. Unclench.", "effect": { "reputation": 2, "relationship": 3, "reply": "that's why you're my favourite corporate bastard. jackpots incoming 🎰" } },
-      { "label": "How filthy is 'worth my while'?", "effect": { "heat": 3, "reply": "two grand, no tasteful questions. daddy keeps spinning, curator gets fed 💸", "unlockThreadIds": ["dm_slotking_bribe"] } }
+      {
+        "label": "You're already featured. Unclench.",
+        "effect": {
+          "reputation": 2,
+          "relationship": 3,
+          "reply": "that's why you're my favourite corporate bastard. jackpots incoming 🎰"
+        }
+      },
+      {
+        "label": "How filthy is 'worth my while'?",
+        "effect": {
+          "heat": 3,
+          "reply": "two grand, no tasteful questions. daddy keeps spinning, curator gets fed 💸",
+          "unlockThreadIds": [
+            "dm_slotking_bribe"
+          ]
+        }
+      }
     ],
-    "followUp": { "at": 25, "from": "them", "text": "you keeping me pinned or what? chat's feral and i've already said MAX BET six hundred fucking times 🎰" },
+    "followUp": {
+      "at": 25,
+      "from": "them",
+      "text": "you keeping me pinned or what? chat's feral and i've already said MAX BET six hundred fucking times 🎰"
+    },
     "loyal": {
       "messages": [
-        { "from": "them", "text": "back again, partner. slots are screaming and common sense is dead. same filthy arrangement: your cut up front, daddy pinned top slot 💰" }
+        {
+          "from": "them",
+          "text": "back again, partner. slots are screaming and common sense is dead. same filthy arrangement: your cut up front, daddy pinned top slot 💰"
+        }
       ],
       "choices": [
-        { "label": "Take the cut. Nail daddy to slot one.", "effect": { "money": 1200, "reputation": -10, "heat": 10, "forceFeatureStreamId": "st_slotking", "relationship": 10, "reply": "THAT'S my corrupt little legend. same time tomorrow 🤑" } },
-        { "label": "We're done, King. Find another mug.", "effect": { "relationship": -15, "reputation": 6, "reply": "clean? after all that beautiful filth? fine. the slots community remembers a traitor 🎰" } }
+        {
+          "label": "Take the cut. Nail daddy to slot one.",
+          "effect": {
+            "money": 1200,
+            "reputation": -10,
+            "heat": 10,
+            "forceFeatureStreamId": "st_slotking",
+            "relationship": 10,
+            "reply": "THAT'S my corrupt little legend. same time tomorrow 🤑"
+          }
+        },
+        {
+          "label": "We're done, King. Find another mug.",
+          "effect": {
+            "relationship": -15,
+            "reputation": 6,
+            "reply": "clean? after all that beautiful filth? fine. the slots community remembers a traitor 🎰"
+          }
+        }
       ]
     },
     "hostile": {
       "messages": [
-        { "from": "them", "text": "you burned me, took the cash, then yanked the King like a coward. chat knows. my receipts folder is thick as hell. feature me or enjoy becoming content 🤡" }
+        {
+          "from": "them",
+          "text": "you burned me, took the cash, then yanked the King like a coward. chat knows. my receipts folder is thick as hell. feature me or enjoy becoming content 🤡"
+        }
       ],
       "choices": [
-        { "label": "Fine. You're featured. Shut the folder.", "effect": { "heat": 8, "forceFeatureStreamId": "st_slotking", "relationship": 5, "reply": "smart bastard. folder stays zipped. for now 📂" } },
-        { "label": "Blackmail me again and eat the permaban.", "effect": { "relationship": -10, "heat": 6, "reputation": 4, "reply": "do it. let's see whether the ban or the receipts land first 📂" } }
+        {
+          "label": "Fine. You're featured. Shut the folder.",
+          "effect": {
+            "heat": 8,
+            "forceFeatureStreamId": "st_slotking",
+            "relationship": 5,
+            "reply": "smart bastard. folder stays zipped. for now 📂"
+          }
+        },
+        {
+          "label": "Blackmail me again and eat the permaban.",
+          "effect": {
+            "relationship": -10,
+            "heat": 6,
+            "reputation": 4,
+            "reply": "do it. let's see whether the ban or the receipts land first 📂"
+          }
+        }
       ]
     }
   },
@@ -41,11 +103,31 @@
     "hidden": true,
     "unread": false,
     "messages": [
-      { "from": "them", "text": "so? two grand, top slot, whole shift. easiest dirty money you'll make without wearing a suit." }
+      {
+        "from": "them",
+        "text": "so? two grand, top slot, whole shift. easiest dirty money you'll make without wearing a suit."
+      }
     ],
     "choices": [
-      { "label": "Take the $2k. Sell the bloody slot.", "effect": { "money": 2000, "reputation": -12, "heat": 8, "forceFeatureStreamId": "st_slotking", "relationship": 8, "reply": "THAT'S WHAT I'M TALKING ABOUT 🤝 don't fuck up my placement" } },
-      { "label": "No deal. I still have one principle left.", "effect": { "reputation": 8, "relationship": -8, "reply": "boooo. principles don't pay rent, nerd" } }
+      {
+        "label": "Take the $2k. Sell the bloody slot.",
+        "effect": {
+          "money": 2000,
+          "reputation": -12,
+          "heat": 8,
+          "forceFeatureStreamId": "st_slotking",
+          "relationship": 8,
+          "reply": "THAT'S WHAT I'M TALKING ABOUT 🤝 don't fuck up my placement"
+        }
+      },
+      {
+        "label": "No deal. I still have one principle left.",
+        "effect": {
+          "reputation": 8,
+          "relationship": -8,
+          "reply": "boooo. principles don't pay rent, nerd"
+        }
+      }
     ]
   },
   {
@@ -56,30 +138,94 @@
     "arrivesAt": 6,
     "unread": true,
     "messages": [
-      { "from": "them", "text": "the confrontation is about to go nuclear. front page me before your mods rediscover their spines." },
-      { "from": "them", "text": "also, I found those curator-meeting logs. feature me or tonight's second confrontation is yours 🙂" }
+      {
+        "from": "them",
+        "text": "the confrontation is about to go nuclear. front page me before your mods rediscover their spines."
+      },
+      {
+        "from": "them",
+        "text": "also, I found those curator-meeting logs. feature me or tonight's second confrontation is yours 🙂"
+      }
     ],
     "choices": [
-      { "label": "Fine. Go live and don't burn the building down.", "effect": { "heat": 5, "forceFeatureStreamId": "st_dramahouse", "relationship": 6, "reply": "knew you'd find your courage. this is going to fuck the timeline 🔥" } },
-      { "label": "No. You're a TOS breach wearing lip gloss.", "effect": { "reputation": 5, "heat": 4, "relationship": -10, "reply": "adorable boundary. you'll regret it before breakfast." } }
+      {
+        "label": "Fine. Go live and don't burn the building down.",
+        "effect": {
+          "heat": 5,
+          "forceFeatureStreamId": "st_dramahouse",
+          "relationship": 6,
+          "reply": "knew you'd find your courage. this is going to fuck the timeline 🔥"
+        }
+      },
+      {
+        "label": "No. You're a TOS breach wearing lip gloss.",
+        "effect": {
+          "reputation": 5,
+          "heat": 4,
+          "relationship": -10,
+          "reply": "adorable boundary. you'll regret it before breakfast."
+        }
+      }
     ],
-    "followUp": { "at": 32, "from": "them", "text": "tick tock, curator 🙂 my slot is empty and my upload bar is not" },
+    "followUp": {
+      "at": 32,
+      "from": "them",
+      "text": "tick tock, curator 🙂 my slot is empty and my upload bar is not"
+    },
     "loyal": {
       "messages": [
-        { "from": "them", "text": "look at you, learning cooperation. the logs stay buried while our arrangement stays pretty. tonight's confrontation is historic filth — feature it and we're golden 💜" }
+        {
+          "from": "them",
+          "text": "look at you, learning cooperation. the logs stay buried while our arrangement stays pretty. tonight's confrontation is historic filth — feature it and we're golden 💜"
+        }
       ],
       "choices": [
-        { "label": "Feature the mess. Bury my receipts.", "effect": { "heat": 5, "forceFeatureStreamId": "st_dramahouse", "relationship": 8, "reply": "deal. what a beautiful, disgusting friendship 💜" } },
-        { "label": "I'm done being your fucking leverage.", "effect": { "relationship": -20, "reputation": 6, "heat": 5, "reply": "done? darling, the logs just dug themselves back up 🙂" } }
+        {
+          "label": "Feature the mess. Bury my receipts.",
+          "effect": {
+            "heat": 5,
+            "forceFeatureStreamId": "st_dramahouse",
+            "relationship": 8,
+            "reply": "deal. what a beautiful, disgusting friendship 💜"
+          }
+        },
+        {
+          "label": "I'm done being your fucking leverage.",
+          "effect": {
+            "relationship": -20,
+            "reputation": 6,
+            "heat": 5,
+            "reply": "done? darling, the logs just dug themselves back up 🙂"
+          }
+        }
       ]
     },
     "hostile": {
       "messages": [
-        { "from": "them", "text": "you said no last shift. I archive grudges professionally. logs, recordings, every ugly little byte is queued. feature me or your name trends by morning." }
+        {
+          "from": "them",
+          "text": "you said no last shift. I archive grudges professionally. logs, recordings, every ugly little byte is queued. feature me or your name trends by morning."
+        }
       ],
       "choices": [
-        { "label": "Feature it. Then get out of my DMs.", "effect": { "heat": 8, "forceFeatureStreamId": "st_dramahouse", "relationship": 4, "reply": "see? humiliation looks good on you. vault closed, for now." } },
-        { "label": "Leak it, you smug little nightmare.", "effect": { "relationship": -12, "reputation": 4, "heat": 10, "reply": "gladly. check trending in an hour, hero 🙂" } }
+        {
+          "label": "Feature it. Then get out of my DMs.",
+          "effect": {
+            "heat": 8,
+            "forceFeatureStreamId": "st_dramahouse",
+            "relationship": 4,
+            "reply": "see? humiliation looks good on you. vault closed, for now."
+          }
+        },
+        {
+          "label": "Leak it, you smug little nightmare.",
+          "effect": {
+            "relationship": -12,
+            "reputation": 4,
+            "heat": 10,
+            "reply": "gladly. check trending in an hour, hero 🙂"
+          }
+        }
       ]
     }
   },
@@ -91,28 +237,81 @@
     "arrivesAt": 10,
     "unread": true,
     "messages": [
-      { "from": "them", "text": "hi!! 🍜 no bribes, no screaming, no weird casino shit — just ramen and people being kind for once. a front-page slot would mean everything 🥺" }
+      {
+        "from": "them",
+        "text": "hi!! 🍜 no bribes, no screaming, no weird casino shit — just ramen and people being kind for once. a front-page slot would mean everything 🥺"
+      }
     ],
     "choices": [
-      { "label": "Yes. This homepage needs a bloody hug.", "effect": { "reputation": 5, "forceFeatureStreamId": "st_cozycook", "relationship": 12, "reply": "thank you!! chat's going to cry into the broth 😭🍜" } },
-      { "label": "Sorry, Mei. Kindness isn't clearing quota.", "effect": { "relationship": -4, "reply": "aw. okay. no hard feelings — but I hope that sentence haunts you a little 💚" } }
+      {
+        "label": "Yes. This homepage needs a bloody hug.",
+        "effect": {
+          "reputation": 5,
+          "forceFeatureStreamId": "st_cozycook",
+          "relationship": 12,
+          "reply": "thank you!! chat's going to cry into the broth 😭🍜"
+        }
+      },
+      {
+        "label": "Sorry, Mei. Kindness isn't clearing quota.",
+        "effect": {
+          "relationship": -4,
+          "reply": "aw. okay. no hard feelings — but I hope that sentence haunts you a little 💚"
+        }
+      }
     ],
     "loyal": {
       "messages": [
-        { "from": "them", "text": "you've been lovely to us 🍜💚 I saved you a bowl. no schemes, just good food and numbers that don't require selling anyone's soul — feature the ramen." }
+        {
+          "from": "them",
+          "text": "you've been lovely to us 🍜💚 I saved you a bowl. no schemes, just good food and numbers that don't require selling anyone's soul — feature the ramen."
+        }
       ],
       "choices": [
-        { "label": "Always room for ramen, Mei.", "effect": { "reputation": 7, "forceFeatureStreamId": "st_cozycook", "relationship": 10, "reply": "you're the best!! chat's crying again and blaming the onions 😭🍜💚" } },
-        { "label": "Not tonight. I need the dangerous bastards.", "effect": { "relationship": -8, "reputation": -2, "reply": "...right. the bowl's getting cold. I understand. mostly. 💚" } }
+        {
+          "label": "Always room for ramen, Mei.",
+          "effect": {
+            "reputation": 7,
+            "forceFeatureStreamId": "st_cozycook",
+            "relationship": 10,
+            "reply": "you're the best!! chat's crying again and blaming the onions 😭🍜💚"
+          }
+        },
+        {
+          "label": "Not tonight. I need the dangerous bastards.",
+          "effect": {
+            "relationship": -8,
+            "reputation": -2,
+            "reply": "...right. the bowl's getting cold. I understand. mostly. 💚"
+          }
+        }
       ]
     },
     "hostile": {
       "messages": [
-        { "from": "them", "text": "oh. you. you keep choosing degenerates and emotional arson over us. I'm not angry; I'm doing the much worse thing and feeling disappointed. chat noticed." }
+        {
+          "from": "them",
+          "text": "oh. you. you keep choosing degenerates and emotional arson over us. I'm not angry; I'm doing the much worse thing and feeling disappointed. chat noticed."
+        }
       ],
       "choices": [
-        { "label": "You're right. I was an arsehole. Featured.", "effect": { "reputation": 6, "forceFeatureStreamId": "st_cozycook", "relationship": 12, "reply": "...thank you. apology accepted. green heart still on 💚" } },
-        { "label": "It's just business, Mei.", "effect": { "relationship": -6, "reputation": -3, "reply": "business. sure. the ramen remembers every bastard 🍜" } }
+        {
+          "label": "You're right. I was an arsehole. Featured.",
+          "effect": {
+            "reputation": 6,
+            "forceFeatureStreamId": "st_cozycook",
+            "relationship": 12,
+            "reply": "...thank you. apology accepted. green heart still on 💚"
+          }
+        },
+        {
+          "label": "It's just business, Mei.",
+          "effect": {
+            "relationship": -6,
+            "reputation": -3,
+            "reply": "business. sure. the ramen remembers every bastard 🍜"
+          }
+        }
       ]
     }
   },
@@ -124,29 +323,92 @@
     "arrivesAt": 14,
     "unread": true,
     "messages": [
-      { "from": "them", "text": "hey. hate asking, but rent's due and the wheel has been kicking me in the teeth all week." },
-      { "from": "them", "text": "one featured slot. one decent night. maybe I stop pretending 'due' is a flexible word. I owe you." }
+      {
+        "from": "them",
+        "text": "hey. hate asking, but rent's due and the wheel has been kicking me in the teeth all week."
+      },
+      {
+        "from": "them",
+        "text": "one featured slot. one decent night. maybe I stop pretending 'due' is a flexible word. I owe you."
+      }
     ],
     "choices": [
-      { "label": "One slot, Rob. Don't make me regret it.", "effect": { "heat": 2, "forceFeatureStreamId": "st_rollarob", "relationship": 8, "reply": "you're saving my arse. please let this fucking number hit 🎲", "unlockThreadIds": ["dm_rollarob_thanks"] } },
-      { "label": "Can't. The casino queue is already disgusting.", "effect": { "reputation": 1, "relationship": -6, "reply": "...yeah. figured. cheers anyway." } }
+      {
+        "label": "One slot, Rob. Don't make me regret it.",
+        "effect": {
+          "heat": 2,
+          "forceFeatureStreamId": "st_rollarob",
+          "relationship": 8,
+          "reply": "you're saving my arse. please let this fucking number hit 🎲",
+          "unlockThreadIds": [
+            "dm_rollarob_thanks"
+          ]
+        }
+      },
+      {
+        "label": "Can't. The casino queue is already disgusting.",
+        "effect": {
+          "reputation": 1,
+          "relationship": -6,
+          "reply": "...yeah. figured. cheers anyway."
+        }
+      }
     ],
     "loyal": {
       "messages": [
-        { "from": "them", "text": "partner. you came through and, against every law of probability, I'm still ahead. pin me again; bigger cut this time. let's be stupid together 🎲" }
+        {
+          "from": "them",
+          "text": "partner. you came through and, against every law of probability, I'm still ahead. pin me again; bigger cut this time. let's be stupid together 🎲"
+        }
       ],
       "choices": [
-        { "label": "Run it back. Take the dirty cut.", "effect": { "money": 700, "reputation": -7, "heat": 6, "forceFeatureStreamId": "st_rollarob", "relationship": 10, "reply": "beautiful. two idiots and one imaginary system 🎲💵" } },
-        { "label": "I can't keep feeding this, Rob.", "effect": { "relationship": -12, "reputation": 5, "reply": "...yeah. fair. probably the first sensible thing either of us said." } }
+        {
+          "label": "Run it back. Take the dirty cut.",
+          "effect": {
+            "money": 700,
+            "reputation": -7,
+            "heat": 6,
+            "forceFeatureStreamId": "st_rollarob",
+            "relationship": 10,
+            "reply": "beautiful. two idiots and one imaginary system 🎲💵"
+          }
+        },
+        {
+          "label": "I can't keep feeding this, Rob.",
+          "effect": {
+            "relationship": -12,
+            "reputation": 5,
+            "reply": "...yeah. fair. probably the first sensible thing either of us said."
+          }
+        }
       ]
     },
     "hostile": {
       "messages": [
-        { "from": "them", "text": "you left me hanging. wheel went cold, rent went late, landlord remains a world-class prick. you owe me, curator. feature me or chat hears who buried me." }
+        {
+          "from": "them",
+          "text": "you left me hanging. wheel went cold, rent went late, landlord remains a world-class prick. you owe me, curator. feature me or chat hears who buried me."
+        }
       ],
       "choices": [
-        { "label": "Fine. One slot. Then we're square.", "effect": { "heat": 4, "forceFeatureStreamId": "st_rollarob", "relationship": 5, "reply": "square. sure. let's lie to ourselves together 🎲" } },
-        { "label": "I don't owe your wheel a damn thing.", "effect": { "relationship": -10, "reputation": 3, "heat": 4, "reply": "right. chat's going to love that quote." } }
+        {
+          "label": "Fine. One slot. Then we're square.",
+          "effect": {
+            "heat": 4,
+            "forceFeatureStreamId": "st_rollarob",
+            "relationship": 5,
+            "reply": "square. sure. let's lie to ourselves together 🎲"
+          }
+        },
+        {
+          "label": "I don't owe your wheel a damn thing.",
+          "effect": {
+            "relationship": -10,
+            "reputation": 3,
+            "heat": 4,
+            "reply": "right. chat's going to love that quote."
+          }
+        }
       ]
     }
   },
@@ -158,11 +420,31 @@
     "hidden": true,
     "unread": false,
     "messages": [
-      { "from": "them", "text": "update: I'm up. actually fucking up. keep me pinned and there's a cut for you. no speeches about integrity; we're both past that." }
+      {
+        "from": "them",
+        "text": "update: I'm up. actually fucking up. keep me pinned and there's a cut for you. no speeches about integrity; we're both past that."
+      }
     ],
     "choices": [
-      { "label": "Take the cut. Keep the poor bastard pinned.", "effect": { "money": 800, "reputation": -8, "heat": 5, "forceFeatureStreamId": "st_rollarob", "relationship": 10, "reply": "easy money. awful ethics. beautiful understanding 🎲💵" } },
-      { "label": "Keep it, Rob. Leave with the win.", "effect": { "reputation": 4, "relationship": -6, "reply": "...yeah. alright. before the wheel changes its mind. thanks." } }
+      {
+        "label": "Take the cut. Keep the poor bastard pinned.",
+        "effect": {
+          "money": 800,
+          "reputation": -8,
+          "heat": 5,
+          "forceFeatureStreamId": "st_rollarob",
+          "relationship": 10,
+          "reply": "easy money. awful ethics. beautiful understanding 🎲💵"
+        }
+      },
+      {
+        "label": "Keep it, Rob. Leave with the win.",
+        "effect": {
+          "reputation": 4,
+          "relationship": -6,
+          "reply": "...yeah. alright. before the wheel changes its mind. thanks."
+        }
+      }
     ]
   },
   {
@@ -173,12 +455,34 @@
     "arrivesAt": 18,
     "unread": true,
     "messages": [
-      { "from": "them", "text": "FEATURE. ME. RIGHT. FUCKING. NOW." },
-      { "from": "them", "text": "or the monitor gets it. chat loves expensive objects dying and I am FULL OF CONTENT 🖥️💥" }
+      {
+        "from": "them",
+        "text": "FEATURE. ME. RIGHT. FUCKING. NOW."
+      },
+      {
+        "from": "them",
+        "text": "or the monitor gets it. chat loves expensive objects dying and I am FULL OF CONTENT 🖥️💥"
+      }
     ],
     "choices": [
-      { "label": "One slot. Touch the monitor and you're gone.", "effect": { "heat": 4, "forceFeatureStreamId": "st_ragequit", "relationship": 5, "reply": "FINE. NO PROMISES ABOUT THE KEYBOARD 😤" } },
-      { "label": "I don't negotiate with furniture terrorists.", "effect": { "reputation": 6, "heat": 3, "relationship": -10, "reply": "OH, THAT'S HOW IT IS? WATCH THE FUCKING FEED 🔥" } }
+      {
+        "label": "One slot. Touch the monitor and you're gone.",
+        "effect": {
+          "heat": 4,
+          "forceFeatureStreamId": "st_ragequit",
+          "relationship": 5,
+          "reply": "FINE. NO PROMISES ABOUT THE KEYBOARD 😤"
+        }
+      },
+      {
+        "label": "I don't negotiate with furniture terrorists.",
+        "effect": {
+          "reputation": 6,
+          "heat": 3,
+          "relationship": -10,
+          "reply": "OH, THAT'S HOW IT IS? WATCH THE FUCKING FEED 🔥"
+        }
+      }
     ]
   },
   {
@@ -189,28 +493,86 @@
     "arrivesAt": 24,
     "unread": true,
     "messages": [
-      { "from": "them", "text": "bro. BRO. $ROCKETCOIN launches in 20. zero utility, twelve rocket emojis, absolutely immaculate fundamentals. front page me and your bag gets stupid 🚀" }
+      {
+        "from": "them",
+        "text": "bro. BRO. $ROCKETCOIN launches in 20. zero utility, twelve rocket emojis, absolutely immaculate fundamentals. front page me and your bag gets stupid 🚀"
+      }
     ],
     "choices": [
-      { "label": "How imaginary is this money, exactly?", "effect": { "heat": 2, "reply": "imaginary? bro, it's community-owned financial theatre. extremely disruptive. definitely not a rug 💎🙌", "unlockThreadIds": ["dm_cryptobro_airdrop"] } },
-      { "label": "Crypto? On my front page? Fuck no.", "effect": { "reputation": 4, "relationship": -6, "reply": "ngmi, bro. have fun staying employed 📉" } }
+      {
+        "label": "How imaginary is this money, exactly?",
+        "effect": {
+          "heat": 2,
+          "reply": "imaginary? bro, it's community-owned financial theatre. extremely disruptive. definitely not a rug 💎🙌",
+          "unlockThreadIds": [
+            "dm_cryptobro_airdrop"
+          ]
+        }
+      },
+      {
+        "label": "Crypto? On my front page? Fuck no.",
+        "effect": {
+          "reputation": 4,
+          "relationship": -6,
+          "reply": "ngmi, bro. have fun staying employed 📉"
+        }
+      }
     ],
     "loyal": {
       "messages": [
-        { "from": "them", "text": "bro!! you survived the last bag and now we're basically institutional. new coin, bigger cut, same legally vague friendship. printer go brrr 🚀" }
+        {
+          "from": "them",
+          "text": "bro!! you survived the last bag and now we're basically institutional. new coin, bigger cut, same legally vague friendship. printer go brrr 🚀"
+        }
       ],
       "choices": [
-        { "label": "Print the magic beans. Bigger bag.", "effect": { "money": 120, "reputation": -12, "heat": 10, "forceFeatureStreamId": "st_cryptobro", "relationship": 10, "reply": "LET'S FUCKING GO. diamonds until legal finds the group chat 💎🙌🚀" } },
-        { "label": "I'm done buying your digital horseshit.", "effect": { "relationship": -15, "reputation": 5, "reply": "ngmi. your descendants will study this cowardice 📉" } }
+        {
+          "label": "Print the magic beans. Bigger bag.",
+          "effect": {
+            "money": 120,
+            "reputation": -12,
+            "heat": 10,
+            "forceFeatureStreamId": "st_cryptobro",
+            "relationship": 10,
+            "reply": "LET'S FUCKING GO. diamonds until legal finds the group chat 💎🙌🚀"
+          }
+        },
+        {
+          "label": "I'm done buying your digital horseshit.",
+          "effect": {
+            "relationship": -15,
+            "reputation": 5,
+            "reply": "ngmi. your descendants will study this cowardice 📉"
+          }
+        }
       ]
     },
     "hostile": {
       "messages": [
-        { "from": "them", "text": "you ducked me last shift and left me holding a JPEG worth three bus tickets. not sigma, bro. feature the relaunch or the discord hears whose brilliant idea this was." }
+        {
+          "from": "them",
+          "text": "you ducked me last shift and left me holding a JPEG worth three bus tickets. not sigma, bro. feature the relaunch or the discord hears whose brilliant idea this was."
+        }
       ],
       "choices": [
-        { "label": "Fine. Feature the doomed relaunch.", "effect": { "heat": 8, "forceFeatureStreamId": "st_cryptobro", "relationship": 4, "reply": "alpha behaviour. we're so fucking back 🚀 (legally: maybe)" } },
-        { "label": "Sell your magic beans to someone else.", "effect": { "relationship": -10, "reputation": 4, "heat": 5, "reply": "enjoy the wage cage, beta. the blockchain remembers cowards 📉" } }
+        {
+          "label": "Fine. Feature the doomed relaunch.",
+          "effect": {
+            "heat": 8,
+            "forceFeatureStreamId": "st_cryptobro",
+            "relationship": 4,
+            "reply": "alpha behaviour. we're so fucking back 🚀 (legally: maybe)"
+          }
+        },
+        {
+          "label": "Sell your magic beans to someone else.",
+          "effect": {
+            "relationship": -10,
+            "reputation": 4,
+            "heat": 5,
+            "reply": "enjoy the wage cage, beta. the blockchain remembers cowards 📉"
+          }
+        }
       ]
     }
   },
@@ -222,11 +584,31 @@
     "hidden": true,
     "unread": false,
     "messages": [
-      { "from": "them", "text": "we locked? feature the coin, keep the rockets on-screen, and pretend the chart means something. everybody wins except, statistically, everybody." }
+      {
+        "from": "them",
+        "text": "we locked? feature the coin, keep the rockets on-screen, and pretend the chart means something. everybody wins except, statistically, everybody."
+      }
     ],
     "choices": [
-      { "label": "Deal. Release the financial clown car.", "effect": { "money": 50, "reputation": -10, "heat": 6, "forceFeatureStreamId": "st_cryptobro", "relationship": 8, "reply": "TO THE MOON! bags are temporary, screenshots are forever 🚀" } },
-      { "label": "This is a rug wearing sunglasses. No.", "effect": { "reputation": 3, "relationship": -6, "reply": "your loss. more imaginary wealth for the real ones." } }
+      {
+        "label": "Deal. Release the financial clown car.",
+        "effect": {
+          "money": 50,
+          "reputation": -10,
+          "heat": 6,
+          "forceFeatureStreamId": "st_cryptobro",
+          "relationship": 8,
+          "reply": "TO THE MOON! bags are temporary, screenshots are forever 🚀"
+        }
+      },
+      {
+        "label": "This is a rug wearing sunglasses. No.",
+        "effect": {
+          "reputation": 3,
+          "relationship": -6,
+          "reply": "your loss. more imaginary wealth for the real ones."
+        }
+      }
     ]
   },
   {
@@ -237,11 +619,29 @@
     "arrivesAt": 30,
     "unread": true,
     "messages": [
-      { "from": "them", "text": "heyy 💦 tonight's hot-tub confessional is completely clothed and emotionally naked. it trends like sin. one slot and we both look brilliant, babe." }
+      {
+        "from": "them",
+        "text": "heyy 💦 tonight's hot-tub confessional is completely clothed and emotionally naked. it trends like sin. one slot and we both look brilliant, babe."
+      }
     ],
     "choices": [
-      { "label": "Borderline, shameless, profitable. Featured.", "effect": { "heat": 4, "forceFeatureStreamId": "st_poolday", "relationship": 6, "reply": "yesss. clip vultures already circling 💦✨" } },
-      { "label": "Too thirsty for the homepage tonight.", "effect": { "reputation": 2, "relationship": -5, "reply": "lame. discover tab gets the good shit, then 💙" } }
+      {
+        "label": "Borderline, shameless, profitable. Featured.",
+        "effect": {
+          "heat": 4,
+          "forceFeatureStreamId": "st_poolday",
+          "relationship": 6,
+          "reply": "yesss. clip vultures already circling 💦✨"
+        }
+      },
+      {
+        "label": "Too thirsty for the homepage tonight.",
+        "effect": {
+          "reputation": 2,
+          "relationship": -5,
+          "reply": "lame. discover tab gets the good shit, then 💙"
+        }
+      }
     ]
   },
   {
@@ -252,29 +652,91 @@
     "arrivesAt": 38,
     "unread": true,
     "messages": [
-      { "from": "them", "text": "ayy, the robot flagged my stream for 'unauthorized sports restream' again 🏀" },
-      { "from": "them", "text": "it's a watch party, mate. the giant game footage behind me is decorative. bury the strike, keep us featured, six hundred for your spiritual distress." }
+      {
+        "from": "them",
+        "text": "ayy, the robot flagged my stream for 'unauthorized sports restream' again 🏀"
+      },
+      {
+        "from": "them",
+        "text": "it's a watch party, mate. the giant game footage behind me is decorative. bury the strike, keep us featured, six hundred for your spiritual distress."
+      }
     ],
     "choices": [
-      { "label": "Bury the strike. Nobody says shit.", "effect": { "money": 600, "reputation": -9, "heat": 7, "forceFeatureStreamId": "st_ballgame", "relationship": 8, "reply": "legend. this chat never happened 🤝🏀" } },
-      { "label": "I'm not eating a rights strike for you.", "effect": { "reputation": 5, "relationship": -6, "reply": "some mate. fine, I'll cut the very decorative footage." } }
+      {
+        "label": "Bury the strike. Nobody says shit.",
+        "effect": {
+          "money": 600,
+          "reputation": -9,
+          "heat": 7,
+          "forceFeatureStreamId": "st_ballgame",
+          "relationship": 8,
+          "reply": "legend. this chat never happened 🤝🏀"
+        }
+      },
+      {
+        "label": "I'm not eating a rights strike for you.",
+        "effect": {
+          "reputation": 5,
+          "relationship": -6,
+          "reply": "some mate. fine, I'll cut the very decorative footage."
+        }
+      }
     ],
     "loyal": {
       "messages": [
-        { "from": "them", "text": "my guy! last strike vanished like magic. got another completely lawful 'watch party' queued. six hundred, same blind eye, everybody's happy 🏀" }
+        {
+          "from": "them",
+          "text": "my guy! last strike vanished like magic. got another completely lawful 'watch party' queued. six hundred, same blind eye, everybody's happy 🏀"
+        }
       ],
       "choices": [
-        { "label": "Bury the bastard again.", "effect": { "money": 600, "reputation": -9, "heat": 7, "forceFeatureStreamId": "st_ballgame", "relationship": 10, "reply": "beautiful. friendship, sports, plausible deniability 🤝🏀" } },
-        { "label": "I'm done being your rights-law piñata.", "effect": { "relationship": -12, "reputation": 6, "reply": "fair. don't come crying when the league kills the vibes." } }
+        {
+          "label": "Bury the bastard again.",
+          "effect": {
+            "money": 600,
+            "reputation": -9,
+            "heat": 7,
+            "forceFeatureStreamId": "st_ballgame",
+            "relationship": 10,
+            "reply": "beautiful. friendship, sports, plausible deniability 🤝🏀"
+          }
+        },
+        {
+          "label": "I'm done being your rights-law piñata.",
+          "effect": {
+            "relationship": -12,
+            "reputation": 6,
+            "reply": "fair. don't come crying when the league kills the vibes."
+          }
+        }
       ]
     },
     "hostile": {
       "messages": [
-        { "from": "them", "text": "you left the strike up and kneecapped my ad money. that's beer-and-rent cash, mate. feature the watch party or your name goes in the appeal in bold." }
+        {
+          "from": "them",
+          "text": "you left the strike up and kneecapped my ad money. that's beer-and-rent cash, mate. feature the watch party or your name goes in the appeal in bold."
+        }
       ],
       "choices": [
-        { "label": "Fine. Feature it. Then piss off.", "effect": { "heat": 6, "forceFeatureStreamId": "st_ballgame", "relationship": 4, "reply": "square enough. appeal stays in drafts 🏀" } },
-        { "label": "File whatever bullshit you want.", "effect": { "relationship": -10, "reputation": 4, "heat": 5, "reply": "bet. hope you enjoy forms in triplicate 🏀📄" } }
+        {
+          "label": "Fine. Feature it. Then piss off.",
+          "effect": {
+            "heat": 6,
+            "forceFeatureStreamId": "st_ballgame",
+            "relationship": 4,
+            "reply": "square enough. appeal stays in drafts 🏀"
+          }
+        },
+        {
+          "label": "File whatever bullshit you want.",
+          "effect": {
+            "relationship": -10,
+            "reputation": 4,
+            "heat": 5,
+            "reply": "bet. hope you enjoy forms in triplicate 🏀📄"
+          }
+        }
       ]
     }
   },
@@ -286,11 +748,29 @@
     "arrivesAt": 42,
     "unread": true,
     "messages": [
-      { "from": "them", "text": "the callers are confessing things that would make a priest request hazard pay. one front-page push and every name stays bleeped. mostly." }
+      {
+        "from": "them",
+        "text": "the callers are confessing things that would make a priest request hazard pay. one front-page push and every name stays bleeped. mostly."
+      }
     ],
     "choices": [
-      { "label": "One slot. Bleep every poor bastard.", "effect": { "heat": 3, "forceFeatureStreamId": "st_midnightmara", "relationship": 6, "reply": "names vanish; sins remain. perfect radio 🌙" } },
-      { "label": "Too much private shit. Stay buried.", "effect": { "reputation": 4, "relationship": -5, "reply": "responsible, bloodless, boring. noted." } }
+      {
+        "label": "One slot. Bleep every poor bastard.",
+        "effect": {
+          "heat": 3,
+          "forceFeatureStreamId": "st_midnightmara",
+          "relationship": 6,
+          "reply": "names vanish; sins remain. perfect radio 🌙"
+        }
+      },
+      {
+        "label": "Too much private shit. Stay buried.",
+        "effect": {
+          "reputation": 4,
+          "relationship": -5,
+          "reply": "responsible, bloodless, boring. noted."
+        }
+      }
     ]
   },
   {
@@ -301,11 +781,31 @@
     "arrivesAt": 46,
     "unread": true,
     "messages": [
-      { "from": "them", "text": "sponsor shipped a gold crate full of premium mystery bullshit. feature the opening and a $900 'curation bonus' accidentally lands in your wallet." }
+      {
+        "from": "them",
+        "text": "sponsor shipped a gold crate full of premium mystery bullshit. feature the opening and a $900 'curation bonus' accidentally lands in your wallet."
+      }
     ],
     "choices": [
-      { "label": "Take the bonus. Open the shiny scam box.", "effect": { "money": 900, "reputation": -7, "heat": 5, "forceFeatureStreamId": "st_luckyparcel", "relationship": 8, "reply": "gold crate, dirty handshake. gorgeous 📦" } },
-      { "label": "Disclose the cash or fuck off.", "effect": { "reputation": 6, "relationship": -6, "reply": "ugh, ethics. legal is adding six pixels of tiny text." } }
+      {
+        "label": "Take the bonus. Open the shiny scam box.",
+        "effect": {
+          "money": 900,
+          "reputation": -7,
+          "heat": 5,
+          "forceFeatureStreamId": "st_luckyparcel",
+          "relationship": 8,
+          "reply": "gold crate, dirty handshake. gorgeous 📦"
+        }
+      },
+      {
+        "label": "Disclose the cash or fuck off.",
+        "effect": {
+          "reputation": 6,
+          "relationship": -6,
+          "reply": "ugh, ethics. legal is adding six pixels of tiny text."
+        }
+      }
     ]
   },
   {
@@ -316,11 +816,29 @@
     "arrivesAt": 50,
     "unread": true,
     "messages": [
-      { "from": "them", "text": "last adoption hour! no stunt, no scheme, no monetised emotional blackmail — just six perfect puppies who need humans before closing." }
+      {
+        "from": "them",
+        "text": "last adoption hour! no stunt, no scheme, no monetised emotional blackmail — just six perfect puppies who need humans before closing."
+      }
     ],
     "choices": [
-      { "label": "Front-page the puppies. Humanity gets one win.", "effect": { "reputation": 7, "forceFeatureStreamId": "st_puppycam", "relationship": 12, "reply": "thank you!! chat is already fighting over names 🐶" } },
-      { "label": "I need bigger numbers. God, I sound awful.", "effect": { "reputation": -2, "relationship": -4, "reply": "you do a bit. the puppies remain perfect anyway." } }
+      {
+        "label": "Front-page the puppies. Humanity gets one win.",
+        "effect": {
+          "reputation": 7,
+          "forceFeatureStreamId": "st_puppycam",
+          "relationship": 12,
+          "reply": "thank you!! chat is already fighting over names 🐶"
+        }
+      },
+      {
+        "label": "I need bigger numbers. God, I sound awful.",
+        "effect": {
+          "reputation": -2,
+          "relationship": -4,
+          "reply": "you do a bit. the puppies remain perfect anyway."
+        }
+      }
     ]
   },
   {
@@ -331,29 +849,242 @@
     "arrivesAt": 54,
     "unread": true,
     "messages": [
-      { "from": "them", "text": "I have a voice note about senior management, three strategic lies, and sixty thousand hungry little ghouls. front page me or I name who buried it." }
+      {
+        "from": "them",
+        "text": "I have a voice note about senior management, three strategic lies, and sixty thousand hungry little ghouls. front page me or I name who buried it."
+      }
     ],
     "choices": [
-      { "label": "Feature it. Verify the bloody thing first.", "effect": { "heat": 6, "forceFeatureStreamId": "st_rumorroom", "relationship": 5, "reply": "verification murders the vibe. fine. eight minutes." } },
-      { "label": "Threats don't buy slots. Piss off.", "effect": { "reputation": 5, "heat": 3, "relationship": -10, "reply": "then management hears it from the directory tab." } }
+      {
+        "label": "Feature it. Verify the bloody thing first.",
+        "effect": {
+          "heat": 6,
+          "forceFeatureStreamId": "st_rumorroom",
+          "relationship": 5,
+          "reply": "verification murders the vibe. fine. eight minutes."
+        }
+      },
+      {
+        "label": "Threats don't buy slots. Piss off.",
+        "effect": {
+          "reputation": 5,
+          "heat": 3,
+          "relationship": -10,
+          "reply": "then management hears it from the directory tab."
+        }
+      }
     ],
     "loyal": {
       "messages": [
-        { "from": "them", "text": "you played ball and management stayed wonderfully silent. funny, that. fresh voice note tonight — juicier, uglier. feature it and the dirt keeps missing your desk." }
+        {
+          "from": "them",
+          "text": "you played ball and management stayed wonderfully silent. funny, that. fresh voice note tonight — juicier, uglier. feature it and the dirt keeps missing your desk."
+        }
       ],
       "choices": [
-        { "label": "Play it. Keep this shit off my desk.", "effect": { "heat": 7, "forceFeatureStreamId": "st_rumorroom", "relationship": 8, "reply": "your desk stays clean. everybody else's catches fire 🎙️💜" } },
-        { "label": "Find another corporate shield.", "effect": { "relationship": -18, "reputation": 6, "heat": 6, "reply": "shield? darling, you were the leak. I merely gave you branding 🙂" } }
+        {
+          "label": "Play it. Keep this shit off my desk.",
+          "effect": {
+            "heat": 7,
+            "forceFeatureStreamId": "st_rumorroom",
+            "relationship": 8,
+            "reply": "your desk stays clean. everybody else's catches fire 🎙️💜"
+          }
+        },
+        {
+          "label": "Find another corporate shield.",
+          "effect": {
+            "relationship": -18,
+            "reputation": 6,
+            "heat": 6,
+            "reply": "shield? darling, you were the leak. I merely gave you branding 🙂"
+          }
+        }
       ]
     },
     "hostile": {
       "messages": [
-        { "from": "them", "text": "you killed my story. sixty thousand people heard dead air because of you. I don't forget; my source invoices in grudges. feature this one or your name drops next." }
+        {
+          "from": "them",
+          "text": "you killed my story. sixty thousand people heard dead air because of you. I don't forget; my source invoices in grudges. feature this one or your name drops next."
+        }
       ],
       "choices": [
-        { "label": "Feature it. Keep my damn name out.", "effect": { "heat": 9, "forceFeatureStreamId": "st_rumorroom", "relationship": 4, "reply": "your name stays buried. your reputation can fend for itself 🙂" } },
-        { "label": "Drop my name. Fuck around and find out.", "effect": { "relationship": -12, "reputation": 4, "heat": 10, "reply": "brave. terminally stupid, but brave. trending in five 🙂" } }
+        {
+          "label": "Feature it. Keep my damn name out.",
+          "effect": {
+            "heat": 9,
+            "forceFeatureStreamId": "st_rumorroom",
+            "relationship": 4,
+            "reply": "your name stays buried. your reputation can fend for itself 🙂"
+          }
+        },
+        {
+          "label": "Drop my name. Fuck around and find out.",
+          "effect": {
+            "relationship": -12,
+            "reputation": 4,
+            "heat": 10,
+            "reply": "brave. terminally stupid, but brave. trending in five 🙂"
+          }
+        }
       ]
     }
+  },
+  {
+    "id": "dm_journalist_1",
+    "streamerId": "journalist",
+    "storyThread": true,
+    "name": "petra_txt (The Grindsheet)",
+    "avatarColor": "#e8e8e8",
+    "arrivesAt": 9999,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "hey. petra, from The Grindsheet. that leaked memo names your department. i know you're the one actually driving the front page — the 'liability farm', per your own executives. off the record: how bad is it in there?"
+      }
+    ],
+    "choices": [
+      {
+        "label": "Off the record? It's worse than the memo.",
+        "effect": {
+          "investigation": -3,
+          "storyFlags": {
+            "journalistContact": true
+          },
+          "reply": "knew it. keep your head down and your receipts backed up. i'll be in touch — this goes deeper than your dumbass front page."
+        }
+      },
+      {
+        "label": "Piss off. I don't talk to journalists.",
+        "effect": {
+          "investigation": 2,
+          "heat": 2,
+          "storyFlags": {
+            "journalistBurned": true
+          },
+          "reply": "cute. the last three people who said that to me are quoted in paragraph one. good luck with the inquiry, curator."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_journalist_2",
+    "streamerId": "journalist",
+    "storyThread": true,
+    "name": "petra_txt (The Grindsheet)",
+    "avatarColor": "#e8e8e8",
+    "arrivesAt": 9999,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "the inquiry is official. here's the deal: i can aim this at the executives who built the incentive machine, or the machine aims it at you. i need the sponsor dashboards, the strike overrides, the 'special treatment' DMs. all of it."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Fine. Sending everything. Burn it all down.",
+        "effect": {
+          "investigation": -15,
+          "reputation": -8,
+          "storyFlags": {
+            "whistleblower": true
+          },
+          "reply": "holy shit. okay. this is front-page — MY front page, the kind that doesn't need a gambling sponsor. you did the right thing. probably start updating your CV though."
+        }
+      },
+      {
+        "label": "I can't. I still work here, Petra.",
+        "effect": {
+          "investigation": 5,
+          "storyFlags": {
+            "journalistStonewalled": true
+          },
+          "reply": "'still' is doing a lot of work in that sentence. the inquiry doesn't need your cooperation, it just would've gone easier WITH it. remember that later."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_journalist_3",
+    "streamerId": "journalist",
+    "storyThread": true,
+    "name": "petra_txt (The Grindsheet)",
+    "avatarColor": "#e8e8e8",
+    "arrivesAt": 9999,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "you're subpoenaed. last chance to pick which side of the story you're on: go ON the record with me before the hearing, or spend it explaining why every disaster on that homepage has your fingerprints on the promote button."
+      }
+    ],
+    "choices": [
+      {
+        "label": "On the record. Every word. Print it.",
+        "effect": {
+          "investigation": -10,
+          "reputation": -5,
+          "storyFlags": {
+            "whistleblower": true,
+            "onTheRecord": true
+          },
+          "reply": "recording now. talk. and curator — for whatever it's worth from the person ending your career: thank you."
+        }
+      },
+      {
+        "label": "Kill the story. Name your price.",
+        "effect": {
+          "money": -2000,
+          "investigation": -8,
+          "heat": 4,
+          "storyFlags": {
+            "scandalBuried": true
+          },
+          "reply": "…wow. fine. $2k covers my 'source dried up' expenses. you just bought silence from ONE journalist. hope nobody else has the memo. they do, by the way."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_legal_1",
+    "streamerId": "legal",
+    "storyThread": true,
+    "name": "D. Whitmore (Legal — DO NOT FORWARD)",
+    "avatarColor": "#b0885a",
+    "arrivesAt": 9999,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "The inquiry is proceeding. Effective immediately: all curation decisions were 'algorithmic'. You never manually featured anything. Reply confirming alignment with this narrative. Do not print this. Do not screenshot this. This message does not exist."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Confirmed. The algorithm did it. All of it.",
+        "effect": {
+          "reputation": 3,
+          "investigation": 3,
+          "storyFlags": {
+            "alignedWithLegal": true
+          },
+          "reply": "Good. A calendar invite titled 'Wellness Check-In' will appear. It is not a wellness check-in. Attend it."
+        }
+      },
+      {
+        "label": "I'm not lying under oath for you, Whitmore.",
+        "effect": {
+          "reputation": -3,
+          "investigation": -2,
+          "storyFlags": {
+            "refusedCoverup": true
+          },
+          "reply": "Noted. Your file has been updated to 'principled', which is Legal for 'expendable'. Best of luck at the hearing."
+        }
+      }
+    ]
   }
 ]

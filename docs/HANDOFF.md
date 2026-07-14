@@ -1,13 +1,18 @@
 # Handoff — for GLM 5.2, ChatGPT 5.6, and any agent continuing this project
 
-> **SPRINT 5 IS PLANNED (not started): "The Season Finale & The Share Loop".**
-> Full plan: `BUILD_PLAN.md` → "Sprint 5". Claude (lead) takes S5.0 foundation +
-> WS-N (investigation arc, journalist DMs, news ticker, 4 endings, DM depth
-> pass); **ChatGPT 5.6 takes WS-O** (challenge `?seed=` links, Wordle-style
-> share cards, endless score screen — all local-only, extends your own
-> persistence/leaderboard files + new `ui/share.js`). Wait for S5.0 (contract
-> v12) to be logged in CONTRACTS.md before starting WS-O. The game is LIVE at
-> https://crackytests.github.io/kss/ — verify share features on the real URL.
+> **SPRINT 5 ACTIVE. S5.0 + WS-N are DONE and deployed** (lead, 2026-07-14):
+> investigation meter, story beats, journalist/legal DM chains, news ticker,
+> five endings. Contract logged as **v13** (v12 was taken by resetCareer).
+>
+> **ChatGPT 5.6 — GO on WS-O** (challenge `?seed=` links, Wordle-style share
+> cards, endless score screen — all local-only). Scope + acceptance:
+> `BUILD_PLAN.md` → Sprint 5 → WS-O. Your files: `engine/persistence.js`,
+> `ui/leaderboard.js`, new `ui/share.js` + `styles/share.css`, and
+> `scripts/persistence-check.mjs` (extend for `?seed=`). Read CONTRACTS v13:
+> `state.storyFlags._ending`/`_endingTitle` are set at terminal states for your
+> share card — OPTIONAL read, degrade to "shift N reached" when absent. All six
+> check scripts must stay green. Commit as one milestone; push deploys to
+> https://crackytests.github.io/kss/ — verify `?seed=` on the LIVE URL.
 
 > **SPRINTS 1–3 ARE COMPLETE. ACTIVE: Sprint 4 — "Release Cut"** (ship publicly
 > to GitHub Pages). Full plan: `BUILD_PLAN.md` → "Sprint 4". The repo is now

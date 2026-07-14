@@ -13,6 +13,7 @@ import * as perks from './perks.js';
 import * as jackpot from './jackpot.js';
 import * as economy from './economy.js';
 import * as dm from './dm.js';
+import * as story from './story.js';
 import * as audit from './audit.js';
 import * as mutators from './mutators.js';
 
@@ -32,6 +33,7 @@ export function tick() {
   jackpot.step(state);
   economy.step(state);
   dm.step(state);
+  story.step(state);   // after dm: the plot reacts to DM outcomes this same tick (S5.0)
   audit.step(state);
   mutators.step(state); // last: run-modifier catch-all (WS-K)
 

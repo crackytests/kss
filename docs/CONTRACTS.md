@@ -356,6 +356,7 @@ store.resetCareer()              // delete full career save + reset in-memory me
 ```
 
 ## Contract changes log
+
 - v1 (initial) — this document.
 - v2 (WS-C, 2026-07-13) — per-tick engagement formula (§2) gains a global
   `engagementScale` multiplier (knob in `data/tos-rules.json`, default 0.4).
@@ -441,3 +442,19 @@ store.resetCareer()              // delete full career save + reset in-memory me
   removes the single `kickstaff.career.v1` localStorage blob and clears its
   in-memory mirrors (`career`, money, perks, relationships, and mute state).
   The career ledger exposes it behind an explicit destructive confirmation.
+- v13 (Sprint 5 / S5.0+WS-N / lead, 2026-07-14) — **additive; the story layer.**
+  `GameState` (§1) gains `investigation` (0–100, run-scoped: survives
+  `ADVANCE_SHIFT`, only reset by `load`), `storyFlags` (plot memory object;
+  `_ending`/`_endingTitle` are set at terminal states for WS-O's share card —
+  optional read), and `ticker` (recent headlines, capped; `engine/story.js`
+  pushes, `ui/news-ticker.js` renders). New action `SET_STORY_FLAG {key, value}`
+  (§4). `DMEffect` (§3) gains optional `investigation` (delta) and `storyFlags`
+  (object merged into state.storyFlags). `DMThread` gains optional boolean
+  `storyThread` — narrative contacts with no stream; exempt from WS-K roster
+  filtering (one-line change in `engine/mutators.js`, logged) and revealed by
+  story beats via `storyFlags.revealed_<threadId>` + per-tick `_arrived`
+  re-assertion. Tick order (§6): `story.step` inserted after `dm`. New files:
+  `engine/story.js` (also exports `pickEnding(state)`, `getEndings()`,
+  `_setRules()`), `data/story.json`, `ui/news-ticker.js`, `ui/ending.js`,
+  `styles/story.css`, `scripts/story-check.mjs`. Mount slots `#tickerSlot`,
+  `#endingSlot` in index.html. HUD shows the investigation meter.

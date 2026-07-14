@@ -1,0 +1,78 @@
+/* STORY LAYER — WS-N (Sprint 5): news ticker, ending card, HUD investigation. */
+
+/* ---- news ticker ---- */
+.ticker {
+  display: flex; align-items: stretch; gap: 0;
+  margin: 0 12px; border: 1px solid var(--line); border-top: none;
+  border-radius: 0 0 8px 8px; background: #0d0f0e; overflow: hidden;
+  font: 600 11px/1 var(--mono);
+}
+.ticker[hidden] { display: none; }
+.ticker__badge {
+  flex: none; display: flex; align-items: center; padding: 6px 10px;
+  background: var(--bad); color: #fff; letter-spacing: .12em; font-weight: 800;
+}
+.ticker__viewport { flex: 1; overflow: hidden; display: flex; align-items: center; }
+.ticker__reel {
+  display: inline-flex; align-items: center; white-space: nowrap;
+  padding-left: 100%;
+  animation: ticker-scroll 45s linear infinite;
+}
+.ticker__item { color: #cfe2d4; letter-spacing: .04em; }
+.ticker__sep { color: var(--accent); margin: 0 14px; }
+@keyframes ticker-scroll { to { transform: translateX(-50%); } }
+.ticker:hover .ticker__reel { animation-play-state: paused; }
+
+/* ---- HUD investigation meter ---- */
+.stat.investigation b { color: var(--good); }
+.stat.investigation.warn b { color: var(--warn); }
+.stat.investigation.danger b { color: var(--bad); text-shadow: 0 0 10px #ff4d4d55; }
+
+/* ---- ending card ---- */
+#endingSlot .ending-backdrop {
+  position: fixed; inset: 0; z-index: 120; /* above shift overlay (100), below tutorial/title */
+  display: grid; place-items: center; padding: 24px;
+  background:
+    radial-gradient(800px 500px at 50% 35%, #3d1a1a33, transparent 70%),
+    #050806f0;
+  backdrop-filter: blur(9px);
+}
+.ending-card {
+  position: relative; width: min(640px, 100%); max-height: calc(100vh - 48px);
+  overflow-y: auto; padding: 36px 34px;
+  border: 1px solid #4a3a3a; border-radius: 18px;
+  background: linear-gradient(150deg, #241d1d 0%, #131010 70%);
+  box-shadow: 0 36px 100px #000d, inset 0 1px #ffffff0d;
+  animation: ending-in .32s cubic-bezier(.2, .9, .3, 1.1);
+}
+.ending-card.is-won {
+  border-color: #3a493d;
+  background: linear-gradient(150deg, #1d241f 0%, #101511 70%);
+}
+@keyframes ending-in { from { opacity: 0; transform: translateY(16px) scale(.98); } }
+.ending-stamp {
+  position: absolute; top: 18px; right: 18px; padding: 5px 10px;
+  border: 2px solid var(--bad); border-radius: 6px; transform: rotate(6deg);
+  color: var(--bad); font: 800 11px/1 var(--mono); letter-spacing: .14em;
+}
+.is-won .ending-stamp { border-color: var(--accent); color: var(--accent); transform: rotate(-5deg); }
+.ending-eyebrow { color: var(--muted); font: 700 10px/1.2 var(--mono); letter-spacing: .18em; }
+.ending-card h1 {
+  margin: 10px 0 12px; font-size: clamp(30px, 6vw, 46px); line-height: .95;
+  letter-spacing: -.04em;
+}
+.ending-body { margin: 0 0 20px; color: #c4b8b3; font-size: 14.5px; line-height: 1.65; }
+.is-won .ending-body { color: #b3c2b8; }
+.ending-stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px;
+  margin-bottom: 20px;
+}
+.ending-stats div { padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: #ffffff06; }
+.ending-stats span { display: block; color: var(--muted); font: 700 9px/1.2 var(--mono); letter-spacing: .14em; }
+.ending-stats b { font-size: 18px; }
+.ending-actions { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker__reel { animation: none; padding-left: 0; }
+  .ending-card { animation: none; }
+}

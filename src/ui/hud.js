@@ -19,6 +19,8 @@ function render(state) {
     <div class="stat"><span class="lbl">Money</span><b>$${state.money.toLocaleString()}</b></div>
     <div class="stat"><span class="lbl">Reputation</span><b>${formatNumber(state.reputation)}</b></div>
     <div class="stat"><span class="lbl">Heat</span><b>${formatNumber(state.heat)}</b></div>
+    <div class="stat investigation ${state.investigation >= 60 ? 'danger' : state.investigation >= 25 ? 'warn' : ''}" title="Regulatory investigation — run-long, does not reset between shifts">
+      <span class="lbl">Investigation</span><b>${Math.round(state.investigation)}</b></div>
     <div class="hud-spacer"></div>
     <button id="muteBtn" title="Toggle sound" aria-pressed="${state.muted ? 'true' : 'false'}">${state.muted ? '🔇' : '🔊'}</button>
     <button id="settingsBtn" title="Settings">⚙️</button>

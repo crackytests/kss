@@ -74,7 +74,9 @@ function checkOneTimeEffects() {
     const before = snapshot(state);
     initializeRun(state, { seed: state.seed }, definition.id);
     assert(state.mutator.id === definition.id, `${definition.id} was not installed`);
-    assert(state.threads.every((thread) => state.streams.some((stream) => stream.streamerId === thread.streamerId)), `${definition.id} left an off-roster DM`);
+    // storyThread contacts (WS-N, CONTRACTS v13) have no stream and are exempt
+    // from roster filtering by design.
+    assert(state.threads.every((thread) => thread.storyThread || state.streams.some((stream) => stream.streamerId === thread.streamerId)), `${definition.id} left an off-roster DM`);
 
     if (definition.id === 'gold_rush') {
       assert(state.streams.every((stream, index) => stream.jackpotChance === Number(Math.min(1, before.streams[index].jackpotChance * 2).toFixed(6))), 'Gold Rush jackpot odds');
