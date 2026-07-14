@@ -59,8 +59,13 @@ function render(root) {
       </div>
 
       <div class="title-foot">Best on desktop · progress saves in this browser</div>
-    </div>
+    </div>`;
 
+  // Settings lives in its OWN top-level host — NOT inside #titleScreen — so the
+  // HUD gear can open it mid-game while the title is display:none.
+  const host = document.getElementById('settingsHost');
+  if (host) {
+    host.innerHTML = `
     <div class="settings-panel" id="settingsPanel" hidden>
       <div class="settings-card" role="dialog" aria-modal="true" aria-label="Settings">
         <h2>Settings</h2>
@@ -79,6 +84,7 @@ function render(root) {
         <div class="settings-actions"><button class="primary" data-settings-close>Done</button></div>
       </div>
     </div>`;
+  }
 }
 
 function wire(root) {
@@ -98,7 +104,8 @@ function wire(root) {
   root.querySelector('[data-title-settings]').onclick = () => openSettings();
   window.addEventListener('kickstaff:settings-open', openSettings);
 
-  const panel = root.querySelector('#settingsPanel');
+  const panel = document.getElementById('settingsPanel');
+  if (!panel) return;
   panel.querySelector('[data-settings-close]').onclick = () => { panel.hidden = true; };
   panel.onclick = (e) => { if (e.target === panel) panel.hidden = true; };
 

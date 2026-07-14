@@ -1,5 +1,7 @@
 /* WS-I — local career ledger, daily challenge, leaderboard and run history. */
-#leaderboardSlot { position: relative; z-index: 160; }
+/* z-index 205: above the title screen (200, WS-L) so the ledger opened FROM the
+   title lands on top of it; below the settings panel (210). */
+#leaderboardSlot { position: relative; z-index: 205; }
 
 .career-eyebrow,
 .career-stat > span,
@@ -11,7 +13,7 @@
 }
 
 .career-backdrop {
-  position: fixed; inset: 0; z-index: 160; display: grid; place-items: center;
+  position: fixed; inset: 0; z-index: 205; display: grid; place-items: center;
   padding: 26px; pointer-events: auto;
   background: radial-gradient(900px 520px at 50% 35%, #153b214f, transparent 72%), #020503ed;
   backdrop-filter: blur(10px);
