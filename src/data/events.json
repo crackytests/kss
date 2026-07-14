@@ -1,0 +1,50 @@
+{
+  "_comment": "Live world-event tuning. WS-J owns this file. Weights are relative; durations in ticks.",
+  "baseChancePerTick": 0.055,
+  "maxConcurrent": 2,
+  "minGapTicks": 6,
+  "earliestTick": 5,
+  "defs": [
+    {
+      "id": "viral",
+      "weight": 30,
+      "minDur": 8,
+      "maxDur": 12,
+      "viewersMultMin": 2.0,
+      "viewersMultMax": 4.0,
+      "controversyAdd": 15,
+      "riskRateMult": 1.5
+    },
+    {
+      "id": "raid",
+      "weight": 20,
+      "minDur": 8,
+      "maxDur": 12,
+      "movedShare": 0.6
+    },
+    {
+      "id": "drama_wave",
+      "weight": 15,
+      "minDur": 8,
+      "maxDur": 12,
+      "minControversy": 40,
+      "controversyAdd": 20,
+      "riskRateMult": 1.3,
+      "viewersMult": 1.4
+    },
+    {
+      "id": "dead_hours",
+      "weight": 15,
+      "minDur": 6,
+      "maxDur": 10,
+      "viewersMult": 0.6
+    },
+    {
+      "id": "category_boom",
+      "weight": 20,
+      "minDur": 8,
+      "maxDur": 12,
+      "viewersMult": 1.8
+    }
+  ]
+}

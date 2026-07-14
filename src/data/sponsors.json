@@ -1,0 +1,37 @@
+[
+  {
+    "id": "stake",
+    "name": "Stake",
+    "kind": "gambling",
+    "demand": "featureTag",
+    "tag": "stake",
+    "blurb": "Keep at least one Stake-tagged gambling stream featured at all times.",
+    "graceTicks": 5,
+    "failTicks": 20,
+    "warningEveryTicks": 5,
+    "warningReputationPenalty": 4,
+    "dropMoneyPenalty": 1500,
+    "dropReputationPenalty": 40,
+    "terminal": true,
+    "payoutPerShift": 300,
+    "color": "#f5a623"
+  },
+  {
+    "id": "brightfizz",
+    "name": "BrightFizz Energy",
+    "kind": "family",
+    "demand": "featureCategoryAvoidGambling",
+    "wantsTag": "wholesome",
+    "avoidAdjacentTag": "gambling",
+    "blurb": "Wants a wholesome stream featured — and hates gambling in the slot next to it.",
+    "graceTicks": 8,
+    "failTicks": 30,
+    "warningEveryTicks": 5,
+    "warningReputationPenalty": 2,
+    "dropMoneyPenalty": 650,
+    "dropReputationPenalty": 15,
+    "terminal": false,
+    "payoutPerShift": 500,
+    "color": "#18c3fc"
+  }
+]

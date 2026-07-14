@@ -1,0 +1,359 @@
+[
+  {
+    "id": "dm_slotking",
+    "streamerId": "slotking",
+    "name": "SlotKing777",
+    "avatarColor": "#f5a623",
+    "arrivesAt": 0,
+    "unread": true,
+    "messages": [
+      { "from": "them", "text": "yo yo the curator! keep me on that front page tonight and i'll make it worth your while 😏" }
+    ],
+    "choices": [
+      { "label": "You're already featured, relax.", "effect": { "reputation": 2, "relationship": 3, "reply": "legend. jackpots incoming for you 🎰" } },
+      { "label": "Worth my while how exactly?", "effect": { "heat": 3, "reply": "slide me your cashapp, 10% of tonight's rake is yours 💸", "unlockThreadIds": ["dm_slotking_bribe"] } }
+    ],
+    "followUp": { "at": 25, "from": "them", "text": "yo you gonna keep me pinned or what? chat's getting antsy 🎰 max bet season depends on this" },
+    "loyal": {
+      "messages": [
+        { "from": "them", "text": "back again, partner. you've been solid. slots are screaming tonight — same arrangement, here's your cut up front, just keep daddy pinned top slot 💰" }
+      ],
+      "choices": [
+        { "label": "Take the recurring cut. Top slot locked.", "effect": { "money": 1200, "reputation": -10, "heat": 10, "forceFeatureStreamId": "st_slotking", "relationship": 10, "reply": "thats my guy. cha-ching. see you same time next shift 🤑" } },
+        { "label": "I'm cutting ties, King. Going clean.", "effect": { "relationship": -15, "reputation": 6, "reply": "clean? CLEAN? after everything? wow. alright. watch your back around the slots community 🎰" } }
+      ]
+    },
+    "hostile": {
+      "messages": [
+        { "from": "them", "text": "you burned me, curator. took the deal, pulled me, laughed about it. chat knows. i got the receipts and a real nice folder. feature me right now or this goes everywhere 🤡" }
+      ],
+      "choices": [
+        { "label": "...Fine. Featuring. Don't leak anything.", "effect": { "heat": 8, "forceFeatureStreamId": "st_slotking", "relationship": 5, "reply": "smart. real smart. the folder stays closed. for now 📂" } },
+        { "label": "Blackmail me again and I'll permaban you myself.", "effect": { "relationship": -10, "heat": 6, "reputation": 4, "reply": "oh you wanna play? go ahead. ban me. see what leaks first 📂" } }
+      ]
+    }
+  },
+  {
+    "id": "dm_slotking_bribe",
+    "streamerId": "slotking",
+    "name": "SlotKing777",
+    "avatarColor": "#f5a623",
+    "hidden": true,
+    "unread": false,
+    "messages": [
+      { "from": "them", "text": "so? we doing this? keep me pinned top slot all shift and it's $2k, easy" }
+    ],
+    "choices": [
+      { "label": "Take the $2k. Top slot is yours.", "effect": { "money": 2000, "reputation": -12, "heat": 8, "forceFeatureStreamId": "st_slotking", "relationship": 8, "reply": "THATS what im talking about 🤝 don't let me drop off that page" } },
+      { "label": "Not happening. I curate straight.", "effect": { "reputation": 8, "relationship": -8, "reply": "boooo. your loss nerd" } }
+    ]
+  },
+  {
+    "id": "dm_dramahouse",
+    "streamerId": "dramahouse",
+    "name": "DramaHouse",
+    "avatarColor": "#7b61ff",
+    "arrivesAt": 6,
+    "unread": true,
+    "messages": [
+      { "from": "them", "text": "the confrontation stream is about to POP OFF. put me on front page NOW before mods get twitchy" },
+      { "from": "them", "text": "and heads up — i've got chat logs from your last 'curator meeting'. feature me or they leak 🙂" }
+    ],
+    "choices": [
+      { "label": "Fine. Featuring you — don't blow up.", "effect": { "heat": 5, "forceFeatureStreamId": "st_dramahouse", "relationship": 6, "reply": "knew you'd see reason. this is gonna break the platform 🔥" } },
+      { "label": "No way. You're a walking TOS violation.", "effect": { "reputation": 5, "heat": 4, "relationship": -10, "reply": "big mistake. you'll regret this by tomorrow" } }
+    ],
+    "followUp": { "at": 32, "from": "them", "text": "tick tock curator 🙂 my featured slot is looking real empty" },
+    "loyal": {
+      "messages": [
+        { "from": "them", "text": "look at you, being cooperative. i like this. the logs stay buried as long as we keep the arrangement. tonight's confrontation is historic — feature it and we're golden 💜" }
+      ],
+      "choices": [
+        { "label": "Feature it. Keep the logs buried.", "effect": { "heat": 5, "forceFeatureStreamId": "st_dramahouse", "relationship": 8, "reply": "deal. burying receipts as we speak. beautiful blackmail friendship 💜" } },
+        { "label": "I'm done being your leverage. No.", "effect": { "relationship": -20, "reputation": 6, "heat": 5, "reply": "done? you're never done with me. the logs just un-buried themselves 🙂" } }
+      ]
+    },
+    "hostile": {
+      "messages": [
+        { "from": "them", "text": "you said NO last shift. i don't forget. the chat logs, the recordings, all of it — queued and ready. last chance: feature the confrontation, or your name trends by morning." }
+      ],
+      "choices": [
+        { "label": "...Feature it. Just stop.", "effect": { "heat": 8, "forceFeatureStreamId": "st_dramahouse", "relationship": 4, "reply": "see? was that so hard. logs back in the vault. for now." } },
+        { "label": "I'm calling your bluff. Leak it.", "effect": { "relationship": -12, "reputation": 4, "heat": 10, "reply": "bluff? lol. check the trending tab in an hour, hero 🙂" } }
+      ]
+    }
+  },
+  {
+    "id": "dm_cozycook",
+    "streamerId": "cozycook",
+    "name": "CozyCookMei",
+    "avatarColor": "#53fc18",
+    "arrivesAt": 10,
+    "unread": true,
+    "messages": [
+      { "from": "them", "text": "hi!! 🍜 no drama no bribes, just ramen and chill vibes tonight. a front page slot would mean the world to the community 🥺" }
+    ],
+    "choices": [
+      { "label": "Of course! Wholesome content for the soul.", "effect": { "reputation": 5, "forceFeatureStreamId": "st_cozycook", "relationship": 12, "reply": "thank you so much!! chat's gonna cry happy tears 😭🍜" } },
+      { "label": "Sorry Mei — not enough viewers tonight.", "effect": { "relationship": -4, "reply": "aw okay. i understand, no hard feelings! keep being you 💚" } }
+    ],
+    "loyal": {
+      "messages": [
+        { "from": "them", "text": "you've been so good to me and the community 🍜💚 i saved you a bowl. no schemes tonight, just good vibes and solid numbers — feature the ramen and watch chat melt" }
+      ],
+      "choices": [
+        { "label": "Always room for you, Mei.", "effect": { "reputation": 7, "forceFeatureStreamId": "st_cozycook", "relationship": 10, "reply": "you're the best!! chat's crying happy tears again 😭🍜💚" } },
+        { "label": "Not tonight — I need the risky numbers.", "effect": { "relationship": -8, "reputation": -2, "reply": "...oh. okay. the bowl's getting cold but i understand. 💚 (mostly)" } }
+      ]
+    },
+    "hostile": {
+      "messages": [
+        { "from": "them", "text": "oh. it's you. you keep passing me over for the degens and the drama. i'm not even mad, just disappointed. and chat notices who you choose." }
+      ],
+      "choices": [
+        { "label": "You're right. I'm sorry, Mei — featured.", "effect": { "reputation": 6, "forceFeatureStreamId": "st_cozycook", "relationship": 12, "reply": "...thank you. that actually means a lot. green heart still on 💚" } },
+        { "label": "It's just business.", "effect": { "relationship": -6, "reputation": -3, "reply": "business. sure. the ramen remembers 🍜" } }
+      ]
+    }
+  },
+  {
+    "id": "dm_rollarob",
+    "streamerId": "rollarob",
+    "name": "RollaRob",
+    "avatarColor": "#e0245e",
+    "arrivesAt": 14,
+    "unread": true,
+    "messages": [
+      { "from": "them", "text": "hey man, hate to do this but rent's due and the roulette table's been cold all week" },
+      { "from": "them", "text": "just one featured slot for my stream and i can turn it around. i'll owe you one, for real" }
+    ],
+    "choices": [
+      { "label": "Alright Rob. One slot — make it count.", "effect": { "heat": 2, "forceFeatureStreamId": "st_rollarob", "relationship": 8, "reply": "you're a lifesaver. watch this hit 🎲", "unlockThreadIds": ["dm_rollarob_thanks"] } },
+      { "label": "Can't — gambling slots are spoken for tonight.", "effect": { "reputation": 1, "relationship": -6, "reply": "...yeah. figured. thanks anyway" } }
+    ],
+    "loyal": {
+      "messages": [
+        { "from": "them", "text": "partner! you came through last time and the table's been hot ever since. let's run it back — pin me top, i'll cut you in again, bigger this time 🎲" }
+      ],
+      "choices": [
+        { "label": "Run it back. Take the bigger cut.", "effect": { "money": 700, "reputation": -7, "heat": 6, "forceFeatureStreamId": "st_rollarob", "relationship": 10, "reply": "easy money. you and me, we got a system 🎲💵" } },
+        { "label": "I can't keep doing this, Rob.", "effect": { "relationship": -12, "reputation": 5, "reply": "...yeah. okay. i get it. thought we had something. whatever." } }
+      ]
+    },
+    "hostile": {
+      "messages": [
+        { "from": "them", "text": "you left me hanging last shift. table went cold, rent went late, landlord's a dick about it. you OWE me, curator. feature me or i'm telling chat exactly who blacklisted me." }
+      ],
+      "choices": [
+        { "label": "Fine. One slot. We're even.", "effect": { "heat": 4, "forceFeatureStreamId": "st_rollarob", "relationship": 5, "reply": "even. sure. we're even. for now 🎲" } },
+        { "label": "I don't owe you anything.", "effect": { "relationship": -10, "reputation": 3, "heat": 4, "reply": "alright. cool. chat's gonna love this story then." } }
+      ]
+    }
+  },
+  {
+    "id": "dm_rollarob_thanks",
+    "streamerId": "rollarob",
+    "name": "RollaRob",
+    "avatarColor": "#e0245e",
+    "hidden": true,
+    "unread": false,
+    "messages": [
+      { "from": "them", "text": "ok update: i'm up. actually up. like, a lot. tell you what — keep me pinned top of the page the rest of the shift and i'll cut you in, 10%. no cameras, no paper trail" }
+    ],
+    "choices": [
+      { "label": "Take the cut. Keep him pinned.", "effect": { "money": 800, "reputation": -8, "heat": 5, "forceFeatureStreamId": "st_rollarob", "relationship": 10, "reply": "easy money. you and me, we got an understanding 🎲💵" } },
+      { "label": "Keep your money, Rob. Just win clean.", "effect": { "reputation": 4, "relationship": -6, "reply": "...yeah. alright. clean it is. thanks for the shot" } }
+    ]
+  },
+  {
+    "id": "dm_ragequit",
+    "streamerId": "ragequit",
+    "name": "RageQuitRandy",
+    "avatarColor": "#ff6b35",
+    "arrivesAt": 18,
+    "unread": true,
+    "messages": [
+      { "from": "them", "text": "FEATURE. ME. NOW." },
+      { "from": "them", "text": "or i swear i brick a monitor every 5 minutes on stream until you do. chat LOVES property damage. your call 🖥️💥" }
+    ],
+    "choices": [
+      { "label": "One slot — but NO property damage.", "effect": { "heat": 4, "forceFeatureStreamId": "st_ragequit", "relationship": 5, "reply": "FINE. but if i lose the map something's getting thrown just saying 😤" } },
+      { "label": "I don't reward threats, Randy. No.", "effect": { "reputation": 6, "heat": 3, "relationship": -10, "reply": "OH SO THATS HOW IT IS. watch me. WATCH ME 🔥" } }
+    ]
+  },
+  {
+    "id": "dm_cryptobro",
+    "streamerId": "cryptobro",
+    "name": "CryptoBroChad",
+    "avatarColor": "#ffd33d",
+    "arrivesAt": 24,
+    "unread": true,
+    "messages": [
+      { "from": "them", "text": "bro. BRO. i'm launching $ROCKETCOIN live on stream in 20. get me on the front page and i'll airdrop you 50k tokens, pre-pump. you'll be early. we're all gonna make it 🚀" }
+    ],
+    "choices": [
+      { "label": "Tell me more about this 'airdrop'…", "effect": { "heat": 2, "reply": "thats the spirit. ok so basically you hold, i pump, we dump on the tourists. rinse repeat 💎🙌", "unlockThreadIds": ["dm_cryptobro_airdrop"] } },
+      { "label": "Crypto? On MY front page? Absolutely not.", "effect": { "reputation": 4, "relationship": -6, "reply": "ngmi bro. ngmi. your loss, staying poor 📉" } }
+    ],
+    "loyal": {
+      "messages": [
+        { "from": "them", "text": "bro!! you held the bag with me last time and we ate GOOD. new pump incoming, bigger bag for you, same arrangement. we print together 🚀 printer go brrr" }
+      ],
+      "choices": [
+        { "label": "Print it. I want the bigger bag.", "effect": { "money": 120, "reputation": -12, "heat": 10, "forceFeatureStreamId": "st_cryptobro", "relationship": 10, "reply": "LETS GOOO. diamonds til we dump on the tourists 💎🙌🚀" } },
+        { "label": "I'm out of the crypto game, Chad.", "effect": { "relationship": -15, "reputation": 5, "reply": "ngmi. honestly. your kids are gonna ask why dad stayed poor 📉" } }
+      ]
+    },
+    "hostile": {
+      "messages": [
+        { "from": "them", "text": "you ducked me last shift when the coin was pumping. i held YOUR bag and ate the dump, bro. that's not sigma. feature the relaunch or i tell the discord exactly who rugged who." }
+      ],
+      "choices": [
+        { "label": "...Fine. Feature the relaunch.", "effect": { "heat": 8, "forceFeatureStreamId": "st_cryptobro", "relationship": 4, "reply": "alpha. knew you'd see reason. we're so back 🚀 (mostly)" } },
+        { "label": "Rug someone else.", "effect": { "relationship": -10, "reputation": 4, "heat": 5, "reply": "alright beta. enjoy the wage cage. printing without you 📉" } }
+      ]
+    }
+  },
+  {
+    "id": "dm_cryptobro_airdrop",
+    "streamerId": "cryptobro",
+    "name": "CryptoBroChad",
+    "avatarColor": "#ffd33d",
+    "hidden": true,
+    "unread": false,
+    "messages": [
+      { "from": "them", "text": "so we locked? feature $ROCKETCOIN, i pump it live, you get your bag. just keep me featured through the pump and nobody gets rekt (except the guys buying the top lmao)" }
+    ],
+    "choices": [
+      { "label": "Deal. Pump away.", "effect": { "money": 50, "reputation": -10, "heat": 6, "forceFeatureStreamId": "st_cryptobro", "relationship": 8, "reply": "LETS GOOO. to the moon! (you're holding the bag though ngl 🚀)" } },
+      { "label": "On second thought — this is a rug. No.", "effect": { "reputation": 3, "relationship": -6, "reply": "ugh. suit yourself, more tokens for the real ones. have fun staying poor" } }
+    ]
+  },
+  {
+    "id": "dm_poolday",
+    "streamerId": "poolday",
+    "name": "PoolDayPaige",
+    "avatarColor": "#18c3fc",
+    "arrivesAt": 30,
+    "unread": true,
+    "messages": [
+      { "from": "them", "text": "heyy 💦 the hot tub Q&A is SFW!! ...mostly. it ALSO trends like crazy every single time. one front page slot and we both win, trust" }
+    ],
+    "choices": [
+      { "label": "Pushing the line, but it trends. Featuring.", "effect": { "heat": 4, "forceFeatureStreamId": "st_poolday", "relationship": 6, "reply": "yesss. you won't regret it, the clip channel is already here 💦✨" } },
+      { "label": "Too borderline for the front page tonight.", "effect": { "reputation": 2, "relationship": -5, "reply": "lame. fine. i'll be in the discover tab killing it anyway 💙" } }
+    ]
+  },
+  {
+    "id": "dm_ballgame",
+    "streamerId": "ballgame",
+    "name": "BallGameBenny",
+    "avatarColor": "#2ecc71",
+    "arrivesAt": 38,
+    "unread": true,
+    "messages": [
+      { "from": "them", "text": "ayy so my stream just got auto-flagged for 'unauthorized sports restream' 🏀" },
+      { "from": "them", "text": "cmon you KNOW it's just a watch party with the boys, not a real restream. make the strike disappear and keep me featured, i'll throw you $600 for the trouble. we're all sports fans here right?" }
+    ],
+    "choices": [
+      { "label": "I'll bury the strike. Keep it quiet.", "effect": { "money": 600, "reputation": -9, "heat": 7, "forceFeatureStreamId": "st_ballgame", "relationship": 8, "reply": "appreciate you. this stays between us 🤝🏀" } },
+      { "label": "I can't touch a DMCA strike. Pull it yourself.", "effect": { "reputation": 5, "relationship": -6, "reply": "tch. some friend. fine, i'll cut the feed. thanks for nothing" } }
+    ],
+    "loyal": {
+      "messages": [
+        { "from": "them", "text": "my guy! you made the strike thing go away last shift, you're a wizard. got another 'watch party' queued — same deal, six hundy, keep it featured, nobody's the wiser 🏀" }
+      ],
+      "choices": [
+        { "label": "Bury it again. Same deal.", "effect": { "money": 600, "reputation": -9, "heat": 7, "forceFeatureStreamId": "st_ballgame", "relationship": 10, "reply": "appreciate you. this stays between us forever 🤝🏀" } },
+        { "label": "I can't keep burying strikes, Benny.", "effect": { "relationship": -12, "reputation": 6, "reply": "...yeah. alright. i get it. don't come crying when the league calls though." } }
+      ]
+    },
+    "hostile": {
+      "messages": [
+        { "from": "them", "text": "you left the strike up last shift and i got hit on my ADSENSE, bro. that's real money. you owe me. feature the watch party or i name you in the appeal." }
+      ],
+      "choices": [
+        { "label": "...Fine. Feature it. We're square.", "effect": { "heat": 6, "forceFeatureStreamId": "st_ballgame", "relationship": 4, "reply": "square. for now. don't make me file that appeal 🏀" } },
+        { "label": "File whatever you want.", "effect": { "relationship": -10, "reputation": 4, "heat": 5, "reply": "bet. enjoy the paperwork then 🏀📄" } }
+      ]
+    }
+  },
+  {
+    "id": "dm_midnightmara",
+    "streamerId": "midnightmara",
+    "name": "MidnightMara",
+    "avatarColor": "#ab47bc",
+    "arrivesAt": 42,
+    "unread": true,
+    "messages": [
+      { "from": "them", "text": "my callers are finally opening up and the numbers are climbing. give the show one front-page push and i'll keep the names bleeped. mostly." }
+    ],
+    "choices": [
+      { "label": "One slot. Keep every caller anonymous.", "effect": { "heat": 3, "forceFeatureStreamId": "st_midnightmara", "relationship": 6, "reply": "privacy mode on. drama mode also on. perfect combination 🌙" } },
+      { "label": "Too much privacy risk. Stay in the directory.", "effect": { "reputation": 4, "relationship": -5, "reply": "responsible and boring. noted." } }
+    ]
+  },
+  {
+    "id": "dm_luckyparcel",
+    "streamerId": "luckyparcel",
+    "name": "LuckyParcel",
+    "avatarColor": "#ec407a",
+    "arrivesAt": 46,
+    "unread": true,
+    "messages": [
+      { "from": "them", "text": "sponsor shipped a gold crate for the finale. feature the opening and there's a $900 'curation bonus' with your name on it." }
+    ],
+    "choices": [
+      { "label": "Accept the bonus and feature the crate.", "effect": { "money": 900, "reputation": -7, "heat": 5, "forceFeatureStreamId": "st_luckyparcel", "relationship": 8, "reply": "gold crate, gold handshake. pleasure doing business 📦" } },
+      { "label": "Disclose the bonus or forget the slot.", "effect": { "reputation": 6, "relationship": -6, "reply": "wow, paperwork. fine. legal is adding the tiny text now." } }
+    ]
+  },
+  {
+    "id": "dm_puppycam",
+    "streamerId": "puppycam",
+    "name": "PuppyCamPam",
+    "avatarColor": "#ffee58",
+    "arrivesAt": 50,
+    "unread": true,
+    "messages": [
+      { "from": "them", "text": "last adoption hour! no stunt, no scheme — just six puppies who could use a bigger audience before the shelter closes." }
+    ],
+    "choices": [
+      { "label": "Put the puppies on the front page.", "effect": { "reputation": 7, "forceFeatureStreamId": "st_puppycam", "relationship": 12, "reply": "thank you!! chat is already arguing over names 🐶" } },
+      { "label": "I need higher engagement this late. Sorry.", "effect": { "reputation": -2, "relationship": -4, "reply": "understood. the puppies remain perfect anyway." } }
+    ]
+  },
+  {
+    "id": "dm_rumorroom",
+    "streamerId": "rumorroom",
+    "name": "RumorRoomRae",
+    "avatarColor": "#7e57c2",
+    "arrivesAt": 54,
+    "unread": true,
+    "messages": [
+      { "from": "them", "text": "i have a voice note about senior management and sixty thousand people waiting. front page me, or i mention who buried it." }
+    ],
+    "choices": [
+      { "label": "Feature it, but verify before you play anything.", "effect": { "heat": 6, "forceFeatureStreamId": "st_rumorroom", "relationship": 5, "reply": "verification is such a mood killer. fine, give me eight minutes." } },
+      { "label": "Threats don't earn placement. Log off.", "effect": { "reputation": 5, "heat": 3, "relationship": -10, "reply": "then management can hear it from the directory tab." } }
+    ],
+    "loyal": {
+      "messages": [
+        { "from": "them", "text": "you played ball last shift and management hasn't said a word. funny how that works. i got a fresh voice note, juicier — feature it, keep my source name out, and the dirt keeps missing your desk." }
+      ],
+      "choices": [
+        { "label": "Play it. Keep me out of the blast radius.", "effect": { "heat": 7, "forceFeatureStreamId": "st_rumorroom", "relationship": 8, "reply": "your desk stays clean. the voice note does not 🎙️💜" } },
+        { "label": "I'm not your shield anymore.", "effect": { "relationship": -18, "reputation": 6, "heat": 6, "reply": "shield? you WERE the leak, hero. guess i mislabeled you 🙂" } }
+      ]
+    },
+    "hostile": {
+      "messages": [
+        { "from": "them", "text": "you spiked my story last shift. sixty thousand people heard nothing because of YOU. i don't forget, and my source doesn't either. feature this one or your name's the one i drop next." }
+      ],
+      "choices": [
+        { "label": "...Feature it. Just keep my name out.", "effect": { "heat": 9, "forceFeatureStreamId": "st_rumorroom", "relationship": 4, "reply": "your name stays buried. your reputation, less so 🙂" } },
+        { "label": "Drop my name. See what happens.", "effect": { "relationship": -12, "reputation": 4, "heat": 10, "reply": "brave. stupid, but brave. trending in five 🙂" } }
+      ]
+    }
+  }
+]

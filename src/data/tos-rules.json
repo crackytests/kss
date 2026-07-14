@@ -1,0 +1,40 @@
+{
+  "_comment": "Tuning knobs for the risk/TOS + gambling/economy systems. WS-C owns this file; WS-D reads the audit* keys (read-only). Values are satirical stand-ins for platform policy pressure.",
+
+  "auditRiskLine": 70,
+  "auditBaseChancePer10Heat": 0.02,
+  "tosBreakPenalty": { "reputation": -15, "heat": 20, "engagement": -50 },
+
+  "_sponsor": "Stake-slot requirement. graceTicks -> first soft warning; failTicks -> sponsor pulls out (hard fail).",
+  "sponsorGraceTicks": 5,
+  "sponsorFailTicks": 20,
+  "sponsorWarnReputationPenalty": 4,
+  "sponsorFailMoneyPenalty": 1500,
+  "sponsorFailReputationPenalty": 40,
+
+  "_economy": "engagementScale tunes the canonical per-tick engagement formula down to fit the 2500 quota (see CONTRACTS.md §2 contract-change log). Jackpot engagement is also multiplied by engagementScale so all engagement stays on one scale; jackpot money is not.",
+  "engagementScale": 0.4,
+  "jackpotEngagementFactor": 0.5,
+  "jackpotMoneyFactor": 1.0,
+
+  "_payout": "End-of-shift money = jackpot winnings (accrued in-shift) + salary + quotaClearBonus - penaltyPerTosBreak*breaks, reputation-weighted salary.",
+  "salaryBase": 400,
+  "salaryReputationBonusMax": 400,
+  "quotaClearBonus": 300,
+  "penaltyPerTosBreak": 120,
+  "cleanShiftReputationBonus": 3,
+
+  "_difficulty": "Each cleared shift compounds quota, authored stream risk rates, AND stream viewers (S3.0 audience inflation — supply grows with demand so the curve is a gradient, not the old shift-6 wall). wonAtShift: clearing this shift = victory (phase 'won'); endless continues after. Three public TOS breaks in one shift is an immediate firing.",
+  "quotaGrowthPerShift": 1.24,
+  "riskRateGrowthPerShift": 1.06,
+  "viewerGrowthPerShift": 1.11,
+  "wonAtShift": 10,
+  "maxTosBreaksPerShift": 3,
+
+  "violationTypes": [
+    { "id": "gambling_promo",  "label": "Unlabeled gambling promo",     "tags": ["gambling"] },
+    { "id": "edgy_irl",        "label": "IRL conduct violation",        "tags": ["edgy-irl", "controversial"] },
+    { "id": "restream",        "label": "Unauthorized restream (DMCA)", "tags": ["restream-risk"] },
+    { "id": "harassment",      "label": "Targeted harassment",          "tags": ["drama", "rage"] }
+  ]
+}

@@ -1,0 +1,65 @@
+/* JUICE — additive visual feedback owned by WS-H (see docs/BUILD_PLAN.md → Sprint 2).
+ *
+ * These effects are opt-in via classes that engine/audio.js toggles on DOM the
+ * other workstreams already render (this file may not edit their JS/CSS):
+ *   - .stat b.juice-pop     → a HUD stat value popped because it changed
+ *   - .risk-fill.juice-danger → a front-page risk meter near its TOS threshold
+ *   - body.juice-shake      → a brief screen-shake on tos_break / audit
+ *
+ * All motion is disabled under prefers-reduced-motion (see block at the bottom).
+ * Nothing here changes layout, box model, or structure owned by theme.css /
+ * board.css / discord.css / shop.css — only transient transforms/shadows.
+ *
+ * NOTE ON REACH: a purely CSS-only "near threshold" pulse isn't expressible,
+ * because board.css encodes the risk fill's danger purely as an inline color +
+ * width with no class hook. So engine/audio.js reads state and toggles the
+ * .juice-danger class here. Likewise the number-pop and shake are class-driven
+ * from audio.js. That keeps every effect inside WS-H's two files. */
+
+/* ---- number-pop: a stat value briefly scales + glows when it changes ---- */
+.stat b.juice-pop {
+  animation: juice-pop 0.32s cubic-bezier(0.2, 0.9, 0.25, 1.2);
+  /* transform-origin keeps the pop centred on the digits without nudging layout */
+  display: inline-block;
+  transform-origin: center;
+}
+@keyframes juice-pop {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.28); color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+  100% { transform: scale(1); }
+}
+
+/* ---- meter pulse: risk fill breathes when a stream nears its TOS threshold ---- */
+.risk-fill.juice-danger {
+  animation: juice-meter 0.7s ease-in-out infinite;
+}
+@keyframes juice-meter {
+  0%, 100% { box-shadow: 0 0 0 0 transparent; filter: brightness(1); }
+  50%      { box-shadow: 0 0 10px 1px var(--bad); filter: brightness(1.35); }
+}
+
+/* ---- screen-shake: whole viewport jolts on a TOS break / audit ---- */
+body.juice-shake {
+  animation: juice-shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+@keyframes juice-shake {
+  10%, 90% { transform: translate3d(-2px, 0, 0); }
+  20%, 80% { transform: translate3d(3px, -1px, 0); }
+  30%, 50%, 70% { transform: translate3d(-5px, 1px, 0); }
+  40%, 60% { transform: translate3d(5px, -1px, 0); }
+}
+
+/* ---- accessibility: honour reduced-motion by neutralising every animation.
+ * The classes still get toggled (harmless), they just don't move anything. ---- */
+@media (prefers-reduced-motion: reduce) {
+  .stat b.juice-pop,
+  .risk-fill.juice-danger,
+  body.juice-shake {
+    animation: none !important;
+    transform: none !important;
+  }
+  /* Keep a non-motion danger cue for the meter so the signal isn't lost. */
+  .risk-fill.juice-danger {
+    box-shadow: 0 0 6px 1px var(--bad) !important;
+  }
+}

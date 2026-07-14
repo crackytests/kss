@@ -1,0 +1,61 @@
+[
+  {
+    "id": "crackdown",
+    "name": "Crackdown",
+    "icon": "🚨",
+    "tone": "bad",
+    "blurb": "A regulator has discovered the refresh button and a deeply personal interest in your front page.",
+    "summary": "Audit chance ×2 · heat cooling reduced to 35%",
+    "effects": {
+      "auditChanceMultiplier": 2,
+      "heatCoolingMultiplier": 0.35
+    }
+  },
+  {
+    "id": "gold_rush",
+    "name": "Gold Rush",
+    "icon": "🤑",
+    "tone": "good",
+    "blurb": "Every gambling stream claims the machine is hot. Statistically dubious; commercially magnificent.",
+    "summary": "Jackpot chance ×2 · jackpot payouts +50%",
+    "effects": {
+      "jackpotChanceMultiplier": 2,
+      "jackpotPayoutMultiplier": 1.5
+    }
+  },
+  {
+    "id": "drama_week",
+    "name": "Drama Week",
+    "icon": "🍿",
+    "tone": "bad",
+    "blurb": "Everyone has receipts, nobody has context, and the clip accounts are doing unpaid overtime.",
+    "summary": "Every stream starts with +20 controversy",
+    "effects": {
+      "controversyAdd": 20
+    }
+  },
+  {
+    "id": "sponsor_war",
+    "name": "Sponsor War",
+    "icon": "⚔️",
+    "tone": "bad",
+    "blurb": "The brands doubled the cheque and halved their emotional regulation. Keep every logo smiling.",
+    "summary": "Sponsor payouts ×2 · sponsor patience halved",
+    "effects": {
+      "sponsorPayoutMultiplier": 2,
+      "sponsorPatienceMultiplier": 0.5
+    }
+  },
+  {
+    "id": "slow_news_day",
+    "name": "Slow News Day",
+    "icon": "🥱",
+    "tone": "neutral",
+    "blurb": "The internet is outside touching grass. Revolting behaviour, but finance adjusted the target.",
+    "summary": "Viewers −25% · engagement quota −20%",
+    "effects": {
+      "viewerMultiplier": 0.75,
+      "quotaMultiplier": 0.8
+    }
+  }
+]

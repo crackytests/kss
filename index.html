@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kick Staff Simulator</title>
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/stream-incident-a-beat1.png" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/stream-incident-a-beat2.png" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/stream-incident-b-beat1.png" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/stream-incident-b-beat2.png" />
+  <link rel="stylesheet" href="src/styles/theme.css?v=2" />
+  <link rel="stylesheet" href="src/styles/board.css" />
+  <link rel="stylesheet" href="src/styles/discord.css" />
+  <link rel="stylesheet" href="src/styles/shop.css" />
+  <link rel="stylesheet" href="src/styles/sponsor.css" />
+  <link rel="stylesheet" href="src/styles/leaderboard.css?v=2" />
+  <link rel="stylesheet" href="src/styles/juice.css" />
+</head>
+<body>
+  <header id="hud"></header>
+  <!-- Sprint 2 mount slots. Each is fully owned by its workstream (content +
+       visibility). Lead exposes them empty so no WS rewrites another's UI file. -->
+  <div id="sponsorSlot"></div>   <!-- WS-G: sponsor demands bar -->
+
+  <main id="app">
+    <section id="browse" class="pane" aria-label="Live directory"></section>
+    <section id="frontpage" class="pane" aria-label="Front page"></section>
+    <section id="discord" class="pane" aria-label="Discord DMs"></section>
+  </main>
+
+  <div id="toasts" aria-live="polite"></div>
+  <div id="shiftOverlay" class="shift-overlay" hidden></div>
+  <div id="shopSlot"></div>          <!-- WS-E: perks shop (shown between shifts) -->
+  <div id="leaderboardSlot"></div>   <!-- WS-I: leaderboard / career screen -->
+
+  <script type="module" src="src/main.js?v=2"></script>
+</body>
+</html>
