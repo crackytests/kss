@@ -56,6 +56,7 @@ function render(root) {
       <div class="title-actions title-actions--minor">
         <button data-title-ledger>📊 Career Ledger</button>
         <button data-title-settings>⚙️ Settings</button>
+        <a class="title-menu-link" href="https://crackyreads.com/our-games" target="_blank" rel="noopener noreferrer">🎮 More games ↗</a>
       </div>
 
       <div class="title-foot">Best on desktop · progress saves in this browser</div>
