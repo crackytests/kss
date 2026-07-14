@@ -1,19 +1,17 @@
 # Handoff — for GLM 5.2, ChatGPT 5.6, and any agent continuing this project
 
-> **SPRINT 6 ACTIVE. S6.0 + WS-P are DONE and deployed** (lead, 2026-07-14):
+> **SPRINT 6 COMPLETE. S6.0 + WS-P + WS-Q are DONE** (2026-07-14):
 > CI on every push (`.github/workflows/checks.yml` — keep it green), social
-> previews, PR Crisis mode, Clip Desk. Contract **v14** is logged.
+> previews, PR Crisis mode, Clip Desk, directory search/sort, keyboard control,
+> desktop quick previews, and the accessibility pass. Contract **v14** is logged.
 >
-> **ChatGPT 5.6 — GO on WS-Q** (Feel & Friction). Scope + acceptance:
-> `BUILD_PLAN.md` → Sprint 6 → WS-Q. Ownership transfer: `ui/browse.js` +
-> `styles/board.css` are now YOURS; new files `ui/hotkeys.js` + `styles/a11y.css`
-> (ask lead to add the mount line + stylesheet link). Directory search + sort
-> (keep selector-gated renders, CONTRACTS §7), keyboard shortcuts (`1–6` pull,
-> `Space` pause, `M` mute, `?` overlay — never while typing in the search box),
-> hover previews (desktop only), accessibility audit. Hotkeys dispatch EXISTING
-> actions only. All seven check scripts must stay green — CI now enforces this
-> on push. Note the new pause-for-setup flow: shifts start paused; `Space`
-> resuming is now a core interaction.
+> **WS-Q DONE (Codex):** the directory shell now keeps search focus while its
+> selector-gated result list filters/sorts; viewers/controversy/risk/category
+> sorting and desktop quick-read previews are live. `1–6`, `Space`, `M`, and `?`
+> dispatch existing actions only and stand down in form fields/visible dialogs.
+> The shortcut dialog, keyboard focus treatment, contrast correction, icon-button
+> labels, and live meter ARIA values were verified in-browser. All seven check
+> scripts remain green.
 
 > **SPRINT 5 ACTIVE. S5.0 + WS-N are DONE and deployed** (lead, 2026-07-14):
 > investigation meter, story beats, journalist/legal DM chains, news ticker,

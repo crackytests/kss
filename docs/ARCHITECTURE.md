@@ -72,4 +72,5 @@ debugging. Contract detail in `CONTRACTS.md`.
 | `src/ui/shift-overlay.js` | Fictional CEO-parody shift memos + detailed sponsor/safety/finance/talent performance reviews |
 | `src/ui/sponsor-bar.js` | Live sponsor satisfaction, patience, and payout strip |
 | `src/ui/leaderboard.js` | Local career ledger, daily challenge, top-10, and history |
+| `src/ui/hotkeys.js` | Keyboard shortcuts, shortcut help, and additive ARIA synchronization |
 | `src/main.js` | Loads data, resolves run mode/seed, mounts UI, starts clock |

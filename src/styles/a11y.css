@@ -1,0 +1,75 @@
+/* WS-Q — accessibility, focus visibility, contrast, and shortcut overlay. */
+:root {
+  /* 6.9:1+ against the primary panel surfaces; still visually secondary. */
+  --muted: #a6b8ac;
+}
+
+.sr-only {
+  position: absolute !important; width: 1px !important; height: 1px !important;
+  padding: 0 !important; margin: -1px !important; overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important;
+}
+
+button, input, select, textarea { min-height: 34px; }
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--bg);
+}
+input::placeholder { opacity: 1; }
+
+.hotkey-help-trigger {
+  width: 36px; min-width: 36px; padding-inline: 0;
+  font: 900 16px/1 var(--mono); color: var(--accent);
+}
+
+.hotkey-dialog {
+  width: min(520px, calc(100vw - 28px)); max-height: calc(100vh - 28px);
+  padding: 0; overflow: auto; border: 1px solid var(--accent-dim);
+  border-radius: 12px; background: var(--panel-solid); color: var(--text);
+  box-shadow: 0 24px 80px #000d, inset 0 3px var(--accent);
+}
+.hotkey-dialog::backdrop { background: #050706d9; backdrop-filter: blur(3px); }
+.hotkey-dialog__head {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
+  padding: 18px 20px 14px; border-bottom: 1px solid var(--line); background: var(--panel-2);
+}
+.hotkey-dialog__head span {
+  color: var(--accent); font: 800 9px/1 var(--mono);
+  letter-spacing: .14em; text-transform: uppercase;
+}
+.hotkey-dialog__head h2 { margin: 5px 0 0; font-size: 22px; }
+.hotkey-dialog__head button { min-width: 38px; padding: 5px 10px; font-size: 22px; line-height: 1; }
+.hotkey-dialog > p { margin: 16px 20px 6px; color: var(--muted); }
+.hotkey-dialog > small { display: block; margin: 8px 20px 20px; color: var(--muted); }
+.hotkey-list { display: grid; gap: 7px; margin: 14px 20px; }
+.hotkey-list > div {
+  display: grid; grid-template-columns: minmax(120px, .65fr) 1fr; align-items: center; gap: 14px;
+  padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: #ffffff08;
+}
+.hotkey-list dt, .hotkey-list dd { margin: 0; }
+.hotkey-list dd { color: var(--muted); }
+kbd {
+  display: inline-block; min-width: 27px; padding: 4px 7px; border: 1px solid #5d7062;
+  border-bottom-width: 3px; border-radius: 5px; background: #0e130f;
+  color: var(--text); font: 800 11px/1 var(--mono); text-align: center;
+}
+
+@media (max-width: 520px) {
+  .hotkey-list > div { grid-template-columns: 1fr; gap: 7px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .directory-preview, .hotkey-dialog { scroll-behavior: auto; }
+}
+
+@media (forced-colors: active) {
+  .stream-card, .slot, .directory-preview, .hotkey-dialog, .hotkey-list > div {
+    border: 1px solid CanvasText;
+  }
+  .risk-fill, .preview-risk span { forced-color-adjust: none; background: Highlight !important; }
+}

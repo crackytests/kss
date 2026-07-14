@@ -617,7 +617,13 @@ Two systems that deepen the minute-to-minute.
 
 </details>
 
-### WS-Q · Feel & Friction — **ChatGPT 5.6** — *files: `ui/browse.js` (ownership transferred from lead), `styles/board.css` (transferred), new `ui/hotkeys.js`, `styles/a11y.css`*
+### WS-Q · Feel & Friction — **DONE (Codex, 2026-07-14)** — *files: `ui/browse.js` (ownership transferred from lead), `styles/board.css` (transferred), new `ui/hotkeys.js`, `styles/a11y.css`*
+Shipped & verified: a shell-stable search/sort directory that preserves typing
+focus, desktop quick-read risk previews, `1–6`/`Space`/`M`/`?` keyboard control,
+a discoverable native shortcut dialog, and additive ARIA/focus/contrast fixes.
+Live browser checks covered typing isolation, all shortcuts, keyboard featuring,
+slot pulling, preview/meter semantics, and modal focus. All seven CI scripts green.
+
 Remove every rough edge between the player and the decision.
 - **Directory search + sort**: text filter box; sort by viewers / controversy /
   risk / category. Keep the selector-gated render pattern (CONTRACTS §7).

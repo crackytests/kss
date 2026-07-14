@@ -2,7 +2,7 @@
 import { store } from './state/store.js';
 import { start } from './engine/clock.js';
 import { mountHud } from './ui/hud.js?v=2';
-import { mountBrowse } from './ui/browse.js?v=4';
+import { mountBrowse } from './ui/browse.js?v=5';
 import { mountFrontPage } from './ui/frontpage.js?v=2';
 import { mountDiscord } from './ui/discord.js';
 import { mountToasts } from './ui/toast.js?v=4';
@@ -18,6 +18,7 @@ import { mountTicker } from './ui/news-ticker.js';
 import { mountEnding } from './ui/ending.js';
 import { mountCrisis } from './ui/crisis.js';
 import { mountClipDesk } from './ui/clipdesk.js';
+import { mountHotkeys } from './ui/hotkeys.js';
 
 const RUN_CONFIG = getRunConfig();
 
@@ -63,6 +64,7 @@ async function boot() {
   mountClipDesk();   // WS-P: viral clip timing minigame
   mountTutorial();   // watches for the first real shift start (career.tutorialDone gates)
   mountTitle();      // topmost shell; must mount after the store hydrates career
+  mountHotkeys();    // WS-Q: shortcuts, help overlay, additive ARIA synchronization
 
   // Reset the first shift, then hold on its briefing until the player starts.
   store.dispatch({ type: 'START_SHIFT' });
