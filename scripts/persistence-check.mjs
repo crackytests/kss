@@ -32,11 +32,17 @@ const sampleStreams = Array.from({ length: 12 }, (_, index) => ({ id: `s${index}
 const orderA = orderStreamsForRun(sampleStreams, dailyA).map((stream) => stream.id);
 const orderB = orderStreamsForRun(sampleStreams, dailyB).map((stream) => stream.id);
 assert.deepEqual(orderA, orderB, 'same-day daily directory must be identical');
-assert.deepEqual(
-  orderStreamsForRun(sampleStreams, getRunConfig('', day)),
-  sampleStreams,
-  'standard runs must keep authored directory order',
-);
+// WS-K (Sprint 3) made EVERY run a seeded roster: 16–18 stream subset (capped
+// by the authored pool) with ±15% jitter. The old "standard runs keep authored
+// order" contract is gone; what must hold now is determinism + subset validity.
+const stdConfig = getRunConfig('', day); // standard seeds are time-derived — reuse ONE config
+const stdA = orderStreamsForRun(sampleStreams, stdConfig).map((stream) => stream.id);
+const stdB = orderStreamsForRun(sampleStreams, stdConfig).map((stream) => stream.id);
+assert.deepEqual(stdA, stdB, 'same-seed standard runs must produce the same roster');
+const authoredIds = new Set(sampleStreams.map((stream) => stream.id));
+assert.ok(stdA.every((id) => authoredIds.has(id)), 'roster must be drawn from authored streams');
+assert.ok(new Set(stdA).size === stdA.length, 'roster must not repeat streams');
+assert.ok(stdA.length <= Math.min(sampleStreams.length, 18), 'roster must respect the size cap');
 
 // Full store/localStorage round-trip: terminal commit -> career blob -> reload.
 store.load({ streams: sampleStreams, seed: dailyA.seed });

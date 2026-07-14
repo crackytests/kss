@@ -22,6 +22,18 @@ let ctx = null;         // AudioContext | null — null until first gesture
 let master = null;      // GainNode master bus
 const played = new Set(); // event ids already handled (mirrors toast.js `shown`)
 
+// User volume 0..1, scaling the fixed bus level. Set by the settings panel
+// (WS-L, Sprint 4) via setVolume; applied on the live bus and remembered for
+// the lazily-created context.
+const BASE_GAIN = 0.28;
+let volume = 1;
+
+/** Additive Sprint-4 export: user volume control (0..1). */
+export function setVolume(v) {
+  volume = Math.max(0, Math.min(1, Number(v) || 0));
+  if (master) master.gain.value = BASE_GAIN * volume;
+}
+
 // Note frequencies (Hz) used by the cues.
 const C5 = 523.25, E5 = 659.25, G5 = 783.99, C6 = 1046.5;
 
@@ -54,7 +66,7 @@ function ensureContext() {
   try {
     ctx = new AC();
     master = ctx.createGain();
-    master.gain.value = 0.28; // keep the overall bus civilised
+    master.gain.value = BASE_GAIN * volume; // civilised bus level × user volume
     master.connect(ctx.destination);
   } catch {
     ctx = null;

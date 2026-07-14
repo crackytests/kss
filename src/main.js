@@ -12,6 +12,8 @@ import { mountSponsorBar } from './ui/sponsor-bar.js';
 import { mountAudio } from './engine/audio.js';
 import { getRunConfig, mountPersistence, orderStreamsForRun } from './engine/persistence.js';
 import { mountLeaderboard } from './ui/leaderboard.js?v=2';
+import { mountTitle } from './ui/title.js';
+import { mountTutorial } from './ui/tutorial.js';
 
 const RUN_CONFIG = getRunConfig();
 
@@ -51,6 +53,8 @@ async function boot() {
   mountSponsorBar();
   mountLeaderboard(RUN_CONFIG);
   mountAudio();
+  mountTutorial();   // watches for the first real shift start (career.tutorialDone gates)
+  mountTitle();      // topmost shell; must mount after the store hydrates career
 
   // Reset the first shift, then hold on its briefing until the player starts.
   store.dispatch({ type: 'START_SHIFT' });

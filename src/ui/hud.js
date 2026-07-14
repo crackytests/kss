@@ -21,6 +21,7 @@ function render(state) {
     <div class="stat"><span class="lbl">Heat</span><b>${formatNumber(state.heat)}</b></div>
     <div class="hud-spacer"></div>
     <button id="muteBtn" title="Toggle sound" aria-pressed="${state.muted ? 'true' : 'false'}">${state.muted ? '🔇' : '🔊'}</button>
+    <button id="settingsBtn" title="Settings">⚙️</button>
     <button id="careerBtn" title="Open career ledger">${state.phase === 'fired' || state.phase === 'won' ? '📊 Run saved' : '📊 Career'}</button>
     ${controls(state)}
   `;
@@ -44,6 +45,8 @@ function controls(state) {
 function wire(state) {
   const mute = document.getElementById('muteBtn');
   if (mute) mute.onclick = () => store.dispatch({ type: 'TOGGLE_MUTE' });
+  const settings = document.getElementById('settingsBtn');
+  if (settings) settings.onclick = () => window.dispatchEvent(new CustomEvent('kickstaff:settings-open'));
   const career = document.getElementById('careerBtn');
   if (career) career.onclick = () => window.dispatchEvent(new CustomEvent('kickstaff:career-open'));
   const pause = document.getElementById('pauseBtn');
