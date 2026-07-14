@@ -4,6 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kick Staff Simulator</title>
+
+  <!-- Social previews (S6.0). Absolute URLs — unfurlers don't resolve relative paths. -->
+  <meta name="description" content="A satirical streaming-platform curation sim. Feature the chaos, keep the slots spinning, pull it one tick before it becomes your problem. 18+ R-rated satire." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kick Staff Simulator" />
+  <meta property="og:title" content="Kick Staff Simulator" />
+  <meta property="og:description" content="Feature the chaos. Keep the slots spinning. Pull it one tick before it becomes your problem. A platform-curation satire — 18+, R-rated." />
+  <meta property="og:url" content="https://crackytests.github.io/kss/" />
+  <meta property="og:image" content="https://crackytests.github.io/kss/src/assets/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Kick Staff Simulator — green block letters on black, an 18+ R-rated satire badge, and a TOS risk meter at 87%." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kick Staff Simulator" />
+  <meta name="twitter:description" content="Feature the chaos. Keep the slots spinning. Pull it one tick before it becomes your problem." />
+  <meta name="twitter:image" content="https://crackytests.github.io/kss/src/assets/social-card.png" />
   <link rel="preload" as="image" href="src/assets/stream-thumbs/stream-incident-a-beat1.png" />
   <link rel="preload" as="image" href="src/assets/stream-thumbs/stream-incident-a-beat2.png" />
   <link rel="preload" as="image" href="src/assets/stream-thumbs/stream-incident-b-beat1.png" />
@@ -23,6 +39,7 @@
   <link rel="stylesheet" href="src/styles/juice.css" />
   <link rel="stylesheet" href="src/styles/title.css" />
   <link rel="stylesheet" href="src/styles/story.css" />
+  <link rel="stylesheet" href="src/styles/toys.css" />
 </head>
 <body>
   <header id="hud"></header>
@@ -45,6 +62,8 @@
   <div id="titleScreen" hidden></div><!-- WS-L: title screen (topmost shell) -->
   <div id="settingsHost"></div>      <!-- WS-L: settings panel; own host so it works in-game too -->
   <div id="endingSlot"></div>        <!-- WS-N: run-ending story card (topmost of game overlays) -->
+  <div id="crisisSlot"></div>        <!-- WS-P: PR crisis panel -->
+  <div id="clipSlot"></div>          <!-- WS-P: clip desk button + timing bar -->
 
   <script type="module" src="src/main.js?v=7"></script>
 </body>

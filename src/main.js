@@ -16,6 +16,8 @@ import { mountTitle } from './ui/title.js';
 import { mountTutorial } from './ui/tutorial.js';
 import { mountTicker } from './ui/news-ticker.js';
 import { mountEnding } from './ui/ending.js';
+import { mountCrisis } from './ui/crisis.js';
+import { mountClipDesk } from './ui/clipdesk.js';
 
 const RUN_CONFIG = getRunConfig();
 
@@ -57,6 +59,8 @@ async function boot() {
   mountAudio();
   mountTicker();     // WS-N: satirical chyron fed by engine/story.js
   mountEnding();     // WS-N: terminal-run story card
+  mountCrisis();     // WS-P: PR crisis panel
+  mountClipDesk();   // WS-P: viral clip timing minigame
   mountTutorial();   // watches for the first real shift start (career.tutorialDone gates)
   mountTitle();      // topmost shell; must mount after the store hydrates career
 

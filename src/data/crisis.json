@@ -1,0 +1,38 @@
+{
+  "_comment": "PR crisis tuning + copy. WS-P owns this file. A tos_break spawns one crisis (if none active). Effects are ON TOP of the break's baseline penalties. R register.",
+  "countdownTicks": 8,
+  "spinCostBase": 200,
+  "spinCostPerShift": 100,
+  "options": [
+    {
+      "id": "spin",
+      "label": "Spin it",
+      "desc": "Pay the PR ghouls to reframe it as 'a raw, unfiltered moment'. Costs ${cost}; claws back most of the reputation.",
+      "tone": "neutral",
+      "effects": { "reputation": 8, "heat": -5, "storyFlagsAdd": { "spinsUsed": 1 } },
+      "resolveMessage": "🌀 PR statement out: 'context matters'. It cost you ${cost} and a piece of your soul, but the number recovered."
+    },
+    {
+      "id": "bury",
+      "label": "Bury it",
+      "desc": "Nuke the clips, memory-hole the VOD, seed a distraction. Engagement recovers — regulators and journalists notice the shovel.",
+      "tone": "bad",
+      "effects": { "engagement": 40, "heat": 10, "investigation": 10, "storyFlagsAdd": { "scandalsBuried": 1 } },
+      "resolveMessage": "🕳️ Scrubbed. The clip is gone everywhere except the three places that matter. Investigation smells fresh dirt."
+    },
+    {
+      "id": "sacrifice",
+      "label": "Sacrifice the streamer",
+      "desc": "Full public execution: permaban statement, 'we are shocked', the works. The platform walks away clean. They never forgive you.",
+      "tone": "bad",
+      "effects": { "reputation": 10, "heat": -10, "investigation": -5, "relationship": -40, "storyFlagsAdd": { "sacrifices": 1 } },
+      "resolveMessage": "🪓 Statement posted: 'This individual does not represent our community.' You built the community. They were the community."
+    }
+  ],
+  "ignore": {
+    "id": "ignore",
+    "label": "(say nothing)",
+    "effects": { "reputation": -5, "heat": 5, "investigation": 5, "storyFlagsAdd": { "crisesIgnored": 1 } },
+    "resolveMessage": "🦗 You said nothing. The clip spoke for itself, in every language, on every platform."
+  }
+}

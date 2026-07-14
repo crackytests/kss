@@ -55,6 +55,10 @@ function initialState(seed) {
     ticker: [],          // recent news headlines (strings, newest last). story.js pushes,
                          // ui/news-ticker.js renders. Capped by story.js.
 
+    // ---- Sprint 6 (S6.0) additive state — new toys ----
+    crisis: null,        // active PR crisis (one at a time) or null. engine/crisis.js
+                         // spawns/expires; CRISIS_CHOOSE resolves. See CONTRACTS v14.
+
     eventQueue: [],
     rng: makeRng(seed),
     seed,
@@ -244,6 +248,8 @@ function reduce(state, action) {
     case 'SET_STORY_FLAG':
       if (payload.key) state.storyFlags[payload.key] = payload.value ?? true;
       return;
+    case 'CRISIS_CHOOSE': return crisisChoose(state, payload);
+    case 'CLIP_ATTEMPT': return clipAttempt(state, payload);
     case 'ADJUST_RELATIONSHIP': return adjustRelationship(state, payload.streamerId, payload.delta);
     case 'SET_RUNNING': state.running = !!payload.running; return;
     case 'DISMISS_EVENT':
@@ -344,6 +350,66 @@ function adjustRelationship(state, streamerId, delta) {
   if (!streamerId || typeof delta !== 'number') return;
   const cur = state.relationships[streamerId] || 0;
   state.relationships[streamerId] = clamp(cur + delta, -100, 100);
+}
+
+// ---- Sprint 6 (S6.0) reducers ----
+
+/** Resolve the active PR crisis with one of its options. The store stays
+ * generic: it applies the option's declared effects (same key language as
+ * DMEffect + relationship delta against the crisis streamer) and clears the
+ * crisis. Option semantics/copy live in data/crisis.json (WS-P). */
+function crisisChoose(state, { optionId }) {
+  const crisis = state.crisis;
+  if (!crisis) return;
+  const opt = (crisis.options || []).find((o) => o.id === optionId);
+  if (!opt) return;
+  const eff = opt.effects || {};
+  if (typeof eff.money === 'number') state.money += eff.money;
+  if (typeof eff.engagement === 'number') state.engagement = Math.max(0, state.engagement + eff.engagement);
+  if (typeof eff.reputation === 'number') state.reputation = clamp(state.reputation + eff.reputation, 0, 100);
+  if (typeof eff.heat === 'number') state.heat = clamp(state.heat + eff.heat, 0, 100);
+  if (typeof eff.investigation === 'number') state.investigation = clamp(state.investigation + eff.investigation, 0, 100);
+  if (typeof eff.relationship === 'number') adjustRelationship(state, crisis.streamerId, eff.relationship);
+  if (eff.storyFlags && typeof eff.storyFlags === 'object') Object.assign(state.storyFlags, eff.storyFlags);
+  if (eff.storyFlagsAdd && typeof eff.storyFlagsAdd === 'object') {
+    for (const [k, n] of Object.entries(eff.storyFlagsAdd)) {
+      state.storyFlags[k] = (state.storyFlags[k] || 0) + n;
+    }
+  }
+  if (opt.resolveMessage) {
+    store.pushEvent({ type: 'info', tone: opt.tone || 'neutral', message: opt.resolveMessage });
+  }
+  state.crisis = null;
+}
+
+/** Clip Desk (WS-P): convert timing accuracy (0..1) on a viral featured stream
+ * into an engagement bonus. Canonical formula (CONTRACTS v14):
+ *   hit  (accuracy >= 0.3): + round(viewers/1000 × (0.5 + accuracy) × 2)
+ *   miss (accuracy <  0.3): − 25 engagement (the clip is embarrassing)
+ * One attempt per viral event: marks the live event _clipped. */
+function clipAttempt(state, { streamId, accuracy = 0 }) {
+  const s = state.streams.find((x) => x.id === streamId);
+  if (!s) return;
+  const ev = (state.liveEvents || []).find(
+    (e) => e.defId === 'viral' && !e._clipped && (e.streamIds || []).includes(streamId),
+  );
+  if (!ev) return; // no un-clipped viral moment for this stream
+  ev._clipped = true;
+  const acc = clamp(accuracy, 0, 1);
+  if (acc >= 0.3) {
+    const bonus = Math.round((s.viewers / 1000) * (0.5 + acc) * 2);
+    state.engagement += bonus;
+    store.pushEvent({
+      type: 'jackpot', tone: 'good', streamId,
+      message: `🎬 CLIPPED IT — ${Math.round(acc * 100)}% frame-perfect. +${bonus} engagement.`,
+    });
+  } else {
+    state.engagement = Math.max(0, state.engagement - 25);
+    store.pushEvent({
+      type: 'info', tone: 'bad', streamId,
+      message: `🎬 You clipped the wrong ten seconds. −25 engagement and everyone saw.`,
+    });
+  }
 }
 
 function startShift(state) {

@@ -1,0 +1,28 @@
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Syntax-check all game JS
+        run: |
+          set -e
+          for f in $(find src -name '*.js'); do node --check "$f"; done
+      - name: Validate JSON data
+        run: |
+          set -e
+          for f in src/data/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))"; done
+      - name: Run check scripts
+        run: |
+          set -e
+          for s in scripts/*.mjs; do echo "== $s"; node "$s"; done

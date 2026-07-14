@@ -458,3 +458,19 @@ store.resetCareer()              // delete full career save + reset in-memory me
   `_setRules()`), `data/story.json`, `ui/news-ticker.js`, `ui/ending.js`,
   `styles/story.css`, `scripts/story-check.mjs`. Mount slots `#tickerSlot`,
   `#endingSlot` in index.html. HUD shows the investigation meter.
+- v14 (Sprint 6 / S6.0+WS-P / lead, 2026-07-14) — **additive; new toys.**
+  `GameState` (§1) gains `crisis` (null | active PR crisis: one at a time,
+  spawned by `engine/crisis.js` from `tos_break` events with an ~8-tick
+  countdown; options carry baked, shift-scaled costs). New actions (§4):
+  `CRISIS_CHOOSE {optionId}` — applies the chosen option's declared effects
+  (money/engagement/reputation/heat/investigation/relationship vs the crisis
+  streamer/storyFlags merge/`storyFlagsAdd` counters) and clears the crisis;
+  expiry resolves through the SAME reducer with `optionId:'ignore'`.
+  `CLIP_ATTEMPT {streamId, accuracy}` — canonical payout: hit (accuracy ≥ 0.3)
+  = +round(viewers/1000 × (0.5+accuracy) × 2) engagement; miss = −25; one
+  attempt per viral live event (marks `_clipped`). Tick order (§6): `crisis.step`
+  after `story`. New files: `engine/crisis.js` (exports `step`, `_setRules`),
+  `data/crisis.json`, `ui/crisis.js`, `ui/clipdesk.js`, `styles/toys.css`,
+  `scripts/crisis-check.mjs`. Mount slots `#crisisSlot`, `#clipSlot`. Also
+  S6.0 hardening: `.github/workflows/checks.yml` CI (syntax + JSON + all check
+  scripts on push/PR) and og:/twitter: social-preview meta + card image.

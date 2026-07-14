@@ -14,6 +14,7 @@ import * as jackpot from './jackpot.js';
 import * as economy from './economy.js';
 import * as dm from './dm.js';
 import * as story from './story.js';
+import * as crisis from './crisis.js';
 import * as audit from './audit.js';
 import * as mutators from './mutators.js';
 
@@ -34,6 +35,7 @@ export function tick() {
   economy.step(state);
   dm.step(state);
   story.step(state);   // after dm: the plot reacts to DM outcomes this same tick (S5.0)
+  crisis.step(state);  // after story: crises spawn from this tick's breaks (S6.0)
   audit.step(state);
   mutators.step(state); // last: run-modifier catch-all (WS-K)
 

@@ -585,7 +585,18 @@ R-rated register for all new copy. One commit per milestone; push deploys.
 
 ## Phase S6.1 — Parallel workstreams
 
-### WS-P · New Toys — **Claude (lead)** — *files: `engine/crisis.js`, `data/crisis.json`, `ui/crisis.js`, `ui/clipdesk.js`, `styles/toys.css`*
+### WS-P · New Toys — **DONE (Claude lead, 2026-07-14)** — *files: `engine/crisis.js`, `data/crisis.json`, `ui/crisis.js`, `ui/clipdesk.js`, `styles/toys.css`*
+Shipped & verified (contract **v14**). PR Crisis: a break spawns one timed
+crisis (8 ticks); spin (shift-scaled cost, baked at spawn), bury, sacrifice, and
+the auto-'say nothing' expiry all resolve through ONE reducer path
+(CRISIS_CHOOSE). Clip Desk: viral+featured shows the pill; timing bar converts
+accuracy into the canonical payout; once per event. S6.0 also shipped: CI
+workflow (syntax+JSON+all checks on push/PR) and social-preview meta + 1200×630
+card. `scripts/crisis-check.mjs` covers spawn/bake/resolve/expiry/sacrifice/
+clip payouts; all seven scripts green; verified live in-browser (panel,
+countdown, spin −$300/+8 rep at shift 1, clip flow end to end).
+
+<details><summary>original scope</summary>
 Two systems that deepen the minute-to-minute.
 - **PR Crisis mode**: a TOS break now ALSO spawns a timed crisis (one at a
   time, ~8-tick countdown, auto-resolves worst-case if ignored). Three plays,
@@ -603,6 +614,8 @@ Two systems that deepen the minute-to-minute.
   story-check or new crisis-check); clip button appears only during viral on
   featured streams; accuracy scales reward; all checks green; balance sim
   still passes (crisis penalties must not soften the fired states).
+
+</details>
 
 ### WS-Q · Feel & Friction — **ChatGPT 5.6** — *files: `ui/browse.js` (ownership transferred from lead), `styles/board.css` (transferred), new `ui/hotkeys.js`, `styles/a11y.css`*
 Remove every rough edge between the player and the decision.
