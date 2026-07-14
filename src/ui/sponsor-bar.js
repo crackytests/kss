@@ -37,7 +37,7 @@ function render(state) {
 
   root.innerHTML = `
     <section class="sponsor-strip" aria-label="Sponsor contracts">
-      <div class="sponsor-strip__label"><span>CONTRACT PRESSURE</span><small>every logo wants a different homepage</small></div>
+      <div class="sponsor-strip__label"><span>CONTRACT PRESSURE</span><small>every needy logo wants a different fucking homepage</small></div>
       <div class="sponsor-strip__contracts">${sponsors.map(sponsorCard).join('')}</div>
     </section>`;
 }
@@ -56,13 +56,13 @@ function sponsorCard(sponsor) {
       ? 'pending'
       : runtime.satisfied ? 'satisfied' : 'breach';
   const badge = status === 'dropped'
-    ? 'DROPPED'
+    ? 'TOLD US TO FUCK OFF'
     : status === 'satisfied'
-      ? 'COMPLIANT'
-      : status === 'breach' ? `BREACH ${missed}/${failTicks}` : 'PENDING';
+      ? 'LOGO HAPPY'
+      : status === 'breach' ? `PISSED ${missed}/${failTicks}` : 'WAITING TO COMPLAIN';
   const payout = runtime.payoutEarned > 0
-    ? `paid $${runtime.payoutEarned}`
-    : `up to $${sponsor.payoutPerShift || 0}`;
+    ? `coughed up $${runtime.payoutEarned}`
+    : `dangling up to $${sponsor.payoutPerShift || 0}`;
 
   return `
     <article class="sponsor-contract is-${status}" style="--sponsor-color:${safeColor(sponsor.color)}">

@@ -47,7 +47,7 @@ function autoPull(state) {
       s.cooldown = 3;
       store.pushEvent({
         type: 'info', tone: 'good', streamId: s.id,
-        message: `🤖 Auto-Pull yanked "${s.title}" at ${Math.round((s.risk / s.tosThreshold) * 100)}% risk.`,
+        message: `🤖 Auto-Pull saved your arse and yanked "${s.title}" at ${Math.round((s.risk / s.tosThreshold) * 100)}% risk.`,
       });
     }
   }

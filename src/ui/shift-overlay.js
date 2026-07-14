@@ -73,7 +73,7 @@ function briefing(state) {
         <div class="eddie-avatar" aria-hidden="true">E</div>
         <div>
           <div class="shift-card__eyebrow">VOICE NOTE TRANSCRIBED // EDDIE, CEO</div>
-          <h1 id="shiftTitle">Make it look organic, mate.</h1>
+          <h1 id="shiftTitle">Make the shitshow look organic, mate.</h1>
           <p class="shift-card__lede">${briefingLede(state)}</p>
         </div>
       </div>
@@ -83,26 +83,26 @@ function briefing(state) {
         ${briefMetric('WINDOW', `${state.ticksPerShift}s`, 'one tick per second')}
         ${briefMetric('SLOTS', state.slots, `${state.streams.length} seeded live channels`)}
         ${briefMetric('PRESSURE', pressure, pressureNote(state))}
-        ${briefMetric('STAKE UPSIDE', stakePayout ? `$${stakePayout}` : 'VIBES', 'maximum alignment fee')}
+        ${briefMetric('STAKE UPSIDE', stakePayout ? `$${stakePayout}` : 'VIBES', 'maximum ethically flexible fee')}
       </div>
       <div class="brief-priorities">
         <div class="brief-directive brief-directive--stake">
           <span>EDDIE'S TOTALLY INDEPENDENT EDITORIAL PRIORITY</span>
-          <strong>Keep a Stake-tagged stream visible. Tastefully. Constantly.</strong>
-          <small>We don't play favourites. Some partners simply enjoy more strategic visibility than others.</small>
+          <strong>Keep a Stake-tagged casino circus visible. Tastefully. Constantly. No bloody gaps.</strong>
+          <small>We don't play favourites. Some partners simply pay enough to make that sentence complete bullshit.</small>
         </div>
         <div class="brief-directive">
           <span>PUBLIC TALKING POINT</span>
           <strong>“Kick backs creators, choice, and a fair go.”</strong>
-          <small>If anybody asks about adjacency rules, say “brand safety” slowly and look concerned.</small>
+          <small>If anybody asks about the casino next to the puppies, say “brand safety” slowly and look professionally constipated.</small>
         </div>
       </div>
       <div class="eddie-checklist" aria-label="Eddie's shift checklist">
-        ${checklistItem('01', 'Feed the number', `Clear ${state.quota.toLocaleString()} engagement before the clock runs out.`)}
-        ${checklistItem('02', 'Manage the talent', 'Pull risky streams one second before disaster, not one second after. Easy as, mate.')}
-        ${checklistItem('03', 'Protect the story', 'A clean shift is excellent. A profitable shift is also, for legal reasons, excellent.')}
+        ${checklistItem('01', 'Feed the bastard number', `Clear ${state.quota.toLocaleString()} engagement before the clock runs out and finance starts sniffing around.`)}
+        ${checklistItem('02', 'Herd the feral talent', 'Pull risky streams one second before they shit the bed, not one second after. Easy as, mate.')}
+        ${checklistItem('03', 'Protect the corporate fairy tale', 'A clean shift is excellent. A filthy profitable shift is, for legal reasons, also excellent.')}
       </div>
-      ${eddieSignoff('Righto — have a good one. And give the green-logo streams a fair go. A very fair go.')}
+      ${eddieSignoff('Righto — go make me proud, or at least difficult to subpoena. Give the green-logo streams a very, very fair go.')}
       <div class="shift-card__actions">
         <button class="shift-action" data-career-overlay>📊 Career ledger</button>
         <button class="primary shift-action" data-start-shift>Righto, start day ${state.shift} →</button>
@@ -117,7 +117,7 @@ function mutatorBrief(state) {
     <div class="brief-directive" style="margin-top:18px" aria-label="This run's mutator">
       <span>THIS RUN'S RULE // ${escapeHtml(mutator.name).toUpperCase()}</span>
       <strong>${escapeHtml(mutator.icon)} ${escapeHtml(mutator.summary)}</strong>
-      <small>${escapeHtml(mutator.blurb)} Eddie says this is “market texture,” mate.</small>
+      <small>${escapeHtml(mutator.blurb)} Eddie says this fresh bullshit is “market texture,” mate.</small>
     </div>`;
 }
 
@@ -131,12 +131,12 @@ function memoHeader(label, shift) {
 
 function briefingLede(state) {
   if (state.shift === 1) {
-    return 'G’day. Nice easy one to start: make the homepage enormous, keep it technically responsible, and remember that Stake visibility is merely a fascinating coincidence. No worries.';
+    return 'G’day. Nice easy one: make the homepage enormous, keep it technically legal, and remember Stake visibility is a totally fascinating coincidence. Don’t fuck it up.';
   }
   if (state.shift < 4) {
-    return `Righto, mate, day ${state.shift}. The target is up, patience is down, and everyone would love “authentic discovery” to continue discovering the sponsor with the green logo.`;
+    return `Righto, mate, day ${state.shift}. Target’s up, patience is rooted, and “authentic discovery” had better keep discovering the casino with the green logo.`;
   }
-  return `Listen, mate, day ${state.shift} is where strategy becomes panic with a dashboard. Keep the chaos monetisable, the policy incidents deniable, and Stake somewhere a camera can see it.`;
+  return `Listen, mate, day ${state.shift} is panic wearing a strategy lanyard. Keep the chaos monetisable, the policy breaches deniable, and Stake where every bloody camera can see it.`;
 }
 
 function briefMetric(label, value, note) {
@@ -148,7 +148,7 @@ function checklistItem(index, title, copy) {
 }
 
 function eddieSignoff(copy) {
-  return `<div class="eddie-signoff"><span>${copy}</span><strong>— Eddie</strong><small>Sent from a phone that definitely has responsible-gambling controls enabled</small></div>`;
+  return `<div class="eddie-signoff"><span>${copy}</span><strong>— Eddie</strong><small>Sent from a phone whose responsible-gambling controls are somebody else’s fucking problem</small></div>`;
 }
 
 function pressureNote(state) {
@@ -173,12 +173,12 @@ function results(state) {
   return `
     <section class="shift-card shift-card--results ${passed ? 'is-cleared' : 'is-fired'}" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
       ${memoHeader('PERFORMANCE REVIEW', state.shift)}
-      <div class="result-stamp">${passed ? 'BONUS-ADJACENT' : 'MATE, NO'}</div>
+      <div class="result-stamp">${passed ? 'BONUS-ADJACENT' : 'MATE, WHAT THE FUCK'}</div>
       <div class="eddie-message eddie-message--review">
         <div class="eddie-avatar" aria-hidden="true">E</div>
         <div>
           <div class="shift-card__eyebrow">PRIVATE FEEDBACK // EDDIE, CEO</div>
-          <h1 id="resultTitle">${passed ? 'Fine. I’ll call this leadership.' : 'This is a career-expanding moment.'}</h1>
+          <h1 id="resultTitle">${passed ? 'Bloody hell. I’ll call this leadership.' : 'You’ve absolutely cooked this, mate.'}</h1>
           <p class="shift-card__lede">${reason}</p>
         </div>
       </div>
@@ -186,7 +186,7 @@ function results(state) {
       <div class="result-score">
         <div class="result-score__number">${scorePct}%</div>
         <div class="result-score__copy">
-          <span>THE NUMBER THAT DECIDES WHETHER THIS WAS “STRATEGY”</span>
+          <span>THE NUMBER THAT DECIDES WHETHER THIS SHITSHOW WAS “STRATEGY”</span>
           <strong>${state.engagement.toLocaleString()} / ${state.quota.toLocaleString()}</strong>
           <div class="result-progress"><i style="width:${Math.min(100, Math.max(0, scorePct))}%"></i></div>
         </div>
@@ -203,11 +203,11 @@ function results(state) {
       </div>
       <div class="review-sections">
         <section class="review-panel review-panel--sponsors">
-          <div class="review-panel__heading"><span>01</span><div><strong>PARTNER ALIGNMENT</strong><small>The bit Eddie definitely reads</small></div></div>
+          <div class="review-panel__heading"><span>01</span><div><strong>PARTNER ALIGNMENT</strong><small>The paid-for bit Eddie actually gives a shit about</small></div></div>
           <div class="sponsor-review-list">${sponsor.rows}</div>
         </section>
         <section class="review-panel">
-          <div class="review-panel__heading"><span>02</span><div><strong>FRONT-PAGE AUTOPSY</strong><small>What the algorithm “chose”</small></div></div>
+          <div class="review-panel__heading"><span>02</span><div><strong>FRONT-PAGE AUTOPSY</strong><small>What the “algorithm” did after you held it at gunpoint</small></div></div>
           ${reviewLine('Slots occupied at close', `${risk.occupied} / ${state.slots}`)}
           ${reviewLine('Stake-tagged positions', risk.stakeSlots)}
           ${reviewLine('Gambling positions', risk.gamblingSlots)}
@@ -216,26 +216,26 @@ function results(state) {
           ${reviewLine('Highest-risk talent', `${escapeHtml(risk.hottestName)} · ${risk.hottestRisk}%`)}
         </section>
         <section class="review-panel">
-          <div class="review-panel__heading"><span>03</span><div><strong>TALENT TEMPERATURE</strong><small>Friendship, but operationalised</small></div></div>
+          <div class="review-panel__heading"><span>03</span><div><strong>TALENT TEMPERATURE</strong><small>Parasocial friendship, brutally operationalised</small></div></div>
           ${reviewLine('Average relationship', formatSigned(talent.average))}
           ${reviewLine('Strongest ally', `${escapeHtml(talent.bestName)} · ${formatSigned(talent.bestScore)}`)}
           ${reviewLine('Most likely to subtweet', `${escapeHtml(talent.worstName)} · ${formatSigned(talent.worstScore)}`)}
           ${reviewLine('Tracked relationships', talent.count)}
         </section>
         <section class="review-panel">
-          <div class="review-panel__heading"><span>04</span><div><strong>RISK & OPTICS</strong><small>For the people who use the word “governance”</small></div></div>
+          <div class="review-panel__heading"><span>04</span><div><strong>RISK & OPTICS</strong><small>For the expensive bastards who say “governance”</small></div></div>
           ${reviewLine('Final regulatory heat', formatNumber(state.heat))}
           ${reviewLine('Heat added this shift', formatDelta(heatDelta))}
           ${reviewLine('Policy incident budget', `${state.tosBreaksThisShift} / ${state.maxTosBreaksPerShift}`)}
           ${reviewLine('Run mutator', `${escapeHtml(state.mutator?.icon || '•')} ${escapeHtml(state.mutator?.name || 'None')}`)}
           ${reviewLine('Starting roster', `${state.mutator?.rosterSize || state.streams.length} streams`)}
           ${reviewLine('Streams still available', state.streams.length - risk.banned)}
-          ${reviewLine('Overall verdict', passed ? 'SCALE IT CAREFULLY' : 'REBRAND THE FAILURE')}
+          ${reviewLine('Overall verdict', passed ? 'SCALE THIS BEAUTIFUL MESS' : 'REBRAND THE FUCK-UP')}
         </section>
       </div>
       ${eddieSignoff(passed
-        ? 'Good on ya, mate. Take five, then find out whether Stake needs anything. Casually.'
-        : 'No hard feelings, mate. Plenty of companies need someone who has already learned this exact lesson.')}
+        ? 'Good on ya, mate. Take five, then ask whether Stake needs anything. Casually, desperately, profitably.'
+        : 'No hard feelings, mate. Pack your shit before security develops initiative.')}
       <div class="shift-card__actions">
         <button class="shift-action" data-career-overlay>📊 Career ledger</button>
         ${passed
@@ -248,31 +248,31 @@ function results(state) {
 function resultReason(state, passed) {
   if (passed) {
     return state.tosBreaksThisShift === 0
-      ? 'You hit quota with a clean policy record. Bloody beautiful, mate. Legal has nothing to do and finance is pretending that was the plan.'
-      : `You hit quota despite ${state.tosBreaksThisShift} public policy incident${state.tosBreaksThisShift === 1 ? '' : 's'}. Finance deducted the fines; comms has renamed the rest “creator-led spontaneity.”`;
+      ? 'You hit quota with a clean policy record. Bloody beautiful, mate. Legal is bored and finance is claiming the whole fucking idea.'
+      : `You hit quota despite ${state.tosBreaksThisShift} public policy shitstorm${state.tosBreaksThisShift === 1 ? '' : 's'}. Finance deducted the fines; comms renamed the wreckage “creator-led spontaneity.”`;
   }
-  if (state.failureReason === 'sponsor') return 'The sponsor walked before the shift ended, mate. Management discovered its principles at exactly the same moment.';
-  if (state.failureReason === 'reputation') return 'Your reputation reached zero. Bit rough. HR has moved your messages into a folder called “culture.”';
-  if (state.failureReason === 'tos_limit') return `You recorded ${state.tosBreaksThisShift} public TOS breaks. Management needed accountability, which is executive for “someone else.”`;
-  return `You finished ${Math.max(0, state.quota - state.engagement).toLocaleString()} engagement short of quota. Close only counts in horseshoes and pre-roll conversion, mate.`;
+  if (state.failureReason === 'sponsor') return 'The sponsor walked mid-shift, mate. Management discovered its fucking principles at the exact same second.';
+  if (state.failureReason === 'reputation') return 'Your reputation hit zero. Impressive. HR moved your messages into a folder called “culture” and your badge into the bin.';
+  if (state.failureReason === 'tos_limit') return `You detonated ${state.tosBreaksThisShift} public TOS breaches. Management needed accountability, which is executive for “sacrifice this poor bastard.”`;
+  return `You finished ${Math.max(0, state.quota - state.engagement).toLocaleString()} engagement short. Close only counts in horseshoes, hand grenades, and bullshit quarterly decks, mate.`;
 }
 
 function eddieVerdict(state, passed, scorePct, sponsor) {
   const stake = state.sponsors?.find((item) => item.id === 'stake');
   const uptime = sponsorUptime(stake);
   if (!passed && state.failureReason === 'sponsor') {
-    return 'Mate, I asked for growth, safety, freedom, and one tiny non-negotiable logo. Somehow we lost the logo.';
+    return 'Mate, I asked for growth, safety, freedom, and one tiny non-negotiable casino logo. Somehow you lost the only bit that fucking pays us.';
   }
   if (!passed) {
-    return 'The dashboard is red, the group chat is quiet, and I’m hearing the phrase “learning opportunity.” That phrase is about you, mate.';
+    return 'The dashboard is red, the group chat is silent, and some coward said “learning opportunity.” That phrase means you’re fucked, mate.';
   }
   if (uptime >= 95 && state.tosBreaksThisShift === 0) {
-    return `Clean record, ${scorePct}% of quota, and Stake enjoyed ${uptime}% uptime. That is what I call independent editorial excellence.`;
+    return `Clean record, ${scorePct}% of quota, and Stake enjoyed ${uptime}% uptime. Independent editorial excellence, bought and paid for.`;
   }
   if (uptime < 70) {
-    return `The number cleared, which is good. Stake visibility landed at ${uptime}%, which is also a number. Let’s make that second number less interesting tomorrow, mate.`;
+    return `The number cleared. Good. Stake visibility landed at ${uptime}%. Bad. Make that second number boring as batshit tomorrow, mate.`;
   }
-  return `You got the result. A little chaos, a little paperwork, ${uptime}% Stake uptime — classic high-growth governance, mate.`;
+  return `You got the result: chaos, paperwork, ${uptime}% Stake uptime, and nobody important in handcuffs. Classic high-growth governance, mate.`;
 }
 
 function sponsorSummary(state) {
@@ -289,7 +289,7 @@ function sponsorSummary(state) {
   }).join('');
   return {
     payout,
-    rows: rows || '<div class="review-empty">No sponsor telemetry. Eddie has left the chat.</div>',
+    rows: rows || '<div class="review-empty">No sponsor telemetry. Eddie has fucked off to a safer group chat.</div>',
   };
 }
 

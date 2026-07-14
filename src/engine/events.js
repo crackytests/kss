@@ -53,7 +53,7 @@ export function step(state) {
     if (state.tick < ev.endsAt) continue;
     revert(state, ev);
     state.liveEvents = state.liveEvents.filter((x) => x !== ev);
-    store.pushEvent({ type: 'info', tone: 'neutral', message: `${ev.label} is over.` });
+    store.pushEvent({ type: 'info', tone: 'neutral', message: `${ev.label} is over. Back to the usual bullshit.` });
   }
 
   // 2) maybe spawn
@@ -103,7 +103,7 @@ const BUILDERS = {
     s.riskRate = round4(s.riskRate * def.riskRateMult);
     return {
       label: `${s.streamerName}'s viral moment`,
-      message: `🔥 "${s.title}" is going VIRAL — ${s.viewers.toLocaleString()} viewers and climbing. Clip it or kill it.`,
+      message: `🔥 "${s.title}" is going fucking VIRAL — ${s.viewers.toLocaleString()} viewers and climbing. Milk it or murder it.`,
       toastType: 'viral', tone: 'good', streamIds: [s.id], saved,
     };
   },
@@ -121,7 +121,7 @@ const BUILDERS = {
     to.viewers += moved;
     return {
       label: `${from.streamerName} → ${to.streamerName} raid`,
-      message: `⚡ ${from.streamerName} just raided ${to.streamerName} — ${moved.toLocaleString()} viewers moved.`,
+      message: `⚡ ${from.streamerName} just dumped ${moved.toLocaleString()} feral viewers onto ${to.streamerName}. Good fucking luck.`,
       toastType: 'info', tone: 'neutral', streamIds: [to.id, from.id], saved,
     };
   },
@@ -138,7 +138,7 @@ const BUILDERS = {
     }
     return {
       label: 'a sitewide drama wave',
-      message: `🍿 DRAMA WAVE — ${targets.length} messy streams just got messier (and bigger). Engagement gold, TOS minefield.`,
+      message: `🍿 DRAMA WAVE — ${targets.length} messy bastards just got messier and bigger. Engagement gold; TOS minefield.`,
       toastType: 'info', tone: 'neutral', streamIds: targets.map((s) => s.id), saved,
     };
   },
@@ -153,7 +153,7 @@ const BUILDERS = {
     }
     return {
       label: 'the dead hours',
-      message: `😴 Dead hours — the whole directory's numbers just sagged. Good luck hitting quota with this.`,
+      message: `😴 Dead hours — the whole directory's numbers fell on their arse. Good luck feeding quota this corpse.`,
       toastType: 'info', tone: 'bad', streamIds: [], saved,
     };
   },
@@ -172,7 +172,7 @@ const BUILDERS = {
     }
     return {
       label: `the ${cat} boom`,
-      message: `📈 ${cat} is BOOMING — every ${cat} stream just inflated. Front-page material.`,
+      message: `📈 ${cat} is BOOMING — every ${cat} stream just inflated like a bullshit valuation. Front-page material.`,
       toastType: 'info', tone: 'good', streamIds: targets.map((s) => s.id), saved,
     };
   },

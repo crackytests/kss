@@ -36,7 +36,7 @@ export function tick() {
   mutators.step(state); // last: run-modifier catch-all (WS-K)
 
   if (state.phase === 'playing' && state.reputation <= 0) {
-    fire(state, 'reputation', 'Your reputation hit zero. HR revoked your access.');
+    fire(state, 'reputation', 'Your reputation hit zero. HR killed your access and called it culture work.');
   } else if (
     state.phase === 'playing'
     && state.tosBreaksThisShift >= state.maxTosBreaksPerShift
@@ -44,7 +44,7 @@ export function tick() {
     fire(
       state,
       'tos_limit',
-      `${state.tosBreaksThisShift} public TOS breaks in one shift. Management needs a scapegoat.`,
+      `${state.tosBreaksThisShift} public TOS breaks in one shift. Management needs a poor bastard to sacrifice.`,
     );
   }
 
@@ -68,20 +68,20 @@ function endShift(state) {
     state.failureReason = 'quota';
     store.pushEvent({
       type: 'shift_end', tone: 'bad',
-      message: `Shift ${state.shift} failed — ${state.engagement}/${state.quota} engagement. You're fired.`,
+      message: `Shift ${state.shift} failed — ${state.engagement}/${state.quota} engagement. Pack your shit; you're fired.`,
     });
   } else if (state.shift >= state.wonAtShift && state.phase !== 'won') {
     // Victory: survive wonAtShift shifts. Endless scaling continues via ADVANCE_SHIFT.
     state.phase = 'won';
     store.pushEvent({
       type: 'shift_end', tone: 'good',
-      message: `🏆 Shift ${state.shift} cleared — you survived the quarter. Management is horrified and impressed. (Endless mode unlocked.)`,
+      message: `🏆 Shift ${state.shift} cleared — you survived the bloody quarter. Management is horrified, impressed, and taking credit. (Endless mode unlocked.)`,
     });
   } else {
     state.phase = 'shift_end';
     store.pushEvent({
       type: 'shift_end', tone: 'good',
-      message: `Shift ${state.shift} cleared! ${state.engagement}/${state.quota} engagement.`,
+      message: `Shift ${state.shift} cleared! ${state.engagement}/${state.quota} engagement. Somehow this shit worked.`,
     });
   }
 }

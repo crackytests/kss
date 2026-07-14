@@ -55,7 +55,7 @@ function rollJackpots(state) {
       type: 'jackpot',
       tone: 'good',
       streamId: stream.id,
-      message: `💰 JACKPOT on "${stream.title}"! +$${cash} to you, +${engagement} engagement.`,
+      message: `💰 JACKPOT on "${stream.title}"! The house farted money: +$${cash} to you, +${engagement} engagement.`,
     });
   }
 }
@@ -77,7 +77,7 @@ function stepSponsor(state, sponsor) {
       store.pushEvent({
         type: 'info',
         tone: 'good',
-        message: `✅ ${sponsor.name} is back in compliance. Contract clock reset.`,
+        message: `✅ ${sponsor.name} stopped throwing a corporate tantrum. Contract clock reset.`,
       });
     }
   } else {
@@ -103,7 +103,7 @@ function stepSponsor(state, sponsor) {
     store.pushEvent({
       type: 'sponsor_warning',
       tone: 'bad',
-      message: `⚠️ ${sponsor.name}: ${runtime.detail} ${failTicks(sponsor) - missed} ticks before the contract dies. Reputation −${repPenalty}.`,
+      message: `⚠️ ${sponsor.name} is pissed: ${runtime.detail} ${failTicks(sponsor) - missed} ticks before the money fucks off. Reputation −${repPenalty}.`,
     });
   }
 }
@@ -123,7 +123,7 @@ function dropSponsor(state, sponsor, runtime) {
   store.pushEvent({
     type: 'sponsor_warning',
     tone: 'bad',
-    message: `❌ ${sponsor.name} killed the contract — ${runtime.ticksUnsatisfied} straight misses. −$${moneyPenalty}, Reputation −${reputationPenalty}.`,
+    message: `❌ ${sponsor.name} killed the bloody contract after ${runtime.ticksUnsatisfied} misses. −$${moneyPenalty}, Reputation −${reputationPenalty}.`,
   });
 
   if (sponsor.terminal) {
@@ -146,8 +146,8 @@ function evaluateDemand(state, sponsor) {
     return {
       satisfied: match,
       detail: match
-        ? `A ${sponsor.tag}-tagged stream is live.`
-        : `No ${sponsor.tag}-tagged stream is featured.`,
+        ? `A ${sponsor.tag}-tagged money furnace is live.`
+        : `No ${sponsor.tag}-tagged money furnace is featured.`,
     };
   }
 
@@ -158,7 +158,7 @@ function evaluateDemand(state, sponsor) {
     if (wanted.length === 0) {
       return {
         satisfied: false,
-        detail: `No ${sponsor.wantsTag} stream is featured.`,
+        detail: `No ${sponsor.wantsTag} stream is featured. The brand is having a shit-fit.`,
       };
     }
 
@@ -174,8 +174,8 @@ function evaluateDemand(state, sponsor) {
     return {
       satisfied: !conflict,
       detail: conflict
-        ? `A gambling stream is adjacent to wholesome inventory.`
-        : `Wholesome inventory is live with clean neighbors.`,
+        ? `A casino stream is dry-humping the wholesome inventory next door.`
+        : `Wholesome inventory is live with suspiciously clean neighbours.`,
     };
   }
 
@@ -197,7 +197,7 @@ function ensureRuntime(state, sponsor) {
       ...freshRuntime(state.shift, 0),
       dropped,
       dropTick,
-      detail: dropped ? 'Contract was already terminated.' : 'Awaiting first evaluation.',
+      detail: dropped ? 'Contract already told us to get fucked.' : 'Waiting for the logo to judge us.',
     };
   }
   return sponsor.runtime;
@@ -207,7 +207,7 @@ function freshRuntime(shift, ticksUnsatisfied) {
   return {
     shift,
     satisfied: false,
-    detail: 'Awaiting first evaluation.',
+    detail: 'Waiting for the logo to judge us.',
     ticksUnsatisfied,
     satisfiedTicks: 0,
     evaluatedTicks: 0,

@@ -83,7 +83,7 @@ function runAudit(state) {
     state.heat = clamp(state.heat - CLEAN_AUDIT_COOL, 0, 100);
     store.pushEvent({
       type: 'audit', tone: 'neutral',
-      message: `🔎 Snap audit — front page clean. Regulator stands down. Heat −${CLEAN_AUDIT_COOL}.`,
+      message: `🔎 Snap audit — front page clean as a suspicious whistle. Regulator fucks off. Heat −${CLEAN_AUDIT_COOL}.`,
     });
     return false;
   }
@@ -113,7 +113,7 @@ function runAudit(state) {
   store.pushEvent({
     type: 'audit', tone: 'bad',
     streamId: offenders[0].id,
-    message: `🚔 AUDIT! ${offenders.length} over-risk ${noun} fined & taken down — engagement −${totalFine}, reputation −${repHit}, heat +${heatGain}.`,
+    message: `🚔 AUDIT! ${offenders.length} reckless ${noun} caught with their pants metaphorically down — engagement −${totalFine}, reputation −${repHit}, heat +${heatGain}.`,
   });
   return true;
 }

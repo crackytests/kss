@@ -152,7 +152,7 @@ function revealUnlocks(state) {
     t._revealed = true;
     store.pushEvent({
       type: 'dm_incoming', tone: 'neutral', threadId: t.id,
-      message: `💬 ${t.name} messaged you.`,
+      message: `💬 ${t.name} slid into your corporate nightmare.`,
     });
   }
 }
@@ -168,7 +168,7 @@ function deliverArrivals(state) {
     t.unread = true;
     store.pushEvent({
       type: 'dm_incoming', tone: 'neutral', threadId: t.id,
-      message: `💬 ${t.name} messaged you.`,
+      message: `💬 ${t.name} wants something. Of fucking course.`,
     });
   }
 }
@@ -187,7 +187,7 @@ function deliverFollowUps(state) {
     t.unread = true;
     store.pushEvent({
       type: 'dm_incoming', tone: 'neutral', threadId: t.id,
-      message: `💬 ${t.name} sent a follow-up.`,
+      message: `💬 ${t.name} followed up because boundaries are dead.`,
     });
   }
 }
@@ -219,7 +219,7 @@ function honor(state, t) {
   adjust(state, t.streamerId, FORCE_HONOR_REL);
   store.pushEvent({
     type: 'info', tone: 'good', threadId: t.id,
-    message: `🤝 You honoured the deal with ${t.name}. Reputation +${FORCE_KEEP_WORD_REP}, standing up.`,
+    message: `🤝 You honoured the filthy deal with ${t.name}. Reputation +${FORCE_KEEP_WORD_REP}; somehow loyalty exists here.`,
   });
 }
 
@@ -235,7 +235,7 @@ function renege(state, t) {
   const what = stream ? `"${stream.title}"` : 'the stream';
   store.pushEvent({
     type: 'info', tone: 'bad', threadId: t.id,
-    message: `📣 ${t.name} blew the whistle — you took the deal but never featured ${what}. −$${FORCE_RENEGE_MONEY}, reputation −${FORCE_RENEGE_REP}, heat +${FORCE_RENEGE_HEAT}. They'll remember this.`,
+    message: `📣 ${t.name} blew the whistle — you took the dirty deal then stiffed them on ${what}. −$${FORCE_RENEGE_MONEY}, reputation −${FORCE_RENEGE_REP}, heat +${FORCE_RENEGE_HEAT}. Petty bastards remember everything.`,
   });
 }
 

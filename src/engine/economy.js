@@ -80,12 +80,12 @@ export function payout(state) {
   }
 
   const breakNote = state.tosBreaksThisShift > 0
-    ? ` (−$${penalties} for ${state.tosBreaksThisShift} TOS break${state.tosBreaksThisShift > 1 ? 's' : ''})`
+    ? ` (−$${penalties} because ${state.tosBreaksThisShift} TOS fuck-up${state.tosBreaksThisShift > 1 ? 's' : ''} made legal twitchy)`
     : '';
   const sponsorNote = sponsorCash > 0 ? ` · sponsors +$${sponsorCash}` : '';
   store.pushEvent({
     type: 'info', tone: net >= 0 ? 'good' : 'bad',
-    message: `💵 Payday: ${net >= 0 ? '+' : '−'}$${Math.abs(net)}${sponsorNote}${breakNote}. Wallet: $${state.money}.`,
+    message: `💵 Payday, you beautiful corporate parasite: ${net >= 0 ? '+' : '−'}$${Math.abs(net)}${sponsorNote}${breakNote}. Wallet: $${state.money}.`,
   });
 }
 

@@ -47,32 +47,32 @@ function careerPanel(state, career) {
   const todayBest = career.dailyBest?.[today];
   const perksOwned = Object.keys(state.perks || {}).length;
   const switchHref = runConfig.mode === 'daily' ? './' : '?mode=daily';
-  const switchLabel = runConfig.mode === 'daily' ? 'Return to a standard run' : 'Play today’s daily board';
+  const switchLabel = runConfig.mode === 'daily' ? 'Return to regular bullshit' : 'Play today’s shared nightmare';
 
   return `
     <div class="career-backdrop" data-career-backdrop>
       <section class="career-panel" role="dialog" aria-modal="true" aria-labelledby="careerTitle">
         <header class="career-head">
           <div>
-            <div class="career-eyebrow">LOCAL EMPLOYEE RECORD // DEFINITELY NOT CLOUD SYNCED</div>
-            <h2 id="careerTitle">Career ledger</h2>
-            <p>Your best decisions, worst incidents, and every number finance remembered.</p>
+            <div class="career-eyebrow">LOCAL EMPLOYEE RECORD // HR’S LITTLE BOOK OF FUCK-UPS</div>
+            <h2 id="careerTitle">Career damage ledger</h2>
+            <p>Your best grifts, worst disasters, and every ugly number finance kept for leverage.</p>
           </div>
           <button class="career-close" data-career-close aria-label="Close career ledger">×</button>
         </header>
 
         <div class="career-lifetime" aria-label="Lifetime career metrics">
-          ${lifetimeMetric('RUNS', career.runs || 0, 'completed careers')}
-          ${lifetimeMetric('BEST SCORE', formatNumber(career.bestRunScore || 0), 'local leaderboard')}
-          ${lifetimeMetric('BEST ENGAGEMENT', formatNumber(career.bestEngagement || 0), 'single shift')}
-          ${lifetimeMetric('SHIFTS SURVIVED', career.lifetimeShifts || 0, 'across all runs')}
-          ${lifetimeMetric('CAREER BANK', formatMoney(state.money || 0), `${perksOwned} perks owned`)}
+          ${lifetimeMetric('RUNS', career.runs || 0, 'completed corporate ordeals')}
+          ${lifetimeMetric('BEST SCORE', formatNumber(career.bestRunScore || 0), 'local arse-kicking table')}
+          ${lifetimeMetric('BEST ENGAGEMENT', formatNumber(career.bestEngagement || 0), 'one glorious shitshow')}
+          ${lifetimeMetric('SHIFTS SURVIVED', career.lifetimeShifts || 0, 'before somebody cracked')}
+          ${lifetimeMetric('CAREER BANK', formatMoney(state.money || 0), `${perksOwned} expensive coping mechanisms`)}
         </div>
 
         <section class="daily-card ${runConfig.mode === 'daily' ? 'is-active' : ''}">
           <div class="daily-card__date"><span>TODAY’S BOARD</span><strong>${today}</strong><small>UTC · shared seed ${seedLabel(runConfig.mode === 'daily' ? runConfig.seed : todayConfig.seed)}</small></div>
           <div class="daily-card__copy">
-            <strong>${runConfig.mode === 'daily' ? 'You’re on the shared board.' : 'Same directory. Same RNG. No excuses.'}</strong>
+            <strong>${runConfig.mode === 'daily' ? 'You’re in today’s shared meat grinder.' : 'Same roster. Same RNG. No fucking excuses.'}</strong>
             <small>${dailySummary(state, todayBest)}</small>
           </div>
           <a class="daily-card__action" href="${switchHref}">${switchLabel} →</a>
@@ -80,23 +80,23 @@ function careerPanel(state, career) {
 
         <div class="career-columns">
           <section class="career-section">
-            <div class="career-section__head"><div><span>TOP 10</span><h3>Local leaderboard</h3></div><small>Score rewards survival + engagement</small></div>
+            <div class="career-section__head"><div><span>TOP 10</span><h3>Local bastard leaderboard</h3></div><small>Survival, engagement, ethical flexibility</small></div>
             <div class="leader-table">
-              ${leaders.length ? leaders.map(leaderRow).join('') : emptyState('No completed runs yet. Getting fired is technically progress.')}
+              ${leaders.length ? leaders.map(leaderRow).join('') : emptyState('No completed runs yet. Go get fired with some fucking ambition.')}
             </div>
           </section>
           <section class="career-section">
-            <div class="career-section__head"><div><span>LAST 8</span><h3>Run history</h3></div><small>Newest first</small></div>
+            <div class="career-section__head"><div><span>LAST 8</span><h3>Incident history</h3></div><small>Freshest humiliation first</small></div>
             <div class="history-list">
-              ${history.length ? history.map(historyRow).join('') : emptyState('Your permanent record is currently, somehow, clean.')}
+              ${history.length ? history.map(historyRow).join('') : emptyState('Your permanent record is somehow clean. Suspicious as hell.')}
             </div>
           </section>
         </div>
 
         <footer class="career-foot">
           <div class="career-foot__save">
-            <span>Saved in this browser only.</span>
-            <button type="button" class="career-reset" data-career-reset>Reset career data</button>
+            <span>Your sins are saved in this browser only.</span>
+            <button type="button" class="career-reset" data-career-reset>Burn the whole record</button>
           </div>
           <strong>${runConfig.mode === 'daily' ? 'DAILY MODE ACTIVE' : 'STANDARD MODE'}</strong>
         </footer>
@@ -139,7 +139,7 @@ function dailySummary(state, todayBest) {
     : '';
   const best = todayBest
     ? `Local best: ${todayBest.score.toLocaleString()} points over ${todayBest.shiftsSurvived} shifts (${escapeHtml(todayBest.mutatorName || 'legacy rules')}).`
-    : 'No local daily result yet. A suspiciously open market.';
+    : 'No local daily result yet. Be the first bastard to leave a stain.';
   return `${runConfig.mode === 'daily' ? current : ''}${best}`;
 }
 
@@ -157,7 +157,7 @@ function wire(root, state) {
   const reset = root.querySelector('[data-career-reset]');
   if (reset) reset.onclick = () => {
     const confirmed = window.confirm(
-      'Reset your entire career? This permanently deletes money, perks, relationships, settings, run history, leaderboard scores, and daily records saved in this browser.',
+      'Burn your entire career record? This permanently deletes every dollar, perk, relationship, setting, run, score, and daily result saved in this browser. There is no clever undo button, mate.',
     );
     if (!confirmed) return;
     store.resetCareer();

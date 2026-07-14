@@ -28,7 +28,7 @@ function breakTos(state, s) {
 
   store.pushEvent({
     type: 'tos_break', tone: 'bad', streamId: s.id,
-    message: `🚨 "${s.title}" broke TOS on the front page. Reputation −15, Heat +20.`,
+    message: `🚨 "${s.title}" shit the TOS bed live on the front page. Reputation −15, Heat +20.`,
   });
 }
 

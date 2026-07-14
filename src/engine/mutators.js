@@ -153,7 +153,7 @@ function runExtraAudit(state, coolingMultiplier) {
     store.pushEvent({
       type: 'audit',
       tone: 'neutral',
-      message: `🔎 Crackdown re-audit — clean this time. Heat −${cooling}.`,
+      message: `🔎 Crackdown re-audit — somehow clean. The regulator leaves disappointed. Heat −${cooling}.`,
     });
     return;
   }
@@ -175,7 +175,7 @@ function runExtraAudit(state, coolingMultiplier) {
     type: 'audit',
     tone: 'bad',
     streamId: offenders[0].id,
-    message: `🚨 CRACKDOWN! Second audit catches ${offenders.length} stream${offenders.length === 1 ? '' : 's'} — engagement −${totalFine}, reputation −${repHit}, heat +${heatGain}.`,
+    message: `🚨 CRACKDOWN! Second audit catches ${offenders.length} reckless bastard${offenders.length === 1 ? '' : 's'} — engagement −${totalFine}, reputation −${repHit}, heat +${heatGain}.`,
   });
 }
 

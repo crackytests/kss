@@ -4,27 +4,27 @@
     "name": "Risk X-Ray",
     "cost": 500,
     "icon": "🔬",
-    "blurb": "Reveals each featured stream's exact risk speed and a live estimate of how many ticks until it breaks TOS."
+    "blurb": "Shows exactly how fast each featured disaster is approaching the TOS cliff, because vibes are a shit compliance system."
   },
   {
     "id": "auto_pull",
     "name": "Auto-Pull Bot",
     "cost": 900,
     "icon": "🤖",
-    "blurb": "Automatically yanks any featured stream the instant it crosses 90% risk — no more late-night reflex tests."
+    "blurb": "Yanks featured talent at 90% risk, one merciless tick before they shit on your career in public."
   },
   {
     "id": "heat_scrubber",
     "name": "PR Firm on Retainer",
     "cost": 750,
     "icon": "🧯",
-    "blurb": "Spin doctors quietly bleed off regulator heat every tick, making audits far rarer."
+    "blurb": "A pack of expensive bullshit artists quietly bleeds off regulator heat and invoices you for 'narrative hygiene.'"
   },
   {
     "id": "extra_slot",
     "name": "Sixth Slot",
     "cost": 1400,
     "icon": "➕",
-    "blurb": "Bribe IT for one more front-page slot. More streams featured, more engagement — and more to babysit."
+    "blurb": "Bribe IT for another front-page slot: more engagement, more chaos, one extra feral adult to babysit."
   }
 ]
