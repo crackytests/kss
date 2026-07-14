@@ -437,15 +437,15 @@ sponsors, perks blurbs) + UI strings ONLY in files you own (`ui/shift-overlay.js
 - Acceptance: all five `scripts/*.mjs` stay green (catches JSON slips); spot-read
   in-browser. Commit as one milestone.
 
-## Phase R2 — Deploy (lead) — in progress
-- [x] Subpath compatibility PROVEN: game boots clean under `/kick/` (simulated
-  Pages subpath) — relative fetches + module imports all fine, zero console errors.
-- [ ] **Blocked on user:** no `gh` CLI installed and no git remote. User must
-  either install/auth `gh` (then lead runs repo-create + push + Pages enable) or
-  create the GitHub repo manually and add it as `origin`.
-- [ ] After push: enable Pages (deploy from branch, `main`, root), smoke test the
-  public URL (fresh profile → title → tutorial → one full shift; daily-mode
-  determinism across two loads).
+## Phase R2 — Deploy — DONE (2026-07-14) 🚀
+**LIVE at https://crackytests.github.io/kss/** (repo: github.com/crackytests/kss,
+Pages deploy-from-branch `main`/root). WS-M (hard-R copy pass, ChatGPT commit
+`5a395b8`) shipped in the deployed build — all five check scripts green on it,
+JSON valid, copy spot-checked against the hard lines (no real people/platforms).
+Public smoke test passed: zero console errors under the `/kss/` subpath, title →
+18+ notice → 5-step tutorial (fires once, persists) → featured stream earning
+engagement with the clock running, and daily mode produced an identical
+18-stream roster across two loads.
 
 ## Sprint 4 ownership matrix
 
