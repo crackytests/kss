@@ -105,7 +105,7 @@ function briefing(state) {
       ${eddieSignoff('Righto — go make me proud, or at least difficult to subpoena. Give the green-logo streams a very, very fair go.')}
       <div class="shift-card__actions">
         <button class="shift-action" data-career-overlay>📊 Career ledger</button>
-        <button class="primary shift-action" data-start-shift>Righto, start day ${state.shift} →</button>
+        <button class="primary shift-action" data-start-shift>Set up day ${state.shift} — paused →</button>
       </div>
     </section>`;
 }
@@ -384,7 +384,10 @@ function wireBriefing(root, state) {
   if (!start) return;
   start.onclick = () => {
     startedShifts.add(state.shift);
-    store.dispatch({ type: 'SET_RUNNING', payload: { running: true } });
+    // Dismiss into a frozen board so the player can build the front page before
+    // any risk, sponsor patience, or shift time starts moving.
+    render(store.getState());
+    store.dispatch({ type: 'SET_RUNNING', payload: { running: false } });
   };
 }
 

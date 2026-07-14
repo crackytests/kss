@@ -1,21 +1,21 @@
 // FIRST-RUN TUTORIAL — WS-L (Sprint 4 Release Cut). Owned by lead.
-// Five skippable steps that fire the first time a player actually starts a
+// Six skippable steps that fire when the first briefing opens onto the board.
 // shift (career.tutorialDone gates it forever after, via store.persist()).
-// The clock pauses while a step is up and resumes when the player finishes
-// or skips. Pure chrome: highlights existing panes, dispatches only
-// SET_RUNNING, never touches the sim.
+// The clock stays paused throughout onboarding and remains paused afterward;
+// the player deliberately presses Resume once their front page is ready.
+// Pure chrome: highlights existing panes and never touches the simulation.
 import { store } from '../state/store.js';
 
 const STEPS = [
   {
     target: 'browse',
     title: 'The directory',
-    text: 'Every stream here is a liability with a webcam. Hit **Feature** to put one on the front page. Big viewers × big controversy = big engagement.',
+    text: 'The clock is paused, so set up without burning a second. Every stream here is a liability with a webcam. Hit **Feature** to put one on the front page.',
   },
   {
     target: 'frontpage',
     title: 'The front page',
-    text: 'Featured streams print engagement — the number that keeps you employed. Watch the TOS risk meter. It only goes up.',
+    text: 'Fill your available slots before you start the clock. Featured streams print engagement — the number that keeps you employed. Watch the TOS risk meter. It only goes up.',
   },
   {
     target: 'frontpage',
@@ -32,6 +32,11 @@ const STEPS = [
     title: 'The DMs',
     text: 'Streamers will slide in — begging, bribing, threatening. Choices move money, reputation, and heat… and they remember how you treated them. Good luck.',
   },
+  {
+    target: 'hud',
+    title: 'Start when you’re ready',
+    text: 'Finish setting up the front page, then press **▶ Resume** in the top bar. The timer, risk, and sponsor patience stay frozen until you do.',
+  },
 ];
 
 let stepIndex = -1; // -1 = not running
@@ -42,14 +47,18 @@ export function mountTutorial() {
 }
 
 function check(state) {
-  if (!armed || stepIndex !== -1) return;
+  if (stepIndex !== -1) {
+    if (state.running) store.dispatch({ type: 'SET_RUNNING', payload: { running: false } });
+    return;
+  }
+  if (!armed) return;
   if ((state.career || {}).tutorialDone) { armed = false; return; }
-  // Fire on the first REAL tick of shift 1 — not at boot, where START_SHIFT
-  // briefly sets running=true before main.js pauses for the briefing.
-  if (state.phase !== 'playing' || !state.running || state.shift !== 1 || state.tick < 1) return;
+  // Fire only after the day-one briefing has dismissed into its paused setup
+  // state. Boot also sits at tick 0, but the visible briefing guards that case.
+  const overlay = document.getElementById('shiftOverlay');
+  if (state.phase !== 'playing' || state.running || state.shift !== 1 || state.tick !== 0 || !overlay?.hidden) return;
   armed = false;
   stepIndex = 0;
-  store.dispatch({ type: 'SET_RUNNING', payload: { running: false } });
   render();
 }
 
@@ -71,7 +80,7 @@ function render() {
       <p>${step.text.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')}</p>
       <div class="tut-actions">
         <button data-tut-skip>Skip tutorial</button>
-        <button class="primary" data-tut-next>${stepIndex === STEPS.length - 1 ? "Let's work →" : 'Next →'}</button>
+        <button class="primary" data-tut-next>${stepIndex === STEPS.length - 1 ? 'Got it — stay paused' : 'Next →'}</button>
       </div>
     </div>`;
 
@@ -89,7 +98,6 @@ function finish() {
   const state = store.getState();
   state.career = { ...(state.career || {}), tutorialDone: true };
   store.persist();
-  store.dispatch({ type: 'SET_RUNNING', payload: { running: true } });
 }
 
 function clearHighlight() {
