@@ -83,6 +83,33 @@ function writeCareer(career) {
   } catch { /* ignore quota/availability errors */ }
 }
 
+// ---- Run-resume seam (v15). The live run autosaves to localStorage once per
+// tick; the title screen's ">>" button restores it. Career persists separately.
+const RUN_KEY = 'kickstaff.run.v1';
+
+function readRunSnapshot() {
+  try {
+    if (typeof localStorage === 'undefined') return null;
+    const snap = JSON.parse(localStorage.getItem(RUN_KEY) || 'null');
+    if (!snap || snap.v !== 1 || !snap.state) return null;
+    if (!['playing', 'shift_end', 'won'].includes(snap.state.phase)) return null;
+    return snap;
+  } catch { return null; }
+}
+
+function clearRunSnapshot() {
+  try {
+    if (typeof localStorage !== 'undefined') localStorage.removeItem(RUN_KEY);
+  } catch { /* unavailable storage */ }
+}
+
+function runMode() {
+  try {
+    if (typeof location === 'undefined') return 'standard';
+    return new URLSearchParams(location.search).get('mode') === 'daily' ? 'daily' : 'standard';
+  } catch { return 'standard'; }
+}
+
 function createStore() {
   let state = initialState(1);
   const subscribers = new Set();
@@ -157,12 +184,35 @@ function createStore() {
       writeCareer(career);
     },
 
+    /** The saved run snapshot, or null if none is resumable (v15). */
+    hasSavedRun() {
+      return readRunSnapshot();
+    },
+
+    /** Restore the saved run wholesale (v15): full state including the exact
+     * RNG stream position. Keeps the freshly-loaded career; drops any stale
+     * event queue; always lands paused so the player resumes deliberately. */
+    resumeRun() {
+      const snap = readRunSnapshot();
+      if (!snap) return false;
+      state = {
+        ...snap.state,
+        rng: makeRng(snap.seed, snap.rngInternal),
+        career: state.career,
+        eventQueue: [],
+        running: false,
+      };
+      this.commit();
+      return true;
+    },
+
     /** Permanently clear all browser-local meta progression and reset its
      * in-memory mirrors. The career UI reloads immediately after this call. */
     resetCareer() {
       try {
         if (typeof localStorage !== 'undefined') localStorage.removeItem(CAREER_KEY);
       } catch { /* private mode / unavailable storage */ }
+      clearRunSnapshot();
       state.career = {};
       state.money = 0;
       state.perks = {};
@@ -467,3 +517,28 @@ function shallowEqual(a, b) {
 
 export const store = createStore();
 export { clamp };
+
+// ---- run autosave (v15). Registered before any UI subscriber. Saves at most
+// once per tick/phase change; never before the run's first real tick, so a
+// fresh boot can't clobber the previous run's snapshot before the player picks
+// ">>" on the title screen. A fired run clears its snapshot — no resurrecting.
+let _lastRunSave = null;
+store.subscribe((state) => {
+  try {
+    if (typeof localStorage === 'undefined') return;
+    if (state.phase === 'fired') { clearRunSnapshot(); _lastRunSave = null; return; }
+    if (state.tick < 1) return;
+    const mark = `${state.shift}|${state.tick}|${state.phase}`;
+    if (mark === _lastRunSave) return;
+    _lastRunSave = mark;
+    const { rng, career, eventQueue, ...rest } = state;
+    localStorage.setItem(RUN_KEY, JSON.stringify({
+      v: 1,
+      savedAt: Date.now(),
+      mode: runMode(),
+      seed: state.seed,
+      rngInternal: rng && rng.getInternal ? rng.getInternal() : undefined,
+      state: { ...rest, eventQueue: [], running: false },
+    }));
+  } catch { /* quota/unavailable — resume simply won't be offered */ }
+});

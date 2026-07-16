@@ -1,9 +1,11 @@
 // Seeded PRNG. Never call Math.random() anywhere in the project — go through this.
 // Contract: makeRng(seed) -> { next, int, pick }  (see docs/CONTRACTS.md §6)
 
-/** mulberry32 — small, fast, good enough for a game. */
-export function makeRng(seed) {
-  let a = seed >>> 0;
+/** mulberry32 — small, fast, good enough for a game.
+ * `internal` (optional, v15): resume the stream from a previously saved
+ * getInternal() value instead of the seed — used by run-resume persistence. */
+export function makeRng(seed, internal) {
+  let a = (internal ?? seed) >>> 0;
   const next = () => {
     a |= 0;
     a = (a + 0x6d2b79f5) | 0;
@@ -19,5 +21,7 @@ export function makeRng(seed) {
     pick: (arr) => arr[Math.floor(next() * arr.length)],
     /** true with probability p */
     chance: (p) => next() < p,
+    /** current internal stream position — serialize this to resume exactly (v15) */
+    getInternal: () => a >>> 0,
   };
 }

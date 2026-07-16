@@ -11,24 +11,34 @@ import { store } from '../state/store.js';
 import { setVolume } from '../engine/audio.js';
 
 const SKIP_KEY = 'kickstaff.titleSkip';
+const RESUME_KEY = 'kickstaff.resumeAfterNav';
 
+/** Mounts the title shell. Returns true if it RESUMED a saved run (second leg
+ * of a ">>" navigation) — main.js must then skip its fresh START_SHIFT. */
 export function mountTitle() {
   const root = document.getElementById('titleScreen');
-  if (!root) return;
+  if (!root) return false;
 
-  // One-shot skip after an in-title mode switch reload.
+  // One-shot flags set before an in-title navigation reload.
   let skip = false;
+  let resumeNow = false;
   try {
     skip = sessionStorage.getItem(SKIP_KEY) === '1';
     if (skip) sessionStorage.removeItem(SKIP_KEY);
+    resumeNow = sessionStorage.getItem(RESUME_KEY) === '1';
+    if (resumeNow) sessionStorage.removeItem(RESUME_KEY);
   } catch { /* storage unavailable — always show title */ }
 
   render(root);
   wire(root);
   initVolume();
 
+  // Second leg of a ">>" resume that had to change the URL first (v15).
+  if (resumeNow && store.resumeRun()) { hide(root); return true; }
+
   if (skip) hide(root);
   else show(root);
+  return false;
 }
 
 function isDaily() {
@@ -38,6 +48,10 @@ function isDaily() {
 function render(root) {
   const daily = isDaily();
   const today = new Date().toISOString().slice(0, 10);
+  const snap = store.hasSavedRun();
+  const resumeLabel = snap
+    ? `Resume last game — shift ${snap.state.shift}${snap.mode === 'daily' ? ' (daily)' : ''}`
+    : '';
   root.innerHTML = `
     <div class="title-card" role="dialog" aria-modal="true" aria-labelledby="titleBrand">
       <div class="title-eyebrow">A PLATFORM CURATION SATIRE</div>
@@ -50,7 +64,8 @@ function render(root) {
       </div>
 
       <div class="title-actions">
-        <button class="primary title-btn" data-mode="career">▶ ${daily ? 'Switch to Career' : 'Start Career'}</button>
+        ${snap ? `<button class="primary title-btn title-resume" data-resume aria-label="${resumeLabel}" title="${resumeLabel}">&gt;&gt;</button>` : ''}
+        <button class="${snap ? '' : 'primary '}title-btn" data-mode="career">▶ ${daily ? 'Switch to Career' : 'Start Career'}</button>
         <button class="title-btn ${daily ? 'primary' : ''}" data-mode="daily">📅 ${daily ? `Play Daily — ${today}` : 'Daily Run'}</button>
       </div>
       <div class="title-actions title-actions--minor">
@@ -89,6 +104,26 @@ function render(root) {
 }
 
 function wire(root) {
+  // ">>" — resume the saved run (v15). If the saved run's mode/seed don't match
+  // the current URL, navigate to the canonical run URL first (so persistence's
+  // run config aligns) and finish the resume after the reload via RESUME_KEY.
+  const resumeBtn = root.querySelector('[data-resume]');
+  if (resumeBtn) {
+    resumeBtn.onclick = () => {
+      const snap = store.hasSavedRun();
+      if (!snap) { render(root); wire(root); return; }
+      const params = new URLSearchParams(location.search);
+      const urlMatches = (params.get('mode') === 'daily') === (snap.mode === 'daily')
+        && params.get('seed') === String(snap.seed);
+      if (!urlMatches) {
+        try { sessionStorage.setItem(RESUME_KEY, '1'); } catch { /* resume inline instead */ }
+        location.href = `${location.pathname}?seed=${snap.seed}${snap.mode === 'daily' ? '&mode=daily' : ''}`;
+        return;
+      }
+      if (store.resumeRun()) hide(root);
+    };
+  }
+
   for (const btn of root.querySelectorAll('[data-mode]')) {
     btn.onclick = () => {
       const wantDaily = btn.dataset.mode === 'daily';

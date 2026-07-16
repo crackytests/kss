@@ -32,6 +32,10 @@
 }
 .title-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; }
 .title-btn { font-size: 15px; padding: 12px 22px; border-radius: 12px; font-weight: 700; }
+.title-resume {
+  font: 800 20px/1 var(--mono); letter-spacing: -.08em; padding: 12px 20px;
+  box-shadow: 0 0 0 3px #53fc1826, 0 0 22px #53fc1833;
+}
 .title-actions--minor button,
 .title-menu-link { font-size: 12px; padding: 7px 12px; }
 .title-menu-link {

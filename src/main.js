@@ -63,12 +63,17 @@ async function boot() {
   mountCrisis();     // WS-P: PR crisis panel
   mountClipDesk();   // WS-P: viral clip timing minigame
   mountTutorial();   // watches for the first real shift start (career.tutorialDone gates)
-  mountTitle();      // topmost shell; must mount after the store hydrates career
+  // Topmost shell; must mount after the store hydrates career. Returns true when
+  // it restored a saved run (">>" second leg, v15) — then the fresh-shift reset
+  // below would wipe the restored state and must be skipped.
+  const resumed = mountTitle();
   mountHotkeys();    // WS-Q: shortcuts, help overlay, additive ARIA synchronization
 
-  // Reset the first shift, then hold on its briefing until the player starts.
-  store.dispatch({ type: 'START_SHIFT' });
-  store.dispatch({ type: 'SET_RUNNING', payload: { running: false } });
+  if (!resumed) {
+    // Reset the first shift, then hold on its briefing until the player starts.
+    store.dispatch({ type: 'START_SHIFT' });
+    store.dispatch({ type: 'SET_RUNNING', payload: { running: false } });
+  }
   start();
 }
 

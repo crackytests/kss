@@ -474,3 +474,17 @@ store.resetCareer()              // delete full career save + reset in-memory me
   `scripts/crisis-check.mjs`. Mount slots `#crisisSlot`, `#clipSlot`. Also
   S6.0 hardening: `.github/workflows/checks.yml` CI (syntax + JSON + all check
   scripts on push/PR) and og:/twitter: social-preview meta + card image.
+- v15 (run resume / lead, 2026-07-14) — **additive.** The live run autosaves to
+  `localStorage['kickstaff.run.v1']` (internal store subscriber; at most once
+  per tick/phase change; NEVER before the run's first tick so a fresh boot
+  can't clobber the previous snapshot; a `fired` run clears it). Snapshot =
+  full state minus `rng`/`career`/`eventQueue`, plus the exact RNG stream
+  position: `makeRng(seed, internal?)` (§6) now accepts a resume position and
+  exposes `getInternal()`. New store APIs (§7): `hasSavedRun()` → snapshot |
+  null; `resumeRun()` → restore wholesale (keeps boot-loaded career, drops
+  stale events, lands paused). `resetCareer()` also clears the run snapshot.
+  Title screen shows a primary `>>` button when a snapshot exists; if the
+  snapshot's mode/seed don't match the URL it navigates to the canonical
+  `?seed=` URL (sessionStorage one-shot) and auto-resumes on arrival —
+  `mountTitle()` returns true in that case and `main.js` skips its fresh
+  `START_SHIFT`. index.html bumped to `main.js?v=10`.
