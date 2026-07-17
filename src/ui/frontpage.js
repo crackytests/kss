@@ -9,7 +9,7 @@
 //   - updateMeters() runs every commit but only mutates the existing meter
 //     widths / labels in place, so pull buttons (and any hover/focus) survive.
 import { store } from '../state/store.js';
-import { streamThumbnail } from './stream-thumbnails.js?v=4';
+import { streamThumbnail } from './stream-thumbnails.js?v=5';
 
 export function mountFrontPage() {
   render(store.getState());

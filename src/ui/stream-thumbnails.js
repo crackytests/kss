@@ -10,18 +10,40 @@ const STREAM_PANELS = new Map([
   'st_luckyparcel', 'st_rooftopremy', 'st_puppycam', 'st_chessgrudge',
   'st_rainwatch', 'st_cookoff', 'st_lootlola', 'st_retrorex',
   'st_rumorroom', 'st_dancecrew', 'st_bracketboss', 'st_quietcraft',
-].map((id, index) => [id, index]));
+].map((id, index) => [id, index]).concat([
+  ['st_trainwrecked', 24], ['st_xqpensive', 25], ['st_adenboss', 26],
+  ['st_scapular', 27], ['st_johnnyabroad', 28], ['st_vitaljustice', 29],
+  ['st_natalee', 30], ['st_jackdough', 31], ['st_neonbrkup', 32],
+  ['st_sneerko', 33],
+]));
 
-const STANDALONE = {
+const STREAM_NORMALS = {
   st_dang3rman: {
-    normal: 'src/assets/stream-thumbs/dang3rman-normal.png',
-    normalCss: '../assets/stream-thumbs/dang3rman-normal.png',
+    src: 'src/assets/stream-thumbs/dang3rman-normal.png',
+    css: '../assets/stream-thumbs/dang3rman-normal.png',
+  },
+  st_fireuranus: {
+    src: 'src/assets/stream-thumbs/fire-uranus-normal.png',
+    css: '../assets/stream-thumbs/fire-uranus-normal.png',
+  },
+  st_trainwrecked: normalAsset('trainwrecked-normal.webp'),
+  st_xqpensive: normalAsset('xqpensive-normal.webp'),
+  st_adenboss: normalAsset('adenboss-normal.webp'),
+  st_scapular: normalAsset('scapular-normal.webp'),
+  st_johnnyabroad: normalAsset('johnny-abroad-normal.webp'),
+  st_vitaljustice: normalAsset('vitaljustice-normal.webp'),
+  st_natalee: normalAsset('natalee-normal.webp'),
+  st_jackdough: normalAsset('jack-dough-normal.webp'),
+  st_neonbrkup: normalAsset('n3onbrkup-normal.webp'),
+  st_sneerko: normalAsset('sneerko-normal.webp'),
+};
+
+const STREAM_INCIDENTS = {
+  st_dang3rman: {
     beat1: 'src/assets/stream-thumbs/dang3rman-incident-beat1.png',
     beat2: 'src/assets/stream-thumbs/dang3rman-incident-beat2.png',
   },
   st_fireuranus: {
-    normal: 'src/assets/stream-thumbs/fire-uranus-normal.png',
-    normalCss: '../assets/stream-thumbs/fire-uranus-normal.png',
     beat1: 'src/assets/stream-thumbs/fire-uranus-incident-beat1.png',
     beat2: 'src/assets/stream-thumbs/fire-uranus-incident-beat2.png',
   },
@@ -29,12 +51,13 @@ const STANDALONE = {
 
 export function streamThumbnail(stream, streamIndex) {
   const panel = panelAddress(stream.id, streamIndex);
+  const standalone = STREAM_NORMALS[stream.id];
   const identityIndex = STREAM_PANELS.get(stream.id) ?? streamIndex;
   const phase = (identityIndex % 7) * 0.37;
   const focusX = 45 + (identityIndex % 3) * 5;
   const focusY = 45 + (identityIndex % 2) * 8;
-  const image = panel.standalone ? `url('${panel.normalCss}')` : `var(--atlas-${panel.atlas})`;
-  const size = panel.standalone ? 'cover' : '400% 300%';
+  const image = standalone ? `url('${standalone.css}')` : `var(--atlas-${panel.atlas})`;
+  const size = standalone ? 'cover' : '400% 300%';
 
   return `
     <div class="stream-thumb" data-stream="${stream.id}" style="--thumb-fallback:${stream.color}" aria-hidden="true">
@@ -46,24 +69,24 @@ export function streamThumbnail(stream, streamIndex) {
 /** Two generated incident beats plus the stream's normal frame for TOS replay. */
 export function incidentReplay(stream, streamIndex = 0) {
   const panel = panelAddress(stream.id, streamIndex);
-  const frameClass = panel.standalone ? ' incident-frame--standalone' : '';
-  const normal = panel.standalone ? panel.normal : `src/assets/stream-thumbs/stream-atlas-${panel.atlas}-v2.png`;
-  const beat1 = panel.standalone ? panel.beat1 : `src/assets/stream-thumbs/stream-incident-${panel.atlas}-beat1.png`;
-  const beat2 = panel.standalone ? panel.beat2 : `src/assets/stream-thumbs/stream-incident-${panel.atlas}-beat2.png`;
+  const standalone = STREAM_NORMALS[stream.id];
+  const incident = STREAM_INCIDENTS[stream.id];
+  const normal = standalone?.src ?? `src/assets/stream-thumbs/stream-atlas-${panel.atlas}-v2.png`;
+  const beat1 = incident?.beat1 ?? `src/assets/stream-thumbs/stream-incident-${panel.atlas}-beat1.png`;
+  const beat2 = incident?.beat2 ?? `src/assets/stream-thumbs/stream-incident-${panel.atlas}-beat2.png`;
+  const normalClass = standalone ? ' incident-frame--standalone' : '';
+  const incidentClass = incident ? ' incident-frame--standalone' : '';
   return `
     <div class="incident-replay" style="--incident-col:${panel.col};--incident-row:${panel.row}" aria-label="Incident replay">
-      <img class="incident-frame incident-frame--normal${frameClass}" src="${normal}" alt="" draggable="false" decoding="sync">
-      <img class="incident-frame incident-frame--beat1${frameClass}" src="${beat1}" alt="" draggable="false" decoding="sync">
-      <img class="incident-frame incident-frame--beat2${frameClass}" src="${beat2}" alt="" draggable="false" decoding="sync">
+      <img class="incident-frame incident-frame--normal${normalClass}" src="${normal}" alt="" draggable="false" decoding="sync">
+      <img class="incident-frame incident-frame--beat1${incidentClass}" src="${beat1}" alt="" draggable="false" decoding="sync">
+      <img class="incident-frame incident-frame--beat2${incidentClass}" src="${beat2}" alt="" draggable="false" decoding="sync">
       <span class="incident-replay__eyebrow" aria-hidden="true">INCIDENT REPLAY</span>
       <span class="incident-cut" aria-hidden="true"><b>TOS VIOLATION</b><small>STREAM REMOVED</small></span>
     </div>`;
 }
 
 function panelAddress(streamId, fallbackIndex) {
-  if (STANDALONE[streamId]) {
-    return { standalone: true, ...STANDALONE[streamId], col: 0, row: 0, position: 'center' };
-  }
   const identityIndex = STREAM_PANELS.get(streamId) ?? fallbackIndex;
   const panel = ((identityIndex % 24) + 24) % 24;
   const atlas = panel < 12 ? 'a' : 'b';
@@ -75,5 +98,12 @@ function panelAddress(streamId, fallbackIndex) {
     col,
     row,
     position: `${(col * 100) / 3}% ${row * 50}%`,
+  };
+}
+
+function normalAsset(filename) {
+  return {
+    src: `src/assets/stream-thumbs/${filename}`,
+    css: `../assets/stream-thumbs/${filename}`,
   };
 }
