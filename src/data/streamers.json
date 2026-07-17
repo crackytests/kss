@@ -1,28 +1,182 @@
 [
-  { "id": "slotking",   "name": "SlotKing777",   "color": "#f5a623" },
-  { "id": "rollarob",   "name": "RollaRob",       "color": "#e0245e" },
-  { "id": "dramahouse", "name": "DramaHouse",     "color": "#7b61ff" },
-  { "id": "ragequit",   "name": "RageQuitRandy",  "color": "#ff6b35" },
-  { "id": "cozycook",   "name": "CozyCookMei",    "color": "#53fc18" },
-  { "id": "poolday",    "name": "PoolDayPaige",   "color": "#18c3fc" },
-  { "id": "cryptobro",  "name": "CryptoBroChad",  "color": "#ffd33d" },
-  { "id": "ballgame",   "name": "BallGameBenny",  "color": "#2ecc71" },
-  { "id": "pixelpilot", "name": "PixelPilot",      "color": "#4dd0e1" },
-  { "id": "streetsnacks", "name": "StreetSnacksSam", "color": "#ffb74d" },
-  { "id": "midnightmara", "name": "MidnightMara",   "color": "#ab47bc" },
-  { "id": "fantasyfrank", "name": "FantasyFrank",   "color": "#66bb6a" },
-  { "id": "luckyparcel", "name": "LuckyParcel",     "color": "#ec407a" },
-  { "id": "rooftopremy", "name": "RooftopRemy",    "color": "#42a5f5" },
-  { "id": "puppycam",   "name": "PuppyCamPam",     "color": "#ffee58" },
-  { "id": "chessgrudge", "name": "ChessGrudge",    "color": "#8d6e63" },
-  { "id": "rainwatch",  "name": "RainWatchRay",    "color": "#78909c" },
-  { "id": "cookoff",    "name": "CookoffCam",      "color": "#ef5350" },
-  { "id": "lootlola",   "name": "LootWheelLola",   "color": "#ff7043" },
-  { "id": "retrorex",   "name": "RetroRex",        "color": "#26c6da" },
-  { "id": "rumorroom",  "name": "RumorRoomRae",    "color": "#7e57c2" },
-  { "id": "dancecrew",  "name": "DanceCrewDee",    "color": "#ec407a" },
-  { "id": "bracketboss", "name": "BracketBoss",    "color": "#29b6f6" },
-  { "id": "quietcraft", "name": "QuietCraftQuinn", "color": "#9ccc65" },
-  { "id": "dang3rman", "name": "Dang3rMan", "color": "#d8ff2f" },
-  { "id": "fireuranus", "name": "Fire Uranus", "color": "#ff5a1f" }
+  {
+    "id": "slotking",
+    "name": "SlotKing777",
+    "color": "#f5a623"
+  },
+  {
+    "id": "rollarob",
+    "name": "RollaRob",
+    "color": "#e0245e"
+  },
+  {
+    "id": "dramahouse",
+    "name": "DramaHouse",
+    "color": "#7b61ff"
+  },
+  {
+    "id": "ragequit",
+    "name": "RageQuitRandy",
+    "color": "#ff6b35"
+  },
+  {
+    "id": "cozycook",
+    "name": "CozyCookMei",
+    "color": "#53fc18"
+  },
+  {
+    "id": "poolday",
+    "name": "PoolDayPaige",
+    "color": "#18c3fc"
+  },
+  {
+    "id": "cryptobro",
+    "name": "CryptoBroChad",
+    "color": "#ffd33d"
+  },
+  {
+    "id": "ballgame",
+    "name": "BallGameBenny",
+    "color": "#2ecc71"
+  },
+  {
+    "id": "pixelpilot",
+    "name": "PixelPilot",
+    "color": "#4dd0e1"
+  },
+  {
+    "id": "streetsnacks",
+    "name": "StreetSnacksSam",
+    "color": "#ffb74d"
+  },
+  {
+    "id": "midnightmara",
+    "name": "MidnightMara",
+    "color": "#ab47bc"
+  },
+  {
+    "id": "fantasyfrank",
+    "name": "FantasyFrank",
+    "color": "#66bb6a"
+  },
+  {
+    "id": "luckyparcel",
+    "name": "LuckyParcel",
+    "color": "#ec407a"
+  },
+  {
+    "id": "rooftopremy",
+    "name": "RooftopRemy",
+    "color": "#42a5f5"
+  },
+  {
+    "id": "puppycam",
+    "name": "PuppyCamPam",
+    "color": "#ffee58"
+  },
+  {
+    "id": "chessgrudge",
+    "name": "ChessGrudge",
+    "color": "#8d6e63"
+  },
+  {
+    "id": "rainwatch",
+    "name": "RainWatchRay",
+    "color": "#78909c"
+  },
+  {
+    "id": "cookoff",
+    "name": "CookoffCam",
+    "color": "#ef5350"
+  },
+  {
+    "id": "lootlola",
+    "name": "LootWheelLola",
+    "color": "#ff7043"
+  },
+  {
+    "id": "retrorex",
+    "name": "RetroRex",
+    "color": "#26c6da"
+  },
+  {
+    "id": "rumorroom",
+    "name": "RumorRoomRae",
+    "color": "#7e57c2"
+  },
+  {
+    "id": "dancecrew",
+    "name": "DanceCrewDee",
+    "color": "#ec407a"
+  },
+  {
+    "id": "bracketboss",
+    "name": "BracketBoss",
+    "color": "#29b6f6"
+  },
+  {
+    "id": "quietcraft",
+    "name": "QuietCraftQuinn",
+    "color": "#9ccc65"
+  },
+  {
+    "id": "dang3rman",
+    "name": "Dang3rMan",
+    "color": "#d8ff2f"
+  },
+  {
+    "id": "fireuranus",
+    "name": "Fire Uranus",
+    "color": "#ff5a1f"
+  },
+  {
+    "id": "trainwrecked",
+    "name": "Trainwrecked",
+    "color": "#c9a227"
+  },
+  {
+    "id": "xqpensive",
+    "name": "xQpensive",
+    "color": "#7fd4ff"
+  },
+  {
+    "id": "adenboss",
+    "name": "AdenBoss",
+    "color": "#ff4d94"
+  },
+  {
+    "id": "scapular",
+    "name": "Scapular",
+    "color": "#a0522d"
+  },
+  {
+    "id": "johnnyabroad",
+    "name": "Johnny Abroad",
+    "color": "#d94f30"
+  },
+  {
+    "id": "vitaljustice",
+    "name": "VitalJustice",
+    "color": "#4f7ad9"
+  },
+  {
+    "id": "natalee",
+    "name": "NataLee",
+    "color": "#ff9ecf"
+  },
+  {
+    "id": "jackdough",
+    "name": "Jack Dough",
+    "color": "#f0e14a"
+  },
+  {
+    "id": "neonbrkup",
+    "name": "N3ONBRKUP",
+    "color": "#39ffd5"
+  },
+  {
+    "id": "sneerko",
+    "name": "Sneerko",
+    "color": "#8a8a8a"
+  }
 ]

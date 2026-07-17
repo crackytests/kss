@@ -1166,5 +1166,176 @@
         }
       }
     ]
+  },
+  {
+    "id": "dm_trainwrecked",
+    "streamerId": "trainwrecked",
+    "name": "Trainwrecked",
+    "avatarColor": "#c9a227",
+    "arrivesAt": 4,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "quick org-chart refresher, curator: I co-founded this casino with a chat window. when my slots stream isn't on the front page, the front page is wrong. fix the front page."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featuring you now. Love the chain of command.",
+        "effect": {
+          "reputation": 3,
+          "relationship": 5,
+          "heat": 3,
+          "investigation": 2,
+          "forceFeatureStreamId": "st_trainwrecked",
+          "reply": "good lad. remember: it's not a conflict of interest if the interests all belong to me."
+        }
+      },
+      {
+        "label": "You go through curation like everyone else.",
+        "effect": {
+          "reputation": -6,
+          "relationship": -15,
+          "investigation": -2,
+          "reply": "adorable. HR will enjoy your 'curation principles' in the exit interview. i'll wait."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_xqpensive",
+    "streamerId": "xqpensive",
+    "name": "xQpensive",
+    "avatarColor": "#7fd4ff",
+    "arrivesAt": 9,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "dude dude dude ok so the board is asking why the nine-figure guy isn't pinned. feature me and I'll do NUMBERS. also day 47 no gambling. the slots on my stream are educational."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. Please define 'educational'.",
+        "effect": {
+          "relationship": 8,
+          "heat": 4,
+          "reply": "education is when the bonus buy hits and chat learns something about themselves. LETS GOOO"
+        }
+      },
+      {
+        "label": "Sit down. The buyout isn't my problem.",
+        "effect": {
+          "relationship": -10,
+          "reputation": 2,
+          "reply": "UNBELIEVABLE. i moved platforms for this?? actually insane. juicers remember, curator."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_adenboss",
+    "streamerId": "adenboss",
+    "name": "AdenBoss",
+    "avatarColor": "#ff4d94",
+    "arrivesAt": 14,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "yo tonight's guest is UNGOVERNABLE. can't say who. legal said the name alone is a liability. feature the stream BEFORE he arrives and technically you didn't know. w plan?"
+      }
+    ],
+    "choices": [
+      {
+        "label": "Feature it. Plausible deniability is my love language.",
+        "effect": {
+          "heat": 8,
+          "investigation": 6,
+          "relationship": 6,
+          "storyFlags": {
+            "mysteryGuestEnabled": true
+          },
+          "forceFeatureStreamId": "st_adenboss",
+          "reply": "W CURATOR. if anyone asks, the algorithm did it 🤝"
+        }
+      },
+      {
+        "label": "Name the guest or no front page.",
+        "effect": {
+          "relationship": -8,
+          "reputation": 4,
+          "reply": "L + ratio + you'll see the clips tomorrow anyway. everyone will. that's the business model."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_scapular",
+    "streamerId": "scapular",
+    "name": "Scapular",
+    "avatarColor": "#a0522d",
+    "arrivesAt": 20,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "day 63 of the subathon. chat voted 'drive somewhere illegal' and democracy is sacred. one hour on the front page and I'll keep it to LIGHT crimes. misdemeanors tops. deal?"
+      }
+    ],
+    "choices": [
+      {
+        "label": "Deal. Misdemeanors TOPS. I'm watching.",
+        "effect": {
+          "heat": 6,
+          "investigation": 5,
+          "relationship": 6,
+          "reply": "you won't regret this (legal disclaimer: you might). MOG WORLD ORDER RIDES."
+        }
+      },
+      {
+        "label": "You're a mugshot with a subscriber count. No.",
+        "effect": {
+          "relationship": -12,
+          "reputation": 3,
+          "reply": "first of all, that mugshot went VIRAL. second of all, chat says you're a coward. day 64 tomorrow, with or without you."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_natalee",
+    "streamerId": "natalee",
+    "name": "NataLee",
+    "avatarColor": "#ff9ecf",
+    "arrivesAt": 26,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "ok so tonight's lake rescue is FULLY choreographed. the drowning is fake, the ambulance is rented, the tears are method. it LOOKS like a TOS bomb but it's theatre. front page me, the algorithm can't tell the difference and neither can chat 💅"
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. Art is subjective, liability isn't.",
+        "effect": {
+          "heat": 5,
+          "relationship": 6,
+          "investigation": 3,
+          "reply": "you get it!! if the coast guard shows up again that's ORGANIC REACH baby"
+        }
+      },
+      {
+        "label": "Last 'fake' stunt left a real person in real water.",
+        "effect": {
+          "relationship": -10,
+          "reputation": 4,
+          "reply": "she could float MOSTLY. one bad edit and suddenly I'm the villain. fine. I'll take my genius to the swamp category."
+        }
+      }
+    ]
   }
 ]

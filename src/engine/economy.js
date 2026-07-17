@@ -19,7 +19,7 @@ import { store } from '../state/store.js';
 // Tuning defaults mirror src/data/tos-rules.json; hydrated at load (same pattern
 // as engine/audit.js). Falls back to defaults when fetch is unavailable.
 const rules = {
-  engagementScale: 0.4,
+  engagementScale: 0.34,
   salaryBase: 400,
   salaryReputationBonusMax: 400,
   quotaClearBonus: 300,

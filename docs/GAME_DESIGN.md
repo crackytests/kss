@@ -93,9 +93,19 @@ complicit cog. Gambling is shown as a rigged house-always-wins spectacle whose
 
 R-rated does **not** mean anything goes. Hard lines that keep it defensible
 satire (do not cross even in an R register):
-- **Fictional only** — invented streamers/handles/platform. No real people,
-  companies, or real brand/logo assets. (Kick-ish green/black is fine; the name
-  "Kick" in the title is parody-of-a-platform framing, not real brand content.)
+- **Parody, not impersonation** — (policy updated 2026-07, user decision, was
+  "fictional only") the cast may include **thin-veil parodies of major public
+  figures** under strict conditions: PUBLIC figures only (mega-streamers,
+  never private individuals); obviously-punning invented names and personas
+  (never their real names/handles/likeness assets); the satire targets their
+  **extensively-documented public conduct** (gambling promotion, staged stunts,
+  arrests reported in mainstream press) — never fabricated specific accusations
+  presented as fact; generic game mechanics (bribes, TOS breaks) are the game's
+  universal fiction and apply to every character equally. **Never** parody a
+  deceased person or anyone whose story involves their victimhood; **never**
+  reproduce a real person's hate speech as "their" content. No real companies'
+  brand/logo assets. (Kick-ish green/black is fine; the name "Kick" in the
+  title is parody-of-a-platform framing, not real brand content.)
 - **No hate** — no slurs or dehumanizing content aimed at protected groups. Edgy
   ≠ bigoted. Punch at the system, not at real marginalized people.
 - **Nothing sexual involving minors, ever**, and no real sexual/graphic media —

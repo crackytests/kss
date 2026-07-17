@@ -6,7 +6,11 @@
     "category": "Slots",
     "viewers": 42000,
     "color": "#f5a623",
-    "tags": ["gambling", "stake", "hype"],
+    "tags": [
+      "gambling",
+      "stake",
+      "hype"
+    ],
     "controversy": 35,
     "isGambling": true,
     "isStake": true,
@@ -23,7 +27,10 @@
     "category": "Gambling",
     "viewers": 18500,
     "color": "#e0245e",
-    "tags": ["gambling", "stake"],
+    "tags": [
+      "gambling",
+      "stake"
+    ],
     "controversy": 28,
     "isGambling": true,
     "isStake": true,
@@ -40,7 +47,11 @@
     "category": "IRL",
     "viewers": 61000,
     "color": "#7b61ff",
-    "tags": ["controversial", "edgy-irl", "drama"],
+    "tags": [
+      "controversial",
+      "edgy-irl",
+      "drama"
+    ],
     "controversy": 78,
     "isGambling": false,
     "isStake": false,
@@ -57,7 +68,10 @@
     "category": "Just Chatting",
     "viewers": 22000,
     "color": "#ff6b35",
-    "tags": ["controversial", "rage"],
+    "tags": [
+      "controversial",
+      "rage"
+    ],
     "controversy": 55,
     "isGambling": false,
     "isStake": false,
@@ -74,7 +88,9 @@
     "category": "Just Chatting",
     "viewers": 8000,
     "color": "#53fc18",
-    "tags": ["wholesome"],
+    "tags": [
+      "wholesome"
+    ],
     "controversy": 3,
     "isGambling": false,
     "isStake": false,
@@ -91,7 +107,10 @@
     "category": "Pools",
     "viewers": 39000,
     "color": "#18c3fc",
-    "tags": ["controversial", "edgy-irl"],
+    "tags": [
+      "controversial",
+      "edgy-irl"
+    ],
     "controversy": 66,
     "isGambling": false,
     "isStake": false,
@@ -108,7 +127,11 @@
     "category": "Gambling",
     "viewers": 15000,
     "color": "#ffd33d",
-    "tags": ["gambling", "controversial", "crypto"],
+    "tags": [
+      "gambling",
+      "controversial",
+      "crypto"
+    ],
     "controversy": 62,
     "isGambling": true,
     "isStake": false,
@@ -125,7 +148,10 @@
     "category": "Sports",
     "viewers": 27000,
     "color": "#2ecc71",
-    "tags": ["controversial", "restream-risk"],
+    "tags": [
+      "controversial",
+      "restream-risk"
+    ],
     "controversy": 48,
     "isGambling": false,
     "isStake": false,
@@ -142,7 +168,10 @@
     "category": "Just Chatting",
     "viewers": 28000,
     "color": "#4dd0e1",
-    "tags": ["speedrun", "skill"],
+    "tags": [
+      "speedrun",
+      "skill"
+    ],
     "controversy": 12,
     "isGambling": false,
     "isStake": false,
@@ -159,7 +188,11 @@
     "category": "IRL",
     "viewers": 16500,
     "color": "#ffb74d",
-    "tags": ["food", "wholesome", "irl"],
+    "tags": [
+      "food",
+      "wholesome",
+      "irl"
+    ],
     "controversy": 9,
     "isGambling": false,
     "isStake": false,
@@ -176,7 +209,11 @@
     "category": "Just Chatting",
     "viewers": 53000,
     "color": "#ab47bc",
-    "tags": ["controversial", "drama", "call-in"],
+    "tags": [
+      "controversial",
+      "drama",
+      "call-in"
+    ],
     "controversy": 72,
     "isGambling": false,
     "isStake": false,
@@ -193,7 +230,10 @@
     "category": "Sports",
     "viewers": 34000,
     "color": "#66bb6a",
-    "tags": ["sports", "debate"],
+    "tags": [
+      "sports",
+      "debate"
+    ],
     "controversy": 41,
     "isGambling": false,
     "isStake": false,
@@ -210,7 +250,11 @@
     "category": "Gambling",
     "viewers": 26000,
     "color": "#ec407a",
-    "tags": ["gambling", "stake", "mystery-box"],
+    "tags": [
+      "gambling",
+      "stake",
+      "mystery-box"
+    ],
     "controversy": 46,
     "isGambling": true,
     "isStake": true,
@@ -227,7 +271,11 @@
     "category": "IRL",
     "viewers": 41000,
     "color": "#42a5f5",
-    "tags": ["controversial", "edgy-irl", "stunts"],
+    "tags": [
+      "controversial",
+      "edgy-irl",
+      "stunts"
+    ],
     "controversy": 63,
     "isGambling": false,
     "isStake": false,
@@ -244,7 +292,11 @@
     "category": "IRL",
     "viewers": 11000,
     "color": "#ffee58",
-    "tags": ["wholesome", "animals", "charity"],
+    "tags": [
+      "wholesome",
+      "animals",
+      "charity"
+    ],
     "controversy": 1,
     "isGambling": false,
     "isStake": false,
@@ -261,7 +313,11 @@
     "category": "Just Chatting",
     "viewers": 30000,
     "color": "#8d6e63",
-    "tags": ["debate", "rivalry", "controversial"],
+    "tags": [
+      "debate",
+      "rivalry",
+      "controversial"
+    ],
     "controversy": 50,
     "isGambling": false,
     "isStake": false,
@@ -278,7 +334,11 @@
     "category": "IRL",
     "viewers": 38000,
     "color": "#78909c",
-    "tags": ["controversial", "edgy-irl", "weather"],
+    "tags": [
+      "controversial",
+      "edgy-irl",
+      "weather"
+    ],
     "controversy": 58,
     "isGambling": false,
     "isStake": false,
@@ -295,7 +355,10 @@
     "category": "Just Chatting",
     "viewers": 24500,
     "color": "#ef5350",
-    "tags": ["food", "challenge"],
+    "tags": [
+      "food",
+      "challenge"
+    ],
     "controversy": 18,
     "isGambling": false,
     "isStake": false,
@@ -312,7 +375,11 @@
     "category": "Gambling",
     "viewers": 21000,
     "color": "#ff7043",
-    "tags": ["gambling", "controversial", "loot"],
+    "tags": [
+      "gambling",
+      "controversial",
+      "loot"
+    ],
     "controversy": 69,
     "isGambling": true,
     "isStake": false,
@@ -329,7 +396,11 @@
     "category": "Just Chatting",
     "viewers": 14500,
     "color": "#26c6da",
-    "tags": ["retro", "tech", "wholesome"],
+    "tags": [
+      "retro",
+      "tech",
+      "wholesome"
+    ],
     "controversy": 5,
     "isGambling": false,
     "isStake": false,
@@ -346,7 +417,11 @@
     "category": "Just Chatting",
     "viewers": 48000,
     "color": "#7e57c2",
-    "tags": ["controversial", "drama", "call-in"],
+    "tags": [
+      "controversial",
+      "drama",
+      "call-in"
+    ],
     "controversy": 82,
     "isGambling": false,
     "isStake": false,
@@ -363,7 +438,10 @@
     "category": "Just Chatting",
     "viewers": 36000,
     "color": "#ec407a",
-    "tags": ["music", "competition"],
+    "tags": [
+      "music",
+      "competition"
+    ],
     "controversy": 33,
     "isGambling": false,
     "isStake": false,
@@ -380,7 +458,10 @@
     "category": "Sports",
     "viewers": 29000,
     "color": "#29b6f6",
-    "tags": ["sports", "debate"],
+    "tags": [
+      "sports",
+      "debate"
+    ],
     "controversy": 24,
     "isGambling": false,
     "isStake": false,
@@ -397,7 +478,11 @@
     "category": "Just Chatting",
     "viewers": 9000,
     "color": "#9ccc65",
-    "tags": ["wholesome", "craft", "chill"],
+    "tags": [
+      "wholesome",
+      "craft",
+      "chill"
+    ],
     "controversy": 0,
     "isGambling": false,
     "isStake": false,
@@ -414,7 +499,13 @@
     "category": "IRL",
     "viewers": 68000,
     "color": "#d8ff2f",
-    "tags": ["controversial", "edgy-irl", "gambling", "stake", "self-incrimination"],
+    "tags": [
+      "controversial",
+      "edgy-irl",
+      "gambling",
+      "stake",
+      "self-incrimination"
+    ],
     "controversy": 97,
     "isGambling": true,
     "isStake": true,
@@ -431,7 +522,15 @@
     "category": "IRL",
     "viewers": 52000,
     "color": "#ff5a1f",
-    "tags": ["controversial", "edgy-irl", "travel", "gambling", "stake", "crypto", "tts"],
+    "tags": [
+      "controversial",
+      "edgy-irl",
+      "travel",
+      "gambling",
+      "stake",
+      "crypto",
+      "tts"
+    ],
     "controversy": 99,
     "isGambling": true,
     "isStake": true,
@@ -440,5 +539,216 @@
     "tosThreshold": 90,
     "jackpotChance": 0.05,
     "jackpotPayout": 275
+  },
+  {
+    "id": "st_trainwrecked",
+    "streamerId": "trainwrecked",
+    "title": "CO-FOUNDER SLOTS: I LITERALLY CANNOT BE BANNED (watch)",
+    "category": "Slots",
+    "viewers": 40000,
+    "color": "#c9a227",
+    "tags": [
+      "gambling",
+      "stake",
+      "hype",
+      "management"
+    ],
+    "controversy": 40,
+    "isGambling": true,
+    "isStake": true,
+    "risk": 0,
+    "riskRate": 0.8,
+    "tosThreshold": 100,
+    "jackpotChance": 0.05,
+    "jackpotPayout": 300
+  },
+  {
+    "id": "st_xqpensive",
+    "streamerId": "xqpensive",
+    "title": "DAY 47 OF NEVER GAMBLING AGAIN (SLOTS) (one spin) (juicer)",
+    "category": "Slots",
+    "viewers": 42000,
+    "color": "#7fd4ff",
+    "tags": [
+      "gambling",
+      "stake",
+      "hype"
+    ],
+    "controversy": 50,
+    "isGambling": true,
+    "isStake": true,
+    "risk": 0,
+    "riskRate": 1.3,
+    "tosThreshold": 100,
+    "jackpotChance": 0.045,
+    "jackpotPayout": 260
+  },
+  {
+    "id": "st_adenboss",
+    "streamerId": "adenboss",
+    "title": "MYSTERY GUEST TONIGHT — LEGAL SAID DON'T SAY THE NAME",
+    "category": "Just Chatting",
+    "viewers": 38000,
+    "color": "#ff4d94",
+    "tags": [
+      "controversial",
+      "drama",
+      "guests"
+    ],
+    "controversy": 70,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 2.2,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_scapular",
+    "streamerId": "scapular",
+    "title": "MOG WORLD ORDER DAY 63: TODAY WE DRIVE (what could happen)",
+    "category": "IRL",
+    "viewers": 20000,
+    "color": "#a0522d",
+    "tags": [
+      "controversial",
+      "edgy-irl",
+      "rage",
+      "subathon"
+    ],
+    "controversy": 85,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 2.8,
+    "tosThreshold": 90,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_johnnyabroad",
+    "streamerId": "johnnyabroad",
+    "title": "BANNED FROM 4 COUNTRIES, LIVE FROM A 5TH (they can't catch me)",
+    "category": "IRL",
+    "viewers": 15000,
+    "color": "#d94f30",
+    "tags": [
+      "controversial",
+      "edgy-irl",
+      "travel"
+    ],
+    "controversy": 90,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 2.6,
+    "tosThreshold": 90,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_vitaljustice",
+    "streamerId": "vitaljustice",
+    "title": "CATCHING BAD GUYS EP.34 (my own bail hearing is tuesday)",
+    "category": "IRL",
+    "viewers": 14000,
+    "color": "#4f7ad9",
+    "tags": [
+      "controversial",
+      "edgy-irl",
+      "drama"
+    ],
+    "controversy": 70,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 2.0,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_natalee",
+    "streamerId": "natalee",
+    "title": "LAKE CHALLENGE REDEMPTION ARC — 100% REAL THIS TIME (swear)",
+    "category": "IRL",
+    "viewers": 16000,
+    "color": "#ff9ecf",
+    "tags": [
+      "controversial",
+      "drama",
+      "staged"
+    ],
+    "controversy": 65,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 1.9,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_jackdough",
+    "streamerId": "jackdough",
+    "title": "MY 7TH SUPERCAR REACTS TO THE CRASH OF MY 6TH (giveaway???)",
+    "category": "Just Chatting",
+    "viewers": 22000,
+    "color": "#f0e14a",
+    "tags": [
+      "controversial",
+      "rich",
+      "staged"
+    ],
+    "controversy": 60,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 1.7,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_neonbrkup",
+    "streamerId": "neonbrkup",
+    "title": "SHE LEFT ME IN THE MALL (crying) (real) (security en route)",
+    "category": "Just Chatting",
+    "viewers": 18000,
+    "color": "#39ffd5",
+    "tags": [
+      "controversial",
+      "drama"
+    ],
+    "controversy": 68,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 1.8,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_sneerko",
+    "streamerId": "sneerko",
+    "title": "DEBATING 9 COLLEGE FRESHMEN AT ONCE (they should be scared)",
+    "category": "Just Chatting",
+    "viewers": 12000,
+    "color": "#8a8a8a",
+    "tags": [
+      "controversial",
+      "drama",
+      "debate"
+    ],
+    "controversy": 72,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 1.5,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
   }
 ]

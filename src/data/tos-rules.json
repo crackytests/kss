@@ -13,7 +13,7 @@
   "sponsorFailReputationPenalty": 40,
 
   "_economy": "engagementScale tunes the canonical per-tick engagement formula down to fit the 2500 quota (see CONTRACTS.md §2 contract-change log). Jackpot engagement is also multiplied by engagementScale so all engagement stays on one scale; jackpot money is not.",
-  "engagementScale": 0.4,
+  "engagementScale": 0.34,
   "jackpotEngagementFactor": 0.5,
   "jackpotMoneyFactor": 1.0,
 

@@ -12,7 +12,7 @@ const rules = {
   sponsorWarnReputationPenalty: 4,
   sponsorFailMoneyPenalty: 1500,
   sponsorFailReputationPenalty: 40,
-  engagementScale: 0.4,
+  engagementScale: 0.34,
   jackpotEngagementFactor: 0.5,
   jackpotMoneyFactor: 1.0,
 };

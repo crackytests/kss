@@ -59,8 +59,10 @@ function render(root) {
       <p class="title-tag">Feature the chaos. Keep the slots spinning. Pull it one tick before it becomes your problem.</p>
 
       <div class="title-notice">
-        <b>18+ · R-rated satire.</b> Strong language, gambling degeneracy, crude
-        adult humor. Every streamer, platform, and terrible decision is fictional.
+        <b>18+ · R-rated satire &amp; parody.</b> Strong language, gambling
+        degeneracy, crude adult humor. Characters are fictional creations;
+        some parody the public conduct of public figures. Nothing depicted is
+        a statement of fact about any real person.
       </div>
 
       <div class="title-actions">
