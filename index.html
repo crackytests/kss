@@ -20,18 +20,23 @@
   <meta name="twitter:title" content="Kick Staff Simulator" />
   <meta name="twitter:description" content="Feature the chaos. Keep the slots spinning. Pull it one tick before it becomes your problem." />
   <meta name="twitter:image" content="https://crackytests.github.io/kss/src/assets/social-card.png" />
-  <link rel="preload" as="image" href="src/assets/stream-thumbs/stream-incident-a-beat1.png" />
-  <link rel="preload" as="image" href="src/assets/stream-thumbs/stream-incident-a-beat2.png" />
-  <link rel="preload" as="image" href="src/assets/stream-thumbs/stream-incident-b-beat1.png" />
-  <link rel="preload" as="image" href="src/assets/stream-thumbs/stream-incident-b-beat2.png" />
-  <link rel="preload" as="image" href="src/assets/stream-thumbs/dang3rman-normal.png" />
-  <link rel="preload" as="image" href="src/assets/stream-thumbs/dang3rman-incident-beat1.png" />
-  <link rel="preload" as="image" href="src/assets/stream-thumbs/dang3rman-incident-beat2.png" />
-  <link rel="preload" as="image" href="src/assets/stream-thumbs/fire-uranus-normal.png" />
-  <link rel="preload" as="image" href="src/assets/stream-thumbs/fire-uranus-incident-beat1.png" />
-  <link rel="preload" as="image" href="src/assets/stream-thumbs/fire-uranus-incident-beat2.png" />
+  <!-- Cold-load only the images the directory can show. Incident beats load on demand. -->
+  <link rel="preload" as="image" fetchpriority="high" href="src/assets/stream-thumbs/stream-atlas-a-v3.webp" />
+  <link rel="preload" as="image" fetchpriority="high" href="src/assets/stream-thumbs/stream-atlas-b-v3.webp" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/dang3rman-normal-v2.webp" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/fire-uranus-normal-v2.webp" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/trainwrecked-normal.webp" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/xqpensive-normal.webp" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/adenboss-normal.webp" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/scapular-normal.webp" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/johnny-abroad-normal.webp" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/vitaljustice-normal.webp" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/natalee-normal.webp" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/jack-dough-normal.webp" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/n3onbrkup-normal.webp" />
+  <link rel="preload" as="image" href="src/assets/stream-thumbs/sneerko-normal.webp" />
   <link rel="stylesheet" href="src/styles/theme.css?v=3" />
-  <link rel="stylesheet" href="src/styles/board.css?v=5" />
+  <link rel="stylesheet" href="src/styles/board.css?v=6" />
   <link rel="stylesheet" href="src/styles/discord.css" />
   <link rel="stylesheet" href="src/styles/shop.css" />
   <link rel="stylesheet" href="src/styles/sponsor.css" />
@@ -66,6 +71,6 @@
   <div id="crisisSlot"></div>        <!-- WS-P: PR crisis panel -->
   <div id="clipSlot"></div>          <!-- WS-P: clip desk button + timing bar -->
 
-  <script type="module" src="src/main.js?v=11"></script>
+  <script type="module" src="src/main.js?v=12"></script>
 </body>
 </html>

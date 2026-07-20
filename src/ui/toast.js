@@ -9,7 +9,7 @@
 // The drain loop + DISMISS_EVENT dispatch below is the integration contract and
 // must stay intact.
 import { store } from '../state/store.js';
-import { incidentReplay } from './stream-thumbnails.js?v=5';
+import { incidentReplay } from './stream-thumbnails.js?v=6';
 
 const shown = new Set();
 

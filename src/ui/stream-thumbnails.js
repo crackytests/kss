@@ -19,12 +19,12 @@ const STREAM_PANELS = new Map([
 
 const STREAM_NORMALS = {
   st_dang3rman: {
-    src: 'src/assets/stream-thumbs/dang3rman-normal.png',
-    css: '../assets/stream-thumbs/dang3rman-normal.png',
+    src: 'src/assets/stream-thumbs/dang3rman-normal-v2.webp',
+    css: '../assets/stream-thumbs/dang3rman-normal-v2.webp',
   },
   st_fireuranus: {
-    src: 'src/assets/stream-thumbs/fire-uranus-normal.png',
-    css: '../assets/stream-thumbs/fire-uranus-normal.png',
+    src: 'src/assets/stream-thumbs/fire-uranus-normal-v2.webp',
+    css: '../assets/stream-thumbs/fire-uranus-normal-v2.webp',
   },
   st_trainwrecked: normalAsset('trainwrecked-normal.webp'),
   st_xqpensive: normalAsset('xqpensive-normal.webp'),
@@ -40,12 +40,12 @@ const STREAM_NORMALS = {
 
 const STREAM_INCIDENTS = {
   st_dang3rman: {
-    beat1: 'src/assets/stream-thumbs/dang3rman-incident-beat1.png',
-    beat2: 'src/assets/stream-thumbs/dang3rman-incident-beat2.png',
+    beat1: 'src/assets/stream-thumbs/dang3rman-incident-beat1-v2.webp',
+    beat2: 'src/assets/stream-thumbs/dang3rman-incident-beat2-v2.webp',
   },
   st_fireuranus: {
-    beat1: 'src/assets/stream-thumbs/fire-uranus-incident-beat1.png',
-    beat2: 'src/assets/stream-thumbs/fire-uranus-incident-beat2.png',
+    beat1: 'src/assets/stream-thumbs/fire-uranus-incident-beat1-v2.webp',
+    beat2: 'src/assets/stream-thumbs/fire-uranus-incident-beat2-v2.webp',
   },
 };
 
@@ -71,9 +71,9 @@ export function incidentReplay(stream, streamIndex = 0) {
   const panel = panelAddress(stream.id, streamIndex);
   const standalone = STREAM_NORMALS[stream.id];
   const incident = STREAM_INCIDENTS[stream.id];
-  const normal = standalone?.src ?? `src/assets/stream-thumbs/stream-atlas-${panel.atlas}-v2.png`;
-  const beat1 = incident?.beat1 ?? `src/assets/stream-thumbs/stream-incident-${panel.atlas}-beat1.png`;
-  const beat2 = incident?.beat2 ?? `src/assets/stream-thumbs/stream-incident-${panel.atlas}-beat2.png`;
+  const normal = standalone?.src ?? `src/assets/stream-thumbs/stream-atlas-${panel.atlas}-v3.webp`;
+  const beat1 = incident?.beat1 ?? `src/assets/stream-thumbs/stream-incident-${panel.atlas}-beat1-v2.webp`;
+  const beat2 = incident?.beat2 ?? `src/assets/stream-thumbs/stream-incident-${panel.atlas}-beat2-v2.webp`;
   const normalClass = standalone ? ' incident-frame--standalone' : '';
   const incidentClass = incident ? ' incident-frame--standalone' : '';
   return `

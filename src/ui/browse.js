@@ -2,7 +2,7 @@
 // The control shell stays mounted; selector-gated commits only rebuild the list.
 // This preserves search focus, scroll, and hover state through ordinary ticks.
 import { store } from '../state/store.js';
-import { streamThumbnail } from './stream-thumbnails.js?v=5';
+import { streamThumbnail } from './stream-thumbnails.js?v=6';
 
 let filter = 'all';
 let searchQuery = '';

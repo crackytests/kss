@@ -2,10 +2,10 @@
 import { store } from './state/store.js';
 import { start } from './engine/clock.js';
 import { mountHud } from './ui/hud.js?v=2';
-import { mountBrowse } from './ui/browse.js?v=7';
-import { mountFrontPage } from './ui/frontpage.js?v=3';
+import { mountBrowse } from './ui/browse.js?v=8';
+import { mountFrontPage } from './ui/frontpage.js?v=4';
 import { mountDiscord } from './ui/discord.js';
-import { mountToasts } from './ui/toast.js?v=5';
+import { mountToasts } from './ui/toast.js?v=6';
 import { mountShiftOverlay } from './ui/shift-overlay.js?v=2';
 import { mountShop } from './ui/shop.js';
 import { mountSponsorBar } from './ui/sponsor-bar.js';

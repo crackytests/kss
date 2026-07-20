@@ -17,8 +17,8 @@
 }
 .stream-slides { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
 .stream-reel {
-  --atlas-a: url('../assets/stream-thumbs/stream-atlas-a-v2.png');
-  --atlas-b: url('../assets/stream-thumbs/stream-atlas-b-v2.png');
+  --atlas-a: url('../assets/stream-thumbs/stream-atlas-a-v3.webp');
+  --atlas-b: url('../assets/stream-thumbs/stream-atlas-b-v3.webp');
 }
 .stream-reel {
   position: absolute; inset: -2px;
