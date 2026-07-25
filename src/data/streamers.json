@@ -228,5 +228,20 @@
     "id": "offshoreoskar",
     "name": "OffshoreOskar",
     "color": "#2f9e8f"
+  },
+  {
+    "id": "bighead",
+    "name": "Big hEad",
+    "color": "#c8a44a"
+  },
+  {
+    "id": "tntboxpuppy",
+    "name": "TNTboxpuppy",
+    "color": "#ff9ec4"
+  },
+  {
+    "id": "cuntcrimson",
+    "name": "CuntCrimson",
+    "color": "#b3123c"
   }
 ]

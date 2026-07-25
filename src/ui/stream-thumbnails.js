@@ -68,6 +68,9 @@ const STREAM_NORMALS = {
   st_aimee: rosterAsset('aimee'),
   st_fairusefinn: rosterAsset('fairusefinn'),
   st_dayonedrew: rosterAsset('dayonedrew'),
+  st_bighead: rosterAsset('bighead'),
+  st_tntboxpuppy: rosterAsset('tntboxpuppy'),
+  st_cuntcrimson: rosterAsset('cuntcrimson'),
 };
 
 const STREAM_INCIDENTS = {

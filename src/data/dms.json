@@ -1730,5 +1730,199 @@
         }
       }
     ]
+  },
+  {
+    "id": "dm_bighead",
+    "streamerId": "bighead",
+    "name": "Big hEad",
+    "avatarColor": "#c8a44a",
+    "arrivesAt": 8,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "morning. Big hEad here — acting CEO of this platform. unofficial. spiritual. but ask anyone. the sponsors sent ANOTHER package, that's four this month, and i'm not going to tell you what's in it. i'm going to show it. for ninety minutes. front page me and the whole shoe wall gets a tour."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured, Mr. CEO. Show us the wall.",
+        "effect": {
+          "relationship": 14,
+          "heat": 1,
+          "reply": "LET'S GO. i'm doing the wall left-to-right, box by box, with the STORY behind each pair. some of these were sent to me PERSONALLY. by a brand. who knows my name. 🏆"
+        }
+      },
+      {
+        "label": "Big hEad, you have seven thousand viewers.",
+        "effect": {
+          "relationship": -9,
+          "reputation": 3,
+          "reply": "seven thousand CONCURRENT. that's a stadium. you've never filled a stadium. i'm built different and my wall is FULL."
+        }
+      }
+    ],
+    "followUp": {
+      "at": 40,
+      "from": "them",
+      "text": "hey. off the record, and i'll deny it: the packages ARE the payment. there's no cheque. there was never a cheque. they send shoes because shoes are cheaper than money, and i keep posting thank-yous because the alternative is saying out loud that i work for footwear. anyway!! 🫡 back on brand tomorrow. platform's the best in the game.",
+      "choices": [
+        {
+          "label": "Ask them for money. Actual money. You've earned it.",
+          "effect": {
+            "relationship": 12,
+            "reputation": 5,
+            "reply": "…yeah. yeah maybe. i'll draft something. i'll draft it and not send it, but i'll draft it. thanks for not laughing. CEO out 🫡"
+          }
+        },
+        {
+          "label": "Post the thank-you. Stay on brand.",
+          "effect": {
+            "relationship": 6,
+            "reputation": -4,
+            "heat": 2,
+            "storyFlags": {
+              "keptTheShillHappy": true
+            },
+            "reply": "on brand. always on brand. posting it now with the fire emojis and everything. this is FINE. this is a CAREER 🏆"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "dm_tntboxpuppy",
+    "streamerId": "tntboxpuppy",
+    "name": "TNTboxpuppy",
+    "avatarColor": "#ff9ec4",
+    "arrivesAt": 15,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "hihi!! 🎀 tntboxpuppy here~ i know Compliance has Opinions about my category but i'd like to gently stress that i am a cartoon puppy. the most explicit object on my screen is a bow. everything else happens exclusively in the minds of consenting adults, which i'm told is not a jurisdiction. feature me?? 🎀"
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. Legal can go argue with the cartoon.",
+        "effect": {
+          "heat": 8,
+          "investigation": 7,
+          "relationship": 9,
+          "storyFlags": {
+            "platformedTheLoophole": true
+          },
+          "reply": "yayyy!! 🎀 i promise to stay exactly as ambiguous as i legally am. you're a real one. my community is going to be SO normal about this~"
+        }
+      },
+      {
+        "label": "The avatar is a loophole and we both know it.",
+        "effect": {
+          "relationship": -10,
+          "reputation": 6,
+          "reply": "it IS a loophole 🎀 that's not a criticism, that's the ARCHITECTURE. your rulebook describes cameras. i haven't been on a camera in four years. anyway no hard feelings!! 🎀"
+        }
+      }
+    ],
+    "followUp": {
+      "at": 42,
+      "from": "system",
+      "text": "Compliance ticket #4471 (TNTboxpuppy) has been escalated and returned three times. Reason given: 'no applicable dropdown category'. Ticket closed as WONTFIX with the note: 'the model is a dog'.",
+      "choices": [
+        {
+          "label": "Write the missing category. Someone has to.",
+          "effect": {
+            "reputation": 8,
+            "investigation": -4,
+            "heat": -3,
+            "storyFlags": {
+              "wroteTheMissingRule": true
+            },
+            "reply": "[SYSTEM] Draft policy submitted for review. Estimated review time: 14 months. Interim guidance: continue as before."
+          }
+        },
+        {
+          "label": "Close it. If the dropdown can't see it, neither can I.",
+          "effect": {
+            "heat": 5,
+            "investigation": 6,
+            "reputation": -5,
+            "storyFlags": {
+              "closedTheTicket": true
+            },
+            "reply": "[SYSTEM] Ticket #4471 closed. Ticket #4472 opened by a different moderator. Ticket #4473 opened. Ticket #4474 opened."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "dm_cuntcrimson",
+    "streamerId": "cuntcrimson",
+    "name": "CuntCrimson",
+    "avatarColor": "#b3123c",
+    "arrivesAt": 19,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "blessings. i paint. that is the entire stream — six hours, one canvas, and a hymn to a figure who predates your rulebook by about four thousand years. Trust & Safety has flagged me twice this month for 'occult imagery' while the man three slots over is committing crimes on camera in real time. feature me or don't. She's patient. i'm considerably less so."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. Paint.",
+        "effect": {
+          "relationship": 12,
+          "reputation": 4,
+          "heat": 4,
+          "storyFlags": {
+            "backedTheArtist": true
+          },
+          "reply": "then i'll do the underpainting on the front page and let the brand-safety people discover colour theory. thank you. genuinely. you're the first curator here who read past the handle."
+        }
+      },
+      {
+        "label": "The advertisers can't tell you from a liability.",
+        "effect": {
+          "relationship": -12,
+          "reputation": -3,
+          "heat": -2,
+          "reply": "no. they can't. that's a failure of literacy, not of mine. i've been painting through worse audiences than yours for a decade and i'll be painting after this job eats you. blessings anyway."
+        }
+      }
+    ],
+    "followUp": {
+      "at": 38,
+      "from": "system",
+      "text": "[BRAND SAFETY] BrightFizz Energy has flagged an adjacent listing (CuntCrimson) as off-brand and requested removal. Attached note: 'our consumer is 14-25 and we would simply prefer fewer demons. no judgement.'",
+      "choices": [
+        {
+          "label": "Pull her. The sponsor signs the cheques.",
+          "effect": {
+            "money": 400,
+            "reputation": -7,
+            "relationship": -16,
+            "storyFlags": {
+              "cavedToBrandSafety": true
+            },
+            "reply": "[SYSTEM] Listing removed. BrightFizz has acknowledged. CuntCrimson has not responded and has not needed to."
+          }
+        },
+        {
+          "label": "Reply: she's a painter. Send them her portfolio.",
+          "effect": {
+            "reputation": 8,
+            "heat": 3,
+            "relationship": 10,
+            "storyFlags": {
+              "defendedTheArtist": true
+            },
+            "reply": "[SYSTEM] Reply sent. BrightFizz response: 'we did not open the attachment but we consider the matter closed.' Listing retained."
+          }
+        }
+      ]
+    }
   }
 ]

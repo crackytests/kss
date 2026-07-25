@@ -19,7 +19,7 @@ import { mountEnding } from './ui/ending.js';
 import { mountCrisis } from './ui/crisis.js';
 import { mountClipDesk } from './ui/clipdesk.js';
 import { mountHotkeys } from './ui/hotkeys.js';
-import { preloadStreamThumbnails } from './ui/stream-thumbnails.js?v=7';
+import { preloadStreamThumbnails } from './ui/stream-thumbnails.js?v=8';
 
 const RUN_CONFIG = getRunConfig();
 

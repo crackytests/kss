@@ -957,5 +957,68 @@
     "tosThreshold": 100,
     "jackpotChance": 0.04,
     "jackpotPayout": 240
+  },
+  {
+    "id": "st_bighead",
+    "streamerId": "bighead",
+    "title": "CEO CHECK-IN 🏆 4TH SPONSOR PACKAGE THIS MONTH — SHOE WALL TOUR AT 40K",
+    "category": "Just Chatting",
+    "viewers": 7000,
+    "color": "#c8a44a",
+    "tags": [
+      "hype",
+      "merch",
+      "shill"
+    ],
+    "controversy": 30,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 0.9,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_tntboxpuppy",
+    "streamerId": "tntboxpuppy",
+    "title": "🎀 cozy chat + gaming!! 🎀 (compliance has asked me to stop filing my own tickets)",
+    "category": "Just Chatting",
+    "viewers": 34000,
+    "color": "#ff9ec4",
+    "tags": [
+      "controversial",
+      "vtuber",
+      "unrated"
+    ],
+    "controversy": 85,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 2.6,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_cuntcrimson",
+    "streamerId": "cuntcrimson",
+    "title": "SIX HOURS, ONE CANVAS — devotional oils for Lilith (no talking, just brushes)",
+    "category": "Art",
+    "viewers": 16000,
+    "color": "#b3123c",
+    "tags": [
+      "controversial",
+      "art",
+      "occult"
+    ],
+    "controversy": 58,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 1.5,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
   }
 ]
