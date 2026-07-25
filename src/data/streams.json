@@ -750,5 +750,169 @@
     "tosThreshold": 100,
     "jackpotChance": 0,
     "jackpotPayout": 0
+  },
+  {
+    "id": "st_permabanned",
+    "streamerId": "permabanned",
+    "title": "BANNED FROM 7 PLATFORMS, LIVE ON THE 8TH (they can't do it twice)",
+    "category": "Just Chatting",
+    "viewers": 26000,
+    "color": "#e04040",
+    "tags": [
+      "controversial",
+      "drama",
+      "edgy-irl"
+    ],
+    "controversy": 80,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 2.3,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_organicollie",
+    "streamerId": "organicollie",
+    "title": "62,000 REAL HUMANS WATCHING RIGHT NOW (do not open chat)",
+    "category": "Just Chatting",
+    "viewers": 48000,
+    "color": "#5ad1a0",
+    "tags": [
+      "hype",
+      "botted"
+    ],
+    "controversy": 20,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 2.0,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_afkandy",
+    "streamerId": "afkandy",
+    "title": "HOUR 341: ASLEEP. $2 AIRHORN. $100 THE ONE THAT MAKES ME CRY",
+    "category": "Just Chatting",
+    "viewers": 9000,
+    "color": "#6b7fd7",
+    "tags": [
+      "wholesome",
+      "subathon"
+    ],
+    "controversy": 5,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 0.2,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_blessupbrady",
+    "streamerId": "blessupbrady",
+    "title": "GIVING A STRANGER $500 (life-changing) (my life) 🙏 BLESSINGS UP",
+    "category": "IRL",
+    "viewers": 28000,
+    "color": "#f2c14e",
+    "tags": [
+      "controversial",
+      "charity",
+      "staged"
+    ],
+    "controversy": 55,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 1.6,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_maxbetmarko",
+    "streamerId": "maxbetmarko",
+    "title": "MAX BET, NO DISCLAIMER, NO COUNTRY IS SAFE 🎰",
+    "category": "Slots",
+    "viewers": 32000,
+    "color": "#d4145a",
+    "tags": [
+      "gambling",
+      "stake",
+      "controversial",
+      "hype"
+    ],
+    "controversy": 70,
+    "isGambling": true,
+    "isStake": true,
+    "risk": 0,
+    "riskRate": 2.4,
+    "tosThreshold": 100,
+    "jackpotChance": 0.05,
+    "jackpotPayout": 320
+  },
+  {
+    "id": "st_aimee",
+    "streamerId": "aimee",
+    "title": "AI VTUBER · 100% COMPLIANT · HAS NEVER SLEPT · PLEASE DO NOT JAILBREAK 💖",
+    "category": "Just Chatting",
+    "viewers": 21000,
+    "color": "#b06bff",
+    "tags": [
+      "controversial",
+      "ai"
+    ],
+    "controversy": 40,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 2.1,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_fairusefinn",
+    "streamerId": "fairusefinn",
+    "title": "REACTING TO THE ENTIRE FILM (i say 'oh damn' twice, that's transformative)",
+    "category": "Just Chatting",
+    "viewers": 23000,
+    "color": "#4ec3d9",
+    "tags": [
+      "controversial",
+      "restream-risk"
+    ],
+    "controversy": 45,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 2.8,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
+  },
+  {
+    "id": "st_dayonedrew",
+    "streamerId": "dayonedrew",
+    "title": "DAY ONE (AGAIN) — SOBRIETY STREAM (relapse clips in description)",
+    "category": "Just Chatting",
+    "viewers": 18000,
+    "color": "#9aa87a",
+    "tags": [
+      "controversial",
+      "drama"
+    ],
+    "controversy": 62,
+    "isGambling": false,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 1.7,
+    "tosThreshold": 100,
+    "jackpotChance": 0,
+    "jackpotPayout": 0
   }
 ]

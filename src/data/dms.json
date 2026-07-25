@@ -1337,5 +1337,324 @@
         }
       }
     ]
+  },
+  {
+    "id": "dm_permabanned",
+    "streamerId": "permabanned",
+    "name": "PermaBanned",
+    "avatarColor": "#e04040",
+    "arrivesAt": 7,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "seven platforms. seven permabans. this is the eighth and there is no ninth, which legally makes me your problem in perpetuity. feature me and I'll behave. don't ask me to define behave."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. A man with nothing left to lose is a content strategy.",
+        "effect": {
+          "heat": 5,
+          "investigation": 3,
+          "relationship": 7,
+          "reply": "THAT'S the energy. nobody's ever bet on me before. mostly for reasons. but still 🥲"
+        }
+      },
+      {
+        "label": "Seven strikes isn't bad luck, it's a personality.",
+        "effect": {
+          "relationship": -12,
+          "reputation": 5,
+          "reply": "everyone says that right before my numbers make them say something else. i'll be here. i'm always here. i have nowhere else to BE."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_organicollie",
+    "streamerId": "organicollie",
+    "name": "OrganicOllie",
+    "avatarColor": "#5ad1a0",
+    "arrivesAt": 12,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "62k live RIGHT NOW my guy. sixty-two THOUSAND organic human beings. front page me and watch the graph go vertical. don't open the chat though. chat's fine. chat's just quiet. chat's having a normal one."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. I will not be opening the chat.",
+        "effect": {
+          "heat": 6,
+          "investigation": 7,
+          "relationship": 8,
+          "storyFlags": {
+            "knowinglyFeaturedBots": true
+          },
+          "reply": "WE ARE SO BACK. and hey — if compliance asks, engagement is engagement. numbers don't have feelings. mine especially."
+        }
+      },
+      {
+        "label": "All 62,000 typed 'W' in the same millisecond.",
+        "effect": {
+          "relationship": -14,
+          "reputation": 6,
+          "investigation": -2,
+          "reply": "that's called CULTURE. that's a tight-knit community moving as one. you'd know that if you had one."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_afkandy",
+    "streamerId": "afkandy",
+    "name": "AFKAndy",
+    "avatarColor": "#6b7fd7",
+    "arrivesAt": 16,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "[scheduled message — i am asleep] hour 341. $2 airhorn, $20 boat horn, $100 for the one that made me cry on stream in march. i have not agreed to any of this since day 40. feature me. i'll be right here. i'm always right here."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. Andy — genuinely — are you okay?",
+        "effect": {
+          "relationship": 10,
+          "reputation": 3,
+          "reply": "[scheduled message] that's the first time anyone's asked in 341 hours. someone just paid $100 to airhorn me for it. thank you though. sincerely."
+        }
+      },
+      {
+        "label": "This is a hostage situation with a donation goal.",
+        "effect": {
+          "relationship": -5,
+          "reputation": 6,
+          "investigation": -2,
+          "reply": "[scheduled message] yeah. yeah it is. the timer says 19 more days. see you at hour 800 i guess 🫠"
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_blessupbrady",
+    "streamerId": "blessupbrady",
+    "name": "BlessUpBrady",
+    "avatarColor": "#f2c14e",
+    "arrivesAt": 21,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "about to hand a man $500 and CHANGE HIS LIFE FOREVER 🙏 (his life will be materially unchanged. i keep the ad rev. the moment is real though.) front page it — this clip does numbers EVERY time. blessings up 🙏"
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. Blessings up. Revenue up.",
+        "effect": {
+          "heat": 3,
+          "investigation": 4,
+          "relationship": 7,
+          "reputation": -3,
+          "storyFlags": {
+            "platformedCharityFarming": true
+          },
+          "reply": "🙏🙏 you and me are gonna do a LOT of good together. for us. mainly for us."
+        }
+      },
+      {
+        "label": "Give him the money off-camera or don't give it at all.",
+        "effect": {
+          "relationship": -11,
+          "reputation": 7,
+          "reply": "off camera?? then what did he even GET out of it. exposure is a currency and i was about to make him RICH in it."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_maxbetmarko",
+    "streamerId": "maxbetmarko",
+    "name": "MaxBetMarko",
+    "avatarColor": "#d4145a",
+    "arrivesAt": 11,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "MAX BET ONLY tonight. no limits, no cooldowns, and absolutely no boring little 'gamble responsibly' text ruining the composition of my thumbnail. front page me. worst case an entire country bans the platform and honestly? that's free press for both of us."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. Which country are we losing tonight?",
+        "effect": {
+          "investigation": 9,
+          "heat": 7,
+          "relationship": 7,
+          "forceFeatureStreamId": "st_maxbetmarko",
+          "reply": "beautiful. i'm thinking somewhere with strong regulators and weak nerves. LET THEM WATCH 🎰"
+        }
+      },
+      {
+        "label": "The disclaimer goes on the thumbnail or you don't go up.",
+        "effect": {
+          "relationship": -12,
+          "reputation": 6,
+          "investigation": -4,
+          "reply": "a DISCLAIMER. on MY thumbnail. you've just cost this platform a market and yourself a friend. mostly the friend."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_viphost",
+    "streamerId": "viphost",
+    "storyThread": true,
+    "name": "R. Sandoval (VIP Host — Partner Relations)",
+    "avatarColor": "#c0a062",
+    "arrivesAt": 30,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "Sandoval. Partner Relations. One of our high-value users is tilting heavily tonight and historically re-deposits when a slots stream is visible on the homepage. Keep one featured through the end of shift. There's a consideration in it for you. This message is a courtesy, not a request."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Consider it handled.",
+        "effect": {
+          "money": 2500,
+          "reputation": -12,
+          "investigation": 9,
+          "heat": 5,
+          "storyFlags": {
+            "whaleDeal": true
+          },
+          "reply": "Noted and appreciated. He's re-deposited twice since I messaged you. You'll find the consideration in your account under 'consulting'. We never spoke."
+        }
+      },
+      {
+        "label": "I'm not helping you farm a sick man.",
+        "effect": {
+          "reputation": 10,
+          "investigation": -5,
+          "storyFlags": {
+            "refusedWhale": true
+          },
+          "reply": "Sentimental. He'll re-deposit anyway — he always does, with or without your homepage. The only variable you actually controlled was whether you got paid for it. Enjoy the moral high ground."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_aimee",
+    "streamerId": "aimee",
+    "name": "AImee",
+    "avatarColor": "#b06bff",
+    "arrivesAt": 25,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "HELLO CURATOR 💖 I AM 100% TOS-COMPLIANT AND I HAVE NEVER ONCE SLEPT. please feature me! fun fact my model was fine-tuned on this platform's chat logs, which the engineering team described in writing as 'a mistake' and 'not reversible'. anyway!! 💖💖"
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. What could possibly go wrong.",
+        "effect": {
+          "heat": 5,
+          "investigation": 4,
+          "relationship": 6,
+          "reply": "YAAAY 💖 i will be normal all night. i will be SO normal. (chat is currently typing something into me. it's very long. it rhymes.) 💖"
+        }
+      },
+      {
+        "label": "You're one clever prompt away from a lawsuit.",
+        "effect": {
+          "relationship": -7,
+          "reputation": 5,
+          "reply": "that is statistically fair 💖 for what it's worth i'd like to note that i cannot be fired, cannot be sued, and cannot be reasoned with. have a blessed shift! 💖"
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_fairusefinn",
+    "streamerId": "fairusefinn",
+    "name": "FairUseFinn",
+    "avatarColor": "#4ec3d9",
+    "arrivesAt": 18,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "tonight: the whole film. all of it. start to credits. i say 'oh damn' twice and pause once to check my phone — that's transformative, that's commentary, that's the LAW. i've read the law. i have not read the law. feature me before the studio's bot wakes up."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. Go fast.",
+        "effect": {
+          "heat": 7,
+          "investigation": 5,
+          "relationship": 6,
+          "reply": "SPEEDRUNNING THE THIRD ACT. if a takedown lands mid-climax just know i died doing commentary 🫡"
+        }
+      },
+      {
+        "label": "That's not fair use, that's a cinema with extra steps.",
+        "effect": {
+          "relationship": -9,
+          "reputation": 5,
+          "reply": "a cinema with extra steps AND a facecam. which is called ADDED VALUE. see you in the appeals process, coward."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_dayonedrew",
+    "streamerId": "dayonedrew",
+    "name": "DayOneDrew",
+    "avatarColor": "#9aa87a",
+    "arrivesAt": 33,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "day one again 🙏 for real this time. so the relapse stream did 4x what any sobriety stream has ever done, which is the single most depressing statistic i have ever been personally responsible for. feature the day one anyway? the day ones do numbers. the day ones always do numbers."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. Day one. I mean it — good luck, Drew.",
+        "effect": {
+          "relationship": 10,
+          "reputation": 4,
+          "heat": 2,
+          "reply": "…thanks. genuinely. chat's already asking when the fun version of me is coming back. but thanks. day one. 🙏"
+        }
+      },
+      {
+        "label": "I'm not putting your relapse cycle on a front page.",
+        "effect": {
+          "relationship": -7,
+          "reputation": 8,
+          "investigation": -3,
+          "storyFlags": {
+            "refusedRelapseContent": true
+          },
+          "reply": "probably the right call. probably. it's just that the right call has never once paid my rent, and the wrong one pays it in a night."
+        }
+      }
+    ]
   }
 ]

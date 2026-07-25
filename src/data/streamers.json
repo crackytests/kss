@@ -178,5 +178,45 @@
     "id": "sneerko",
     "name": "Sneerko",
     "color": "#8a8a8a"
+  },
+  {
+    "id": "permabanned",
+    "name": "PermaBanned",
+    "color": "#e04040"
+  },
+  {
+    "id": "organicollie",
+    "name": "OrganicOllie",
+    "color": "#5ad1a0"
+  },
+  {
+    "id": "afkandy",
+    "name": "AFKAndy",
+    "color": "#6b7fd7"
+  },
+  {
+    "id": "blessupbrady",
+    "name": "BlessUpBrady",
+    "color": "#f2c14e"
+  },
+  {
+    "id": "maxbetmarko",
+    "name": "MaxBetMarko",
+    "color": "#d4145a"
+  },
+  {
+    "id": "aimee",
+    "name": "AImee",
+    "color": "#b06bff"
+  },
+  {
+    "id": "fairusefinn",
+    "name": "FairUseFinn",
+    "color": "#4ec3d9"
+  },
+  {
+    "id": "dayonedrew",
+    "name": "DayOneDrew",
+    "color": "#9aa87a"
   }
 ]
