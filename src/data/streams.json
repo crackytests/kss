@@ -914,5 +914,48 @@
     "tosThreshold": 100,
     "jackpotChance": 0,
     "jackpotPayout": 0
+  },
+  {
+    "id": "st_realmoneyrico",
+    "streamerId": "realmoneyrico",
+    "title": "$40,000 SPIN — YES IT'S MY OWN MONEY (do not ask again)",
+    "category": "Slots",
+    "viewers": 30000,
+    "color": "#e8b33c",
+    "tags": [
+      "gambling",
+      "stake",
+      "controversial",
+      "hype"
+    ],
+    "controversy": 68,
+    "isGambling": true,
+    "isStake": true,
+    "risk": 0,
+    "riskRate": 2.0,
+    "tosThreshold": 100,
+    "jackpotChance": 0.055,
+    "jackpotPayout": 300
+  },
+  {
+    "id": "st_offshoreoskar",
+    "streamerId": "offshoreoskar",
+    "title": "BLOCKED IN 4 COUNTRIES 🌍 CHAT KNOWS WHAT TO DO (i said nothing)",
+    "category": "Gambling",
+    "viewers": 25000,
+    "color": "#2f9e8f",
+    "tags": [
+      "gambling",
+      "controversial",
+      "crypto"
+    ],
+    "controversy": 75,
+    "isGambling": true,
+    "isStake": false,
+    "risk": 0,
+    "riskRate": 2.5,
+    "tosThreshold": 100,
+    "jackpotChance": 0.04,
+    "jackpotPayout": 240
   }
 ]

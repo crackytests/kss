@@ -218,5 +218,15 @@
     "id": "dayonedrew",
     "name": "DayOneDrew",
     "color": "#9aa87a"
+  },
+  {
+    "id": "realmoneyrico",
+    "name": "RealMoneyRico",
+    "color": "#e8b33c"
+  },
+  {
+    "id": "offshoreoskar",
+    "name": "OffshoreOskar",
+    "color": "#2f9e8f"
   }
 ]

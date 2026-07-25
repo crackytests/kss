@@ -1656,5 +1656,79 @@
         }
       }
     ]
+  },
+  {
+    "id": "dm_realmoneyrico",
+    "streamerId": "realmoneyrico",
+    "name": "RealMoneyRico",
+    "avatarColor": "#e8b33c",
+    "arrivesAt": 13,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "chat's doing the 'is the balance real' thing again. the balance is REAL. it's just not MINE. the casino tops me up when i tilt — that's a partnership, not a lie. feature me: literally nobody loses money on my stream. except the viewers. obviously. they lose an incredible amount."
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. 'Nobody loses money' is doing heroic work in that sentence.",
+        "effect": {
+          "heat": 6,
+          "investigation": 8,
+          "relationship": 7,
+          "storyFlags": {
+            "platformedCompedBalance": true
+          },
+          "reply": "look — i'm an ACTOR playing a gambler and they're gamblers playing along at home. we're all performing. mine's just funded 🎰"
+        }
+      },
+      {
+        "label": "Put 'COMPED BALANCE' on the overlay or you don't go up.",
+        "effect": {
+          "relationship": -13,
+          "reputation": 8,
+          "investigation": -5,
+          "reply": "you want me to put the trick on the poster. that's not a disclaimer, that's a CONFESSION. nobody tunes in to watch a man risk nothing, and that's exactly what i do."
+        }
+      }
+    ]
+  },
+  {
+    "id": "dm_offshoreoskar",
+    "streamerId": "offshoreoskar",
+    "name": "OffshoreOskar",
+    "avatarColor": "#2f9e8f",
+    "arrivesAt": 24,
+    "unread": true,
+    "messages": [
+      {
+        "from": "them",
+        "text": "my casino got blocked in a fourth country this month, which i'm choosing to read as a five-star review. i won't say the workaround on stream. i'll say it in a way that is legally a wink and functionally a tutorial. front page me before the regulator's morning meeting 🌍"
+      }
+    ],
+    "choices": [
+      {
+        "label": "Featured. Get it done before the meeting.",
+        "effect": {
+          "investigation": 10,
+          "heat": 8,
+          "relationship": 7,
+          "storyFlags": {
+            "platformedGeoEvasion": true
+          },
+          "reply": "you're a real one. four countries can't stop a man with a webcam and a poor understanding of jurisdiction 🌍"
+        }
+      },
+      {
+        "label": "You're a compliance letter with a webcam.",
+        "effect": {
+          "relationship": -12,
+          "reputation": 7,
+          "investigation": -5,
+          "reply": "compliance letters don't do 25k concurrent, mate. i'll be blocked in a fifth country by friday and STILL out-earning your entire safe list."
+        }
+      }
+    ]
   }
 ]
