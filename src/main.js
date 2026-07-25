@@ -19,6 +19,7 @@ import { mountEnding } from './ui/ending.js';
 import { mountCrisis } from './ui/crisis.js';
 import { mountClipDesk } from './ui/clipdesk.js';
 import { mountHotkeys } from './ui/hotkeys.js';
+import { preloadStreamThumbnails } from './ui/stream-thumbnails.js?v=7';
 
 const RUN_CONFIG = getRunConfig();
 
@@ -37,8 +38,11 @@ async function boot() {
     loadJson('src/data/sponsors.json'),
   ]);
 
+  const runStreams = orderStreamsForRun(streams, RUN_CONFIG);
+  await preloadStreamThumbnails(runStreams);
+
   store.load({
-    streams: orderStreamsForRun(streams, RUN_CONFIG),
+    streams: runStreams,
     streamers,
     threads,
     rules,

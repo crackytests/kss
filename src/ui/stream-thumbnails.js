@@ -1,7 +1,7 @@
-// Generated livestream asset addressing. The original roster owns fixed panels
-// in two 4x3 atlases; later additions can own standalone normal/incident frames.
-// Address by stream id (not shuffled roster position) so every host stays
-// visually recognizable across daily seeds and challenge runs.
+// Generated livestream asset addressing. Every host owns a recognizable normal
+// frame; the two atlases remain as incident-replay frames for the original cast.
+// Address by stream id (not shuffled roster position) so identity survives daily
+// seeds, challenge runs, and roster growth.
 
 const STREAM_PANELS = new Map([
   'st_slotking', 'st_rollarob', 'st_dramahouse', 'st_ragequit',
@@ -18,6 +18,30 @@ const STREAM_PANELS = new Map([
 ]));
 
 const STREAM_NORMALS = {
+  st_slotking: rosterAsset('slotking'),
+  st_rollarob: rosterAsset('rollarob'),
+  st_dramahouse: rosterAsset('dramahouse'),
+  st_ragequit: rosterAsset('ragequit'),
+  st_cozycook: rosterAsset('cozycook'),
+  st_poolday: rosterAsset('poolday'),
+  st_cryptobro: rosterAsset('cryptobro'),
+  st_ballgame: rosterAsset('ballgame'),
+  st_pixelpilot: rosterAsset('pixelpilot'),
+  st_streetsnacks: rosterAsset('streetsnacks'),
+  st_midnightmara: rosterAsset('midnightmara'),
+  st_fantasyfrank: rosterAsset('fantasyfrank'),
+  st_luckyparcel: rosterAsset('luckyparcel'),
+  st_rooftopremy: rosterAsset('rooftopremy'),
+  st_puppycam: rosterAsset('puppycam'),
+  st_chessgrudge: rosterAsset('chessgrudge'),
+  st_rainwatch: rosterAsset('rainwatch'),
+  st_cookoff: rosterAsset('cookoff'),
+  st_lootlola: rosterAsset('lootlola'),
+  st_retrorex: rosterAsset('retrorex'),
+  st_rumorroom: rosterAsset('rumorroom'),
+  st_dancecrew: rosterAsset('dancecrew'),
+  st_bracketboss: rosterAsset('bracketboss'),
+  st_quietcraft: rosterAsset('quietcraft'),
   st_dang3rman: {
     src: 'src/assets/stream-thumbs/dang3rman-normal-v2.webp',
     css: '../assets/stream-thumbs/dang3rman-normal-v2.webp',
@@ -36,6 +60,14 @@ const STREAM_NORMALS = {
   st_jackdough: normalAsset('jack-dough-normal.webp'),
   st_neonbrkup: normalAsset('n3onbrkup-normal.webp'),
   st_sneerko: normalAsset('sneerko-normal.webp'),
+  st_permabanned: rosterAsset('permabanned'),
+  st_organicollie: rosterAsset('organicollie'),
+  st_afkandy: rosterAsset('afkandy'),
+  st_blessupbrady: rosterAsset('blessupbrady'),
+  st_maxbetmarko: rosterAsset('maxbetmarko'),
+  st_aimee: rosterAsset('aimee'),
+  st_fairusefinn: rosterAsset('fairusefinn'),
+  st_dayonedrew: rosterAsset('dayonedrew'),
 };
 
 const STREAM_INCIDENTS = {
@@ -48,6 +80,42 @@ const STREAM_INCIDENTS = {
     beat2: 'src/assets/stream-thumbs/fire-uranus-incident-beat2-v2.webp',
   },
 };
+
+const PRELOADED_NORMALS = new Map();
+
+/**
+ * Load and decode only the seeded run's roster before UI mount. Background
+ * images otherwise race the first paint and can appear blank on a cold Pages
+ * visit. Keep the Image objects alive so the decoded bitmaps remain reusable.
+ */
+export function preloadStreamThumbnails(streams = []) {
+  const ready = streams.map((stream, index) => {
+    const asset = STREAM_NORMALS[stream.id];
+    if (!asset) return Promise.resolve();
+    const cached = PRELOADED_NORMALS.get(asset.src);
+    if (cached) return cached.ready;
+
+    const image = new Image();
+    image.decoding = 'async';
+    image.fetchPriority = index < 6 ? 'high' : 'auto';
+    const loaded = new Promise((resolve) => {
+      image.onload = async () => {
+        try {
+          await image.decode();
+        } catch {
+          // A successful load is still usable when decode() is unsupported.
+        }
+        resolve();
+      };
+      image.onerror = resolve;
+    });
+    PRELOADED_NORMALS.set(asset.src, { image, ready: loaded });
+    image.src = asset.src;
+    return loaded;
+  });
+
+  return Promise.all(ready);
+}
 
 export function streamThumbnail(stream, streamIndex) {
   const panel = panelAddress(stream.id, streamIndex);
@@ -106,4 +174,8 @@ function normalAsset(filename) {
     src: `src/assets/stream-thumbs/${filename}`,
     css: `../assets/stream-thumbs/${filename}`,
   };
+}
+
+function rosterAsset(id) {
+  return normalAsset(`roster-v2/${id}.webp`);
 }
